@@ -15,7 +15,6 @@ import com.github.lzyzsd.jsbridge.BridgeHandler;
 import com.github.lzyzsd.jsbridge.CallBackFunction;
 import com.twt.service.R;
 import com.twt.service.support.PrefUtils;
-import com.twt.service.support.StatusBarHelper;
 import com.twt.service.support.share.UpLoadWebChromeClient;
 import com.twt.service.ui.common.NextActivity;
 import com.twt.service.ui.common.TokenRefreshFailureEvent;

@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.antfortune.freeline'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.1'
+    compileSdkVersion Integer.parseInt(TARGET_SDK_VERSION)
+    buildToolsVersion BUILD_TOOL_VERSION
 
     defaultConfig {
         applicationId "com.twt.service"
-        minSdkVersion 17
-        targetSdkVersion 24
+        minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(TARGET_SDK_VERSION)
         versionCode 15
         renderscriptTargetApi 22
         renderscriptSupportModeEnabled true
@@ -31,21 +32,24 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-}
-
-ext {
-    supportLibVersion = '23.1.1'
+    freeline {
+        hack true
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.1.1'
-    compile 'com.android.support:design:24.1.1'
+
+    compile project(":sharesdk")
+
+    compile "com.android.support:support-annotations:${SUPPORT_LIBRARY_VERSION}"
+    compile "com.android.support:appcompat-v7:${SUPPORT_LIBRARY_VERSION}"
+    compile "com.android.support:design:${SUPPORT_LIBRARY_VERSION}"
+    compile "com.android.support:cardview-v7:${SUPPORT_LIBRARY_VERSION}"
+    compile "com.android.support:recyclerview-v7:${SUPPORT_LIBRARY_VERSION}"
+
     compile 'com.squareup.picasso:picasso:2.3.2'
-    compile 'com.android.support:design:24.1.1'
-    compile 'com.android.support:cardview-v7:24.1.1'
-    compile 'com.android.support:recyclerview-v7:24.1.1'
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'com.github.PhilJay:MPAndroidChart:v2.1.3'
     compile 'com.nineoldandroids:library:2.4.0'
@@ -58,7 +62,6 @@ dependencies {
     compile 'de.greenrobot:eventbus:2.4.0'
     compile 'com.github.lzyzsd:jsbridge:1.0.4'
     compile 'com.getbase:floatingactionbutton:1.10.1'
-    compile 'com.android.support:support-annotations:24.1.1'
     compile 'com.haozhang.libary:android-slanted-textview:1.2'
 
     //2.0
@@ -76,4 +79,7 @@ dependencies {
     compile 'com.nightonke:boommenu:1.0.9'
     compile 'com.github.wooplr:Spotlight:1.2.2'
     compile 'com.sothree.slidinguppanel:library:3.0.0'
+
+    // freeline
+    compile "com.antfortune.freeline:runtime:${FREELINE_VERSION}"
 }

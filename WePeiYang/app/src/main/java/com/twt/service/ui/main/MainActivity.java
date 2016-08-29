@@ -4,11 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -30,29 +28,19 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.google.gson.Gson;
-import com.nightonke.boommenu.BoomMenuButton;
-import com.nightonke.boommenu.Types.BoomType;
-import com.nightonke.boommenu.Types.ButtonType;
-import com.nightonke.boommenu.Types.PlaceType;
-import com.nightonke.boommenu.Util;
 import com.squareup.picasso.Picasso;
 import com.twt.service.JniUtils;
 import com.twt.service.R;
-import com.twt.service.bean.Login;
 import com.twt.service.bean.Main;
 import com.twt.service.bean.Update;
 import com.twt.service.bike.bike.bikeAuth.BikeAuthActivity;
 import com.twt.service.bike.bike.ui.main.BikeActivity;
 import com.twt.service.interactor.MainInteractorImpl;
-import com.twt.service.party.ui.home.PartyActivity;
-import com.twt.service.party.ui.home.PartyView;
 import com.twt.service.support.PrefUtils;
 import com.twt.service.ui.BaseActivity;
 import com.twt.service.ui.about.AboutActivity;
 import com.twt.service.ui.account.AccountActivity;
-import com.twt.service.ui.bus.BusActivity;
 import com.twt.service.ui.common.NextActivity;
-import com.twt.service.ui.date.DatingActivity;
 import com.twt.service.ui.feedback.FeedbackActivity;
 import com.twt.service.ui.gpa.GpaActivity;
 import com.twt.service.ui.jobs.JobsActivity;
@@ -63,10 +51,8 @@ import com.twt.service.ui.main.adapter.MainLostAdapter;
 import com.twt.service.ui.news.NewsActivity;
 import com.twt.service.ui.news.details.NewsDetailsActivity;
 import com.twt.service.ui.notice.NoticeActivity;
-import com.twt.service.ui.push.PushActivity;
-import com.twt.service.ui.tools.ToolsActivity;
 import com.twt.service.ui.schedule.ScheduleActivity;
-import com.wooplr.spotlight.SpotlightView;
+import com.twt.service.ui.tools.ToolsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -224,7 +210,7 @@ public class MainActivity extends BaseActivity implements BaseSliderView.OnSlide
                     /*case R.id.item_share_app:
                         break;*/
                     case R.id.item_check_update:
-                        checkUpdate(false);
+                        //checkUpdate(false);
                         break;
                     /*case R.id.push_settings:
                         PushActivity.actionStart(MainActivity.this);
@@ -258,7 +244,7 @@ public class MainActivity extends BaseActivity implements BaseSliderView.OnSlide
                 presenter.loadDataFromNet();
             }
         });
-        checkUpdate(true);
+        //checkUpdate(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.main_primary));
         }

@@ -19,12 +19,12 @@ import android.widget.Toast;
 import com.twt.service.R;
 import com.twt.service.bean.News;
 import com.twt.service.interactor.NewsDetailsInteractorImpl;
-import com.twt.service.support.share.OnekeyShare;
 import com.twt.service.ui.BaseActivity;
 import com.twt.service.ui.news.comments.NewsCommentsActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import cn.sharesdk.OnekeyShare;
 import cn.sharesdk.framework.ShareSDK;
 
 public class NewsDetailsActivity extends BaseActivity implements NewsDetailsView {

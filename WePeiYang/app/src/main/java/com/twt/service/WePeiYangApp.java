@@ -3,6 +3,7 @@ package com.twt.service;
 import android.app.Application;
 import android.content.Context;
 
+import com.antfortune.freeline.FreelineCore;
 import com.twt.service.service.push.PushService;
 
 import org.litepal.LitePalApplication;
@@ -18,6 +19,7 @@ public class WePeiYangApp extends Application{
 
     @Override
     public void onCreate() {
+        FreelineCore.init(this);
         context = getApplicationContext();
         LitePalApplication.initialize(this);
         FIR.init(this);
