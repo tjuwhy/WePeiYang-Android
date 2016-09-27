@@ -4,7 +4,8 @@ import android.app.Application;
 import android.content.Context;
 
 import com.antfortune.freeline.FreelineCore;
-import com.twt.service.service.push.PushService;
+import com.growingio.android.sdk.collection.Configuration;
+import com.growingio.android.sdk.collection.GrowingIO;
 
 import org.litepal.LitePalApplication;
 
@@ -14,13 +15,18 @@ import im.fir.sdk.FIR;
  * Created by sunjuntao on 15/11/15.
  */
 public class WePeiYangApp extends Application{
-    private static Context context;
-    private static boolean isAppLunched;
+
+    private static Context sContext;
 
     @Override
     public void onCreate() {
-        FreelineCore.init(this);
-        context = getApplicationContext();
+        super.onCreate();
+        GrowingIO.startWithConfiguration(this, new Configuration()
+                .useID()
+                .trackAllFragments()
+                .setChannel("Yong-Test"));
+
+        sContext = getApplicationContext();
         LitePalApplication.initialize(this);
         FIR.init(this);
         FIR.addCustomizeValue("sdk", android.os.Build.VERSION.SDK_INT + "");
@@ -28,19 +34,10 @@ public class WePeiYangApp extends Application{
         FIR.addCustomizeValue("rom_provider", android.os.Build.MANUFACTURER);
         //启动推送服务
 //        PushService.actionStart(this);
-        super.onCreate();
     }
-
 
     public static Context getContext() {
-        return context;
+        return sContext;
     }
 
-    public static boolean isAppLunched() {
-        return isAppLunched;
-    }
-
-    public static void setAppLunchState(Boolean argState) {
-        isAppLunched = argState;
-    }
 }
