@@ -3,4 +3,7 @@
     <color name="colorPrimary">#FeD22C</color>
     <color name="colorPrimaryDark">#FeD22C</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorGray">#808080</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
 </resources>
