@@ -76,4 +76,7 @@ dependencies {
     compile 'com.zhihu.android:matisse:0.4.3'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+
+    //floatingActionButton
+    compile 'com.github.clans:fab:1.6.4'
 }

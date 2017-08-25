@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:background="@color/backgroundGray"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.twtstudio.repair.main.MessageActivity">
+    tools:context="com.twtstudio.repair.main.MessageActivity"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         />
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        >
 
         <TextView
             android:layout_width="match_parent"
@@ -25,37 +33,37 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
                 android:layout_weight="1"
                 android:background="@color/colorGray">
 
                 <Spinner
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
                     android:id="@+id/message_spinner_building"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF">
 
                 </Spinner>
             </LinearLayout>
 
             <LinearLayout
-                android:background="@color/colorGray"
-                android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:background="@color/colorGray">
 
                 <Spinner
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
                     android:id="@+id/message_spinner_room"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF">
 
                 </Spinner>
             </LinearLayout>
@@ -64,4 +72,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

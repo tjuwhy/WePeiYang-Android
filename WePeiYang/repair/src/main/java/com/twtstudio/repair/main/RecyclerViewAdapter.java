@@ -16,20 +16,20 @@ import com.twtstudio.repair.R;
  */
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder> {
-    private  Context context;
+    private Context context;
 
-    RecyclerViewAdapter (Context context){
-         this.context = context;
+    RecyclerViewAdapter(Context context) {
+        this.context = context;
     }
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_main_recyclerview, parent, false);
-        ItemViewHolder holder= new ItemViewHolder(view);
+        ItemViewHolder holder = new ItemViewHolder(view);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                MessageActivity.activityStart(context);
             }
         });
         return holder;
@@ -46,7 +46,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return 15;
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder{
+    public class ItemViewHolder extends RecyclerView.ViewHolder {
         public ItemViewHolder(View itemView) {
             super(itemView);
         }
