@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_face.png",
+        "source": "C:\\Users\\liuyuesen\\.android\\build-cache\\6b25930fe43e83725a363d9ad17d1d9dcaf7d22d\\output\\res\\drawable-ldpi-v4\\ic_face.png"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_login_password.png",
+        "source": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\auth\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_login_password.png"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_notifications.png",
+        "source": "C:\\Users\\liuyuesen\\.android\\build-cache\\6b25930fe43e83725a363d9ad17d1d9dcaf7d22d\\output\\res\\drawable-ldpi-v4\\ic_notifications.png"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_login_username.png",
+        "source": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\auth\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_login_username.png"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\toast_frame.9.png",
+        "source": "C:\\Users\\liuyuesen\\.android\\build-cache\\67a6bcc4b045b3be2797151041fa93be73629878\\output\\res\\drawable-ldpi-v4\\toast_frame.9.png"
+    }
+]

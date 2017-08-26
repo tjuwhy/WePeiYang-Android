@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_lost_fab_lost.png",
+        "source": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\src\\main\\res\\drawable-xxhdpi\\ic_lost_fab_lost.png"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_lost_fab_found.png",
+        "source": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\src\\main\\res\\drawable-xxhdpi\\ic_lost_fab_found.png"
+    }
+]
