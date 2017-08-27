@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.twtstudio.repair.main.ComplaintActivity"
+    android:background="@color/backgroundGray"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="320dp">
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="我们将认真阅读您的投诉内容，仔细审查维修方的行为，妥善解决您的问题"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorGray">
+
+            <EditText
+                android:id="@+id/editText_reason_complaint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="@color/colorWhite"
+                android:hint="投诉原因"
+                android:maxLength="30"
+                android:maxLines="3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorGray">
+
+            <EditText
+                android:gravity="start"
+                android:id="@+id/editText_detail_complaint"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="1dp"
+                android:background="@color/colorWhite"
+                android:hint="事件详情"
+                android:maxLength="30"
+                android:maxLines="3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_commit_message"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提交"
+                android:background="@drawable/button_shape"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

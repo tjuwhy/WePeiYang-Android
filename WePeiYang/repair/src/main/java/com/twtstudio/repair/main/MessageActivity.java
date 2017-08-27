@@ -2,31 +2,35 @@ package com.twtstudio.repair.main;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.commons.BaseActivity;
 
-import java.util.List;
-
 import butterknife.BindView;
 
 public class MessageActivity extends BaseActivity {
+    //绑定spinner和toolbar
     @BindView(R.id.message_spinner_building)
     public Spinner spinnerBuilding;
     @BindView(R.id.message_spinner_room)
     public Spinner spinnerRoom;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-    private String[] building = {"正园九斋", "齐园十三斋", "诚园八斋"};
+    @BindView(R.id.button_commit_message)
+    Button commitButton;
+    @BindView(R.id.imageView_photo_message)
+    ImageView photoImageView;
+    //这下面的两个数组是用于储存spinner中的可选数据
+    private String[] building = {"正园九斋", "齐园十三斋", "诚园八斋"};//
     private String[] room = {"227", "228", "229"};
-//    SpinnerAdapter
 
     @Override
     protected int getLayoutResourceId() {
@@ -54,6 +58,9 @@ public class MessageActivity extends BaseActivity {
         ArrayAdapter<String> arrayAdapterRoom = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, room);
         //arrayAdapterRoom.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerRoom.setAdapter(arrayAdapterRoom);
+
+        photoImageView.setOnClickListener(v -> ComplaintActivity.activityStart(MessageActivity.this));
+        commitButton.setOnClickListener(v -> com.twtstudio.repair.main.CommitSuccessActivity.activityStart(MessageActivity.this));
 
         spinnerBuilding.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

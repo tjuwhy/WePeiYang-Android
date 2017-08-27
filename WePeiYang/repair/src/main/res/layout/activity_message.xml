@@ -119,6 +119,9 @@
                 android:background="@color/colorWhite">
 
                 <EditText
+                    
+                    android:gravity="start"
+                    android:id="@+id/editText_descript_message"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
@@ -138,7 +141,8 @@
             android:textColor="@color/colorGray"
             android:textSize="17dp" />
 
-        <ImageButton
+        <ImageView
+            android:id="@+id/imageView_photo_message"
             android:background="@drawable/repair_success"
             android:layout_marginLeft="5dp"
             android:layout_width="80dp"
@@ -164,6 +168,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="1dp">
                 <EditText
+                    android:id="@+id/editText_name_message"
                     android:hint="姓名"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -190,6 +195,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <EditText
+                    android:id="@+id/editText_phone_message"
                     android:hint="联系电话"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -223,6 +229,7 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:id="@+id/button_commit_message"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

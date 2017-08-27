@@ -30,7 +30,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.MessageActivity"></activity>
+        <activity android:name=".main.MessageActivity" />
+        <activity android:name=".main.CommitSuccessActivity" />
+        <activity android:name=".main.ComplaintActivity" />
+        <activity android:name=".main.ComplaintSuccessActivity"></activity>
     </application>
 
 </manifest>
