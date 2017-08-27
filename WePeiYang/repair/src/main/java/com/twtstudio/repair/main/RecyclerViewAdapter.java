@@ -1,15 +1,13 @@
 package com.twtstudio.repair.main;
 
-import android.app.Activity;
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.twtstudio.repair.R;
+import com.twtstudio.repair.view.message.MessageActivity;
 
 /**
  * Created by liuyuesen on 2017/8/22.
@@ -26,12 +24,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_main_recyclerview, parent, false);
         ItemViewHolder holder = new ItemViewHolder(view);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MessageActivity.activityStart(context);
-            }
-        });
+        view.setOnClickListener(v -> MessageActivity.activityStart(context));
         return holder;
     }
 

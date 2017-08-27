@@ -1,4 +1,4 @@
-package com.twtstudio.repair.main;
+package com.twtstudio.repair.view.message;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import android.widget.Spinner;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.commons.BaseActivity;
+import com.twtstudio.repair.complaint.ComplaintActivity;
 
 import butterknife.BindView;
 
@@ -60,7 +61,7 @@ public class MessageActivity extends BaseActivity {
         spinnerRoom.setAdapter(arrayAdapterRoom);
 
         photoImageView.setOnClickListener(v -> ComplaintActivity.activityStart(MessageActivity.this));
-        commitButton.setOnClickListener(v -> com.twtstudio.repair.main.CommitSuccessActivity.activityStart(MessageActivity.this));
+        commitButton.setOnClickListener(v -> CommitSuccessActivity.activityStart(MessageActivity.this));
 
         spinnerBuilding.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

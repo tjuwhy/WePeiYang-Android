@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundGray"
     android:orientation="vertical"
-    tools:context="com.twtstudio.repair.main.CommitSuccessActivity">
+    tools:context=".view.message.CommitSuccessActivity">
 
     <include
         layout="@layout/common_toolbar"

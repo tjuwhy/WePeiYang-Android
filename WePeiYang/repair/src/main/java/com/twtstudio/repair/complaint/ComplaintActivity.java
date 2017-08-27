@@ -1,4 +1,4 @@
-package com.twtstudio.repair.main;
+package com.twtstudio.repair.complaint;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,19 +10,18 @@ import com.twtstudio.repair.commons.BaseActivity;
 
 import butterknife.BindView;
 
-public class CommitSuccessActivity extends BaseActivity {
+public class ComplaintActivity extends BaseActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-
     @Override
     protected int getLayoutResourceId() {
-        return R.layout.activity_success_commit;
+        return R.layout.activity_complaint;
     }
 
     @Override
     protected Toolbar getToolbarView() {
-        toolbar.setTitle("报修成功");
+        toolbar.setTitle("投诉");
         return toolbar;
     }
 
@@ -36,9 +35,8 @@ public class CommitSuccessActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
     }
 
-
     public static void activityStart(Context context) {
-        Intent intent = new Intent(context, CommitSuccessActivity.class);
+        Intent intent = new Intent(context, ComplaintActivity.class);
         context.startActivity(intent);
     }
 }

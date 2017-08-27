@@ -1,6 +1,5 @@
-package com.twtstudio.repair.main;
+package com.twtstudio.repair.view.message;
 
-import android.database.DataSetObserver;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;

@@ -1,19 +1,15 @@
 package com.twtstudio.repair.main;
 
-import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.commons.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
     @BindView(R.id.main_recycler_view)

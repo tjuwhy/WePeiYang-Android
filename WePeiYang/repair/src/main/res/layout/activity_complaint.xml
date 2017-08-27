@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.twtstudio.repair.main.ComplaintActivity"
     android:background="@color/backgroundGray"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".complaint.ComplaintActivity">
 
     <include
         layout="@layout/common_toolbar"
@@ -14,18 +14,18 @@
         android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:background="@color/colorWhite"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="320dp">
+        android:layout_height="320dp"
+        android:layout_margin="10dp"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
         <TextView
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            android:layout_margin="10dp"
             android:text="我们将认真阅读您的投诉内容，仔细审查维修方的行为，妥善解决您的问题"
-            />
+            android:textSize="15dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,30 +51,30 @@
             android:background="@color/colorGray">
 
             <EditText
-                android:gravity="start"
                 android:id="@+id/editText_detail_complaint"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_margin="1dp"
                 android:background="@color/colorWhite"
+                android:gravity="start"
                 android:hint="事件详情"
                 android:maxLength="30"
                 android:maxLines="3" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="5dp"
-            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/button_commit_message"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="提交"
+                android:layout_gravity="center"
                 android:background="@drawable/button_shape"
+                android:text="提交"
 
                 />
         </LinearLayout>
