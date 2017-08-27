@@ -1,4 +1,4 @@
-package com.twtstudio.repair.view.message;
+package com.twtstudio.repair.message.view;
 
 import android.view.View;
 import android.view.ViewGroup;

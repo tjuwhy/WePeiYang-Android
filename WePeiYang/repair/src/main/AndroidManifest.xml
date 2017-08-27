@@ -23,17 +23,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.MainActivity">
+        <activity android:name=".main.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.message.MessageActivity" />
-        <activity android:name=".view.message.CommitSuccessActivity" />
-        <activity android:name=".complaint.ComplaintActivity" />
-        <activity android:name=".complaint.ComplaintSuccessActivity"></activity>
+        <activity android:name=".message.view.MessageActivity" />
+        <activity android:name=".message.view.CommitSuccessActivity" />
+        <activity android:name=".complaint.view.ComplaintActivity" />
+        <activity android:name=".complaint.view.ComplaintSuccessActivity"></activity>
     </application>
 
 </manifest>

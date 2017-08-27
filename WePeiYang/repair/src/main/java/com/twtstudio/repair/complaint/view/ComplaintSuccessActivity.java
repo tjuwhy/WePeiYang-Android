@@ -1,4 +1,4 @@
-package com.twtstudio.repair.complaint;
+package com.twtstudio.repair.complaint.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.twtstudio.repair.main;
+package com.twtstudio.repair.main.view;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.twtstudio.repair.R;
-import com.twtstudio.repair.commons.BaseActivity;
+import com.twtstudio.repair.base.BaseActivity;
 
 import butterknife.BindView;
 

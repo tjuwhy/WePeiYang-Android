@@ -1,11 +1,11 @@
-package com.twtstudio.repair.detail;
+package com.twtstudio.repair.detail.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 
 import com.twtstudio.repair.R;
-import com.twtstudio.repair.commons.BaseActivity;
+import com.twtstudio.repair.base.BaseActivity;
 
 import butterknife.BindView;
 

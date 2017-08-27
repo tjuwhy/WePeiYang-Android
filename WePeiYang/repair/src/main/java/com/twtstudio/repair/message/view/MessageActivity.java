@@ -1,4 +1,4 @@
-package com.twtstudio.repair.view.message;
+package com.twtstudio.repair.message.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +12,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.twtstudio.repair.R;
-import com.twtstudio.repair.commons.BaseActivity;
-import com.twtstudio.repair.complaint.ComplaintActivity;
+import com.twtstudio.repair.base.BaseActivity;
+import com.twtstudio.repair.complaint.view.ComplaintActivity;
 
 import butterknife.BindView;
 

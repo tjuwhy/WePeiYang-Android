@@ -1,4 +1,4 @@
-package com.twtstudio.repair.main;
+package com.twtstudio.repair.main.view;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.twtstudio.repair.R;
-import com.twtstudio.repair.view.message.MessageActivity;
+import com.twtstudio.repair.message.view.MessageActivity;
 
 /**
  * Created by liuyuesen on 2017/8/22.

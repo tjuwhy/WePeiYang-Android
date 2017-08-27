@@ -1,4 +1,4 @@
-package com.twtstudio.repair.complaint;
+package com.twtstudio.repair.complaint.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.twtstudio.repair.R;
-import com.twtstudio.repair.commons.BaseActivity;
+import com.twtstudio.repair.base.BaseActivity;
 
 import butterknife.BindView;
 
