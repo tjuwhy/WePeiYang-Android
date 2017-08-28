@@ -2,7 +2,9 @@ package com.twtstudio.repair.detail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.commons.BaseActivity;
@@ -14,10 +16,29 @@ import butterknife.BindView;
  * Happy coding!
  **/
 
-public class DetailActivity extends BaseActivity implements DetailCotract.DetailPresenter {
+public class DetailActivity extends BaseActivity implements DetailContract.DetailPresenter {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.detail_type)
+    TextView detail_type;
+    @BindView(R.id.detail_description)
+    TextView detail_description;
+    @BindView(R.id.detail_place)
+    TextView detail_place;
+    @BindView(R.id.detail_time)
+    TextView detail_time;
+    @BindView(R.id.cardview_detail_onupdate)
+    CardView cardview_detail_onupdate;
+    @BindView(R.id.cardview_detail_onreceive)
+    CardView cardview_detail_onreceive;
+    @BindView(R.id.cardview_detail_onrepair_half)
+    CardView cardview_detail_onrepair_half;
+    @BindView(R.id.cardview_detail_onrepair_full)
+    CardView cardview_detail_onrepair_full;
+    @BindView(R.id.cardview_detail_onfinish)
+    CardView cardview_detail_onfinish;
+
 
     @Override
     protected int getLayoutResourceId() {
@@ -38,5 +59,13 @@ public class DetailActivity extends BaseActivity implements DetailCotract.Detail
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void setDetailData(DetailBean detailBean) {
+        detail_type.setText("");
+        detail_description.setText("");
+        detail_place.setText("");
+        detail_time.setText("");
     }
 }

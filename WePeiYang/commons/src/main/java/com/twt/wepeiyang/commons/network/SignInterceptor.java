@@ -31,7 +31,7 @@ public class SignInterceptor implements Interceptor {
         /**
          * deal with other requests (not twt requests)
          */
-        if (!originRequest.url().host().equals("open.twtstudio.com")){
+        if (!originRequest.url().host().equals("open.twtstudio.com")) {
             return chain.proceed(originRequest);
         }
 
@@ -39,10 +39,10 @@ public class SignInterceptor implements Interceptor {
 
         Request.Builder builder = originRequest.newBuilder()
 //                    .addHeader("User-Agent", UserAgent.generate())
-                .addHeader("Authorization", "Bearer{"+ CommonPrefUtil.getToken()+"}")
+                .addHeader("Authorization", "Bearer{" + CommonPrefUtil.getToken() + "}")
                 .url(newUrl);
 
-        Logger.d("token-->"+ CommonPrefUtil.getToken());
+        Logger.d("token-->" + CommonPrefUtil.getToken());
 
         return chain.proceed(builder.build());
     }
@@ -56,9 +56,9 @@ public class SignInterceptor implements Interceptor {
         Collections.sort(keysList);
 
         String keys = Stream.of(keysList).map(s1 -> {
-            if ("t".equals(s1)){
+            if ("t".equals(s1)) {
                 s1 += timestamp;
-            }else {
+            } else {
                 s1 += originUrl.queryParameter(s1);
             }
             return s1;

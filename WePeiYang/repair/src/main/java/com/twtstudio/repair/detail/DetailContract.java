@@ -5,11 +5,11 @@ package com.twtstudio.repair.detail;
  * Happy coding!
  **/
 
-public interface DetailCotract {
+public interface DetailContract {
     public interface DetailView{
-
+        void setDetailData(DetailBean detailBean);
     }
     public interface DetailPresenter{
-
+        void setDetailData(DetailBean detailBean);
     }
 }

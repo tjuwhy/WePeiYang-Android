@@ -17,4 +17,24 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp" />
 
+    <include
+        android:id="@+id/cardview_detail_onupdate"
+        layout="@layout/cardview_detail_onupdate" />
+
+    <include
+        android:id="@+id/cardview_detail_onreceive"
+        layout="@layout/cardview_detail_onreceive" />
+
+    <include
+        android:id="@+id/cardview_detail_onrepair_half"
+        layout="@layout/cardview_detail_onrepair_half" />
+
+    <include
+        android:id="@+id/cardview_detail_onrepair_full"
+        layout="@layout/cardview_detail_onrepair_full" />
+
+    <include
+        android:id="@+id/cardview_detail_onfinish"
+        layout="@layout/cardview_detail_onfinish" />
+
 </LinearLayout>
