@@ -1,5 +1,7 @@
-package com.twtstudio.repair.detail;
+package com.twtstudio.repair.detail.view;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
@@ -8,6 +10,7 @@ import android.widget.TextView;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseActivity;
+import com.twtstudio.repair.message.view.MessageActivity;
 
 import butterknife.BindView;
 
@@ -67,5 +70,10 @@ public class DetailActivity extends BaseActivity implements DetailContract.Detai
         detail_description.setText("");
         detail_place.setText("");
         detail_time.setText("");
+    }
+
+    public static void activityStart(Context context) {
+        Intent intent = new Intent(context, DetailActivity.class);
+        context.startActivity(intent);
     }
 }

@@ -7,8 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.twtstudio.repair.R;
-import com.twtstudio.repair.detail.DetailActivity;
-import com.twtstudio.repair.message.view.MessageActivity;
+import com.twtstudio.repair.detail.view.DetailActivity;
 
 /**
  * Created by liuyuesen on 2017/8/22.
