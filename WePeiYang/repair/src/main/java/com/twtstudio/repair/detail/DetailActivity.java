@@ -1,4 +1,4 @@
-package com.twtstudio.repair.detail.view;
+package com.twtstudio.repair.detail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
