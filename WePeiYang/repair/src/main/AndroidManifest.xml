@@ -34,7 +34,8 @@
         <activity android:name=".message.view.MessageActivity" />
         <activity android:name=".message.view.CommitSuccessActivity" />
         <activity android:name=".complaint.view.ComplaintActivity" />
-        <activity android:name=".complaint.view.ComplaintSuccessActivity"></activity>
+        <activity android:name=".complaint.view.ComplaintSuccessActivity" />
+        <activity android:name=".evaluation.view.EvaluationActivity"></activity>
     </application>
 
 </manifest>
