@@ -1,35 +1,30 @@
-package com.twtstudio.repair.detail.view;
+package com.twtstudio.repair.evaluation.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseActivity;
-import com.twtstudio.repair.complaint.view.ComplaintActivity;
+import com.twtstudio.repair.message.view.MessageActivity;
 
 import butterknife.BindView;
 
-/**
- * Created by tjwhm on 2017/8/22 8:04.
- * Happy coding!
- **/
-//implements DetailCotract.DetailPresenter
-public class DetailActivity extends BaseActivity {
-
+public class EvaluationActivity extends BaseActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+
     @Override
     protected int getLayoutResourceId() {
-        return R.layout.activity_detail;
+        return R.layout.activity_evaluation;
     }
 
     @Override
     protected Toolbar getToolbarView() {
-        toolbar.setTitle("报修详情");
+        toolbar.setTitle("评价");
         return toolbar;
     }
 
@@ -39,12 +34,14 @@ public class DetailActivity extends BaseActivity {
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
     public static void activityStart(Context context) {
-        Intent intent = new Intent(context, DetailActivity.class);
+        Intent intent = new Intent(context, EvaluationActivity.class);
         context.startActivity(intent);
+
+
     }
 }

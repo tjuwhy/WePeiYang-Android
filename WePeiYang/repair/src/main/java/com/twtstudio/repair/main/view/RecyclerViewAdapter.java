@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.twtstudio.repair.R;
+import com.twtstudio.repair.detail.view.DetailActivity;
 import com.twtstudio.repair.message.view.MessageActivity;
 
 /**
@@ -24,7 +25,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_main_recyclerview, parent, false);
         ItemViewHolder holder = new ItemViewHolder(view);
-        view.setOnClickListener(v -> MessageActivity.activityStart(context));
+        view.setOnClickListener(v -> DetailActivity.activityStart(context));
         return holder;
     }
 
