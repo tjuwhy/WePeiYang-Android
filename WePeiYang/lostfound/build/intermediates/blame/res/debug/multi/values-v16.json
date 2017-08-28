@@ -1,0 +1,47 @@
+[
+    {
+        "outputFile": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 65,
+                    "endOffset": 116
+                },
+                "from": {
+                    "file": "C:\\Users\\liuyuesen\\.android\\build-cache\\1de8f12451b590ea107c4948337d61584007cc38\\output\\res\\values-v16\\values-v16.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 65,
+                        "endOffset": 116
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 121,
+                    "endLine": 6,
+                    "endColumn": 12,
+                    "endOffset": 293
+                },
+                "from": {
+                    "file": "C:\\Users\\liuyuesen\\.android\\build-cache\\6b25930fe43e83725a363d9ad17d1d9dcaf7d22d\\output\\res\\values-v16\\values-v16.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 5,
+                        "endColumn": 12,
+                        "endOffset": 227
+                    }
+                }
+            }
+        ]
+    }
+]

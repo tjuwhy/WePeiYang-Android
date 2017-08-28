@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_lost_fab_lost.png",
+        "source": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\src\\main\\res\\drawable-hdpi\\ic_lost_fab_lost.png"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\lost_thumb.png",
+        "source": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\src\\main\\res\\drawable-hdpi\\lost_thumb.png"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_lost_fab_found.png",
+        "source": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\src\\main\\res\\drawable-hdpi\\ic_lost_fab_found.png"
+    }
+]

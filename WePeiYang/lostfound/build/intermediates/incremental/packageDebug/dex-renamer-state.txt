@@ -1,0 +1,7 @@
+#Fri Aug 25 17:01:14 CST 2017
+base.0=G\:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_9147c8d82c4f2085bfaa9c7268c6ff1f1bf4aad6
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=G\:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_5dc35f15145c83152c3c232d9da401745dd60519\\classes.dex
+base.1=G\:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_5dc35f15145c83152c3c232d9da401745dd60519
+file.0=G\:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_9147c8d82c4f2085bfaa9c7268c6ff1f1bf4aad6\\classes.dex

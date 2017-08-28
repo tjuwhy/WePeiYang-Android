@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_login_password.xml",
+        "source": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\auth\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_login_password.xml"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
+        "source": "C:\\Users\\liuyuesen\\.android\\build-cache\\d4a030d8b2c4082a828191e0745fea02085de1f6\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_login_username.xml",
+        "source": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\auth\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_login_username.xml"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
+        "source": "C:\\Users\\liuyuesen\\.android\\build-cache\\d4a030d8b2c4082a828191e0745fea02085de1f6\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_notifications.xml",
+        "source": "C:\\Users\\liuyuesen\\.android\\build-cache\\6b25930fe43e83725a363d9ad17d1d9dcaf7d22d\\output\\res\\drawable-anydpi-v21\\ic_notifications.xml"
+    },
+    {
+        "merged": "G:\\android_studio\\android\\repair\\WePeiYang-Android\\WePeiYang\\lostfound\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_face.xml",
+        "source": "C:\\Users\\liuyuesen\\.android\\build-cache\\6b25930fe43e83725a363d9ad17d1d9dcaf7d22d\\output\\res\\drawable-anydpi-v21\\ic_face.xml"
+    }
+]
