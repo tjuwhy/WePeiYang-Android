@@ -15,7 +15,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="323dp"
         android:layout_margin="10dp"
         android:background="@color/colorWhite"
         android:orientation="vertical">
@@ -25,19 +25,22 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="我们将认真阅读您的投诉内容，仔细审查维修方的行为，妥善解决您的问题"
-            android:textSize="15dp" />
+            android:textSize="17dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="@color/colorGray">
 
             <EditText
+                android:paddingLeft="5dp"
+                android:paddingBottom="3dp"
                 android:id="@+id/editText_reason_complaint"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="1dp"
+                android:layout_height="35dp"
+                android:layout_margin="0.5dp"
                 android:background="@color/colorWhite"
                 android:hint="投诉原因"
                 android:maxLength="30"
@@ -47,14 +50,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
+
             android:background="@color/colorGray">
 
             <EditText
                 android:id="@+id/editText_detail_complaint"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_margin="1dp"
+                android:layout_margin="0.5dp"
                 android:background="@color/colorWhite"
                 android:gravity="start"
                 android:hint="事件详情"
@@ -65,11 +69,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:gravity="center">
 
             <Button
-                android:id="@+id/button_commit_message"
+                android:id="@+id/button_commit_complaint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

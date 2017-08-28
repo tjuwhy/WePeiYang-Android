@@ -77,4 +77,7 @@ dependencies {
     compile 'com.zhihu.android:matisse:0.4.3'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+
+    //ratingBar
+    compile 'me.zhanghai.android.materialratingbar:library:1.0.2'
 }

@@ -4,41 +4,149 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/backgroundGray"
+    android:orientation="vertical"
     tools:context="com.twtstudio.repair.evaluation.view.EvaluationActivity">
 
     <include
         layout="@layout/common_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="375dp"
+        android:layout_margin="10dp"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
             <TextView
-                android:text="响应速度"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                />
-            <RatingBar
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="13dp"
-            android:numStars="5"/>
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:text="响应速度"
+                android:textSize="20dp" />
+
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:rating="5"
+                android:id="@+id/RatingBar_speed_evaluation"
+                style="@style/Widget.MaterialRatingBar.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                app:mrb_progressBackgroundTint="@color/colorPrimary"
+                app:mrb_progressTint="@color/colorPrimary"
+                app:mrb_secondaryProgressTint="@color/colorPrimary" />
+
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
 
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:text="服务态度"
+                android:textSize="20dp" />
+
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:rating="5"
+                android:id="@+id/RatingBar_attitude_evaluation"
+                style="@style/Widget.MaterialRatingBar.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                app:mrb_progressBackgroundTint="@color/colorPrimary"
+                app:mrb_progressTint="@color/colorPrimary"
+                app:mrb_secondaryProgressTint="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:text="维修质量"
+                android:textSize="20dp" />
+
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:rating="5"
+                android:id="@+id/RatingBar_quality_evaluation"
+                style="@style/Widget.MaterialRatingBar.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                app:mrb_progressBackgroundTint="@color/colorPrimary"
+                app:mrb_progressTint="@color/colorPrimary"
+                app:mrb_secondaryProgressTint="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="文字补充(30字）"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/colorGray">
+
+            <EditText
+                android:id="@+id/editText_supple_evaluation"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="0.5dp"
+                android:background="@color/colorWhite"
+                android:hint="很棒，给维修师傅点个赞~"
+                android:gravity="start"
+                android:padding="8dp"
+                android:maxLength="30"
+                android:maxLines="3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button_commit_evaluation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:text="提交"
+
+                />
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

@@ -23,6 +23,8 @@ public class MessageActivity extends BaseActivity {
     public Spinner spinnerBuilding;
     @BindView(R.id.message_spinner_room)
     public Spinner spinnerRoom;
+    @BindView(R.id.message_spinner_type)
+    public Spinner spinnerType;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.button_commit_message)
@@ -32,6 +34,7 @@ public class MessageActivity extends BaseActivity {
     //这下面的两个数组是用于储存spinner中的可选数据
     private String[] building = {"正园九斋", "齐园十三斋", "诚园八斋"};//
     private String[] room = {"227", "228", "229"};
+    private String[] type = {"灯", "电源", "路由器","笔记本电脑","巴拉巴拉巴拉哔哩哔哩哔哩超级无敌大风吹强到爆帅炸空调","脑子","多肉","石哥的性取向","地板砖","纱窗","门","水杯","抽屉","衣柜","裤子","石头","空气"};
 
     @Override
     protected int getLayoutResourceId() {
@@ -59,7 +62,8 @@ public class MessageActivity extends BaseActivity {
         ArrayAdapter<String> arrayAdapterRoom = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, room);
         //arrayAdapterRoom.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerRoom.setAdapter(arrayAdapterRoom);
-
+        ArrayAdapter<String> arrayAdapterType = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, type);
+        spinnerType.setAdapter(arrayAdapterType);
         photoImageView.setOnClickListener(v -> ComplaintActivity.activityStart(MessageActivity.this));
         commitButton.setOnClickListener(v -> CommitSuccessActivity.activityStart(MessageActivity.this));
 
