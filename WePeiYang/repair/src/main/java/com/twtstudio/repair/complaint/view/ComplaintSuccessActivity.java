@@ -16,7 +16,6 @@ public class ComplaintSuccessActivity extends BaseActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_complaint_success;

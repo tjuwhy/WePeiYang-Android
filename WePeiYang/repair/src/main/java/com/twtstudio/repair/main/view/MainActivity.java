@@ -12,6 +12,8 @@ import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseActivity;
 import com.twtstudio.repair.complaint.view.ComplaintActivity;
 import com.twtstudio.repair.detail.view.DetailActivity;
+import com.twtstudio.repair.main.MainBean;
+import com.twtstudio.repair.main.presenter.MainPresenter;
 import com.twtstudio.repair.message.view.MessageActivity;
 
 import butterknife.BindView;
@@ -25,7 +27,11 @@ public class MainActivity extends BaseActivity {
     Toolbar toolbar;
     @BindView(R.id.fab_main)
     FloatingActionButton floatingActionButton;
+    RecyclerViewAdapter recyclerViewAdapter;
     LinearLayoutManager layoutManager;
+    MainPresenter mainPresenter = new MainPresenter(this);
+    MainBean mainBean = new MainBean();
+
     int mPreviousVisibleItem = 1;
 
     @Override
@@ -50,8 +56,9 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         layoutManager = new LinearLayoutManager(this);
+        recyclerViewAdapter = new RecyclerViewAdapter(this ,mainBean);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(new RecyclerViewAdapter(this));
+        recyclerView.setAdapter(recyclerViewAdapter);
         floatingActionButton.show(true);
         floatingActionButton.hide(false);
 

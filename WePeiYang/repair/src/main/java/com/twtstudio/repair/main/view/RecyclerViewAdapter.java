@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.detail.view.DetailActivity;
+import com.twtstudio.repair.main.MainBean;
 
 /**
  * Created by liuyuesen on 2017/8/22.
@@ -15,9 +16,12 @@ import com.twtstudio.repair.detail.view.DetailActivity;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder> {
     private Context context;
+    MainBean mainBean;
 
-    RecyclerViewAdapter(Context context) {
+
+    RecyclerViewAdapter(Context context,MainBean mainBean) {
         this.context = context;
+        this.mainBean = mainBean;
     }
 
     @Override
