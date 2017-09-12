@@ -19,7 +19,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     MainBean mainBean;
 
 
-    RecyclerViewAdapter(Context context,MainBean mainBean) {
+    RecyclerViewAdapter(Context context, MainBean mainBean) {
         this.context = context;
         this.mainBean = mainBean;
     }

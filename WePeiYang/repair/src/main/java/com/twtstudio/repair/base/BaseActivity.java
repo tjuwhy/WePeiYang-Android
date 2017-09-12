@@ -13,7 +13,7 @@ import butterknife.ButterKnife;
  * Happy coding!
  **/
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements BaseContract.BaseView{
 
     private Toolbar toolbar;
 

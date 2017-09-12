@@ -5,20 +5,20 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.twtstudio.repair.R;
-import com.twtstudio.repair.base.BaseActivity;
-import com.twtstudio.repair.complaint.view.ComplaintActivity;
-import com.twtstudio.repair.detail.view.DetailActivity;
 import com.twtstudio.repair.main.MainBean;
-import com.twtstudio.repair.main.presenter.MainPresenter;
+import com.twtstudio.repair.main.MainContract;
+import com.twtstudio.repair.main.presenter.MainPresenterImpl;
 import com.twtstudio.repair.message.view.MessageActivity;
 
 import butterknife.BindView;
 
-public class MainActivity extends BaseActivity {
+import static com.twtstudio.repair.main.MainContract.*;
+
+
+public class MainActivity extends MainContract.MainView {
     @BindView(R.id.main_recycler_view)
     RecyclerView recyclerView;
     @BindView(R.id.main_refresh)
@@ -29,7 +29,7 @@ public class MainActivity extends BaseActivity {
     FloatingActionButton floatingActionButton;
     RecyclerViewAdapter recyclerViewAdapter;
     LinearLayoutManager layoutManager;
-    MainPresenter mainPresenter = new MainPresenter(this);
+    MainContract.MainPresenter mainPresenter;
     MainBean mainBean = new MainBean();
 
     int mPreviousVisibleItem = 1;
@@ -56,7 +56,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         layoutManager = new LinearLayoutManager(this);
-        recyclerViewAdapter = new RecyclerViewAdapter(this ,mainBean);
+        recyclerViewAdapter = new RecyclerViewAdapter(this, mainBean);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(recyclerViewAdapter);
         floatingActionButton.show(true);
@@ -80,6 +80,15 @@ public class MainActivity extends BaseActivity {
                 mPreviousVisibleItem = firstVisibleItem;
             }
         });
+
+    }
+
+    public void getData() {
+        mainPresenter = new MainPresenterImpl(this);
+        mainPresenter.getData();
+    }
+
+    public void setData() {
 
     }
 }
