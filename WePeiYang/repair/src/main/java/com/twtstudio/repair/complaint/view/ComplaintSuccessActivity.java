@@ -9,6 +9,7 @@ import android.widget.CompoundButton;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseActivity;
+import com.twtstudio.repair.complaint.ComplaintBean;
 
 import butterknife.BindView;
 
@@ -41,4 +42,8 @@ public class ComplaintSuccessActivity extends BaseActivity {
         Intent intent = new Intent(context, ComplaintSuccessActivity.class);
         context.startActivity(intent);
     }
+
+
+
+
 }

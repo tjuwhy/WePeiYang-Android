@@ -6,20 +6,11 @@ package com.twtstudio.repair.base;
 
 public interface BaseContract {
     public interface BaseView {
-        public void getData();
-
-        public void setData();
     }
 
     public interface BasePresenter {
-        public void getData();
-
-        public void setData();
     }
 
     public interface BaseModel {
-        public void getData();
-
-        public void setData();
     }
 }

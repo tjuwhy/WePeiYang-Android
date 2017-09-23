@@ -10,10 +10,11 @@ import android.widget.ImageView;
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseActivity;
 import com.twtstudio.repair.evaluation.view.EvaluationActivity;
+import com.twtstudio.repair.message.MessageContract;
 
 import butterknife.BindView;
 
-public class CommitSuccessActivity extends BaseActivity {
+public class CommitSuccessActivity extends MessageContract.MessageView {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.imageView_message_success)
@@ -53,4 +54,5 @@ public class CommitSuccessActivity extends BaseActivity {
         Intent intent = new Intent(context, CommitSuccessActivity.class);
         context.startActivity(intent);
     }
+
 }

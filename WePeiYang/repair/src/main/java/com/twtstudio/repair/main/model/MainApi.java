@@ -13,6 +13,6 @@ import rx.Observable;
  */
 
 public interface MainApi {
-    @GET("api/v1/repairs/order/show")
-    Call<MainBean> loadingData();
+    @GET("repairs/order/show")
+    Observable<MainBean> loadingData();
 }

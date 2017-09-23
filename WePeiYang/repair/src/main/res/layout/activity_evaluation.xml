@@ -37,7 +37,7 @@
 
             <me.zhanghai.android.materialratingbar.MaterialRatingBar
                 android:rating="5"
-                android:id="@+id/RatingBar_speed_evaluation"
+                android:id="@+id/repair_evaluation_speed_ratingbar"
                 style="@style/Widget.MaterialRatingBar.RatingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
 
             <me.zhanghai.android.materialratingbar.MaterialRatingBar
                 android:rating="5"
-                android:id="@+id/RatingBar_attitude_evaluation"
+                android:id="@+id/repair_evaluation_attitude_ratingbar"
                 style="@style/Widget.MaterialRatingBar.RatingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,7 +94,7 @@
 
             <me.zhanghai.android.materialratingbar.MaterialRatingBar
                 android:rating="5"
-                android:id="@+id/RatingBar_quality_evaluation"
+                android:id="@+id/repair_evaluation_quality_ratingbar"
                 style="@style/Widget.MaterialRatingBar.RatingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
             android:background="@color/colorGray">
 
             <EditText
-                android:id="@+id/editText_supple_evaluation"
+                android:id="@+id/repair_evaluation_detail_textview"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="0.5dp"
@@ -138,7 +138,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button_commit_evaluation"
+                android:id="@+id/repair_evaluation_commit_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
+    android:id="@+id/repair_detail_onrepair_half_complaint_linearlayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/repair_detail_onreceive_evaluate_cardview"
+        android:id="@+id/repair_detail_onrepair_half_complaint_delete_cardview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="0dp"
         android:background="@color/colorPrimary"
         android:backgroundTint="@color/colorPrimary"
         app:cardCornerRadius="5dp">
@@ -25,15 +21,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/repair_detail_onreceive_button"
+                android:id="@+id/repair_detail_onrepair_half_complaint_delete_button"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
-                android:text="维修完成，去评价" />
+                android:text="删除保修单" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
-
 </LinearLayout>

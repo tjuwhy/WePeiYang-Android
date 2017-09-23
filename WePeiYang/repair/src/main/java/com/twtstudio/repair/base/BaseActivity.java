@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Window;
 
+import com.twtstudio.repair.R;
+
 import butterknife.ButterKnife;
 
 /**
@@ -37,5 +39,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseCont
                 toolbar.setNavigationOnClickListener(view -> onBackPressed());
             }
         }
+
     }
 }

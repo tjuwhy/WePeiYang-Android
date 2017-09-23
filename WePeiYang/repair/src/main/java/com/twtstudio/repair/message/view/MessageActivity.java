@@ -14,10 +14,13 @@ import android.widget.Spinner;
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseActivity;
 import com.twtstudio.repair.complaint.view.ComplaintActivity;
+import com.twtstudio.repair.message.MessageBean;
+import com.twtstudio.repair.message.MessageContract;
+import com.twtstudio.repair.message.presenter.MessagePresenterImpl;
 
 import butterknife.BindView;
 
-public class MessageActivity extends BaseActivity {
+public class MessageActivity extends MessageContract.MessageView {
     //绑定spinner和toolbar
     @BindView(R.id.message_spinner_building)
     public Spinner spinnerBuilding;
@@ -31,11 +34,16 @@ public class MessageActivity extends BaseActivity {
     Button commitButton;
     @BindView(R.id.imageView_photo_message)
     ImageView photoImageView;
+    MessagePresenterImpl messagePresenter;
+
+
     //这下面的两个数组是用于储存spinner中的可选数据
     private String[] building = {"正园九斋", "齐园十三斋", "诚园八斋"};//
     private String[] room = {"227", "228", "229"};
-    private String[] type = {"灯", "电源", "路由器","笔记本电脑","巴拉巴拉巴拉哔哩哔哩哔哩超级无敌大风吹强到爆帅炸空调","脑子","多肉","石哥的性取向","地板砖","纱窗","门","水杯","抽屉","衣柜","裤子","石头","空气"};
+    private String[] type = {"灯", "电源", "路由器", "笔记本电脑", "巴拉巴拉巴拉哔哩哔哩哔哩超级无敌大风吹强到爆帅炸空调", "脑子", "多肉", "石哥的性取向", "地板砖", "纱窗", "门", "水杯", "抽屉", "衣柜", "裤子", "石头", "空气"};
 
+
+    //this port is for toolbar
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_message;
@@ -52,21 +60,27 @@ public class MessageActivity extends BaseActivity {
         return true;
     }
 
+
+    //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        messagePresenter = new MessagePresenterImpl(this);
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, building);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerBuilding.setAdapter(arrayAdapter);
+        //this port is for spinnerAdapter
+        ArrayAdapter<String> arrayAdapterBuilding = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, building);
+        arrayAdapterBuilding.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerBuilding.setAdapter(arrayAdapterBuilding);
         ArrayAdapter<String> arrayAdapterRoom = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, room);
         //arrayAdapterRoom.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerRoom.setAdapter(arrayAdapterRoom);
         ArrayAdapter<String> arrayAdapterType = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, type);
         spinnerType.setAdapter(arrayAdapterType);
+
+
+        //this port is for spinnerOnClickListener
         photoImageView.setOnClickListener(v -> ComplaintActivity.activityStart(MessageActivity.this));
         commitButton.setOnClickListener(v -> CommitSuccessActivity.activityStart(MessageActivity.this));
-
         spinnerBuilding.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -80,8 +94,25 @@ public class MessageActivity extends BaseActivity {
         });
     }
 
+    @Override
+    public void getData() {
+        messagePresenter = new MessagePresenterImpl(this);
+
+    }
+
+    @Override
+    public void setData(MessageBean messageBean) {
+
+    }
+
+    @Override
+    public void postData(MessageBean messageBean){
+    }
+
+
     public static void activityStart(Context context) {
         Intent intent = new Intent(context, MessageActivity.class);
         context.startActivity(intent);
     }
+
 }

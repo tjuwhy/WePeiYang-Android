@@ -1,20 +1,15 @@
 package com.twtstudio.repair.main.presenter;
 
-import android.content.Context;
-
-import com.twtstudio.repair.base.BaseContract;
+import com.twtstudio.repair.main.MainBean;
 import com.twtstudio.repair.main.MainContract;
-import com.twtstudio.repair.main.model.ApiClient;
-import com.twtstudio.repair.main.view.MainActivity;
-
-import static com.twtstudio.repair.main.MainContract.*;
+import com.twtstudio.repair.main.model.MainApiClient;
 
 /**
  * Created by liuyuesen on 2017/8/31.
  */
 
 public class MainPresenterImpl extends MainContract.MainPresenter {
-    ApiClient apiClient;
+    MainApiClient apiClient;
     MainContract.MainView mainView;
 
     public MainPresenterImpl(MainContract.MainView mainView) {
@@ -22,11 +17,14 @@ public class MainPresenterImpl extends MainContract.MainPresenter {
     }
 
     public void getData() {
-        apiClient = new ApiClient(this);
+        apiClient = new MainApiClient(this);
+        apiClient.getData();
     }
 
-    public void setData() {
-        mainView.setData();
+    @Override
+    public void setData(MainBean mainBean) {
+        mainView.setData(mainBean);
     }
+
 
 }

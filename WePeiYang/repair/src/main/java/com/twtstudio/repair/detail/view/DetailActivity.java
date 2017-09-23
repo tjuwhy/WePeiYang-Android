@@ -6,20 +6,44 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseActivity;
-import com.twtstudio.repair.message.view.MessageActivity;
+import com.twtstudio.repair.complaint.view.ComplaintActivity;
+import com.twtstudio.repair.detail.DetailBean;
+import com.twtstudio.repair.detail.DetailContract;
+import com.twtstudio.repair.detail.presenter.DetailPresenterImpl;
+import com.twtstudio.repair.evaluation.view.EvaluationActivity;
+
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import butterknife.BindView;
+import butterknife.OnClick;
+
+import static com.twtstudio.repair.detail.DetailContract.*;
+import static com.umeng.socialize.utils.DeviceConfig.context;
 
 /**
  * Created by tjwhm on 2017/8/22 8:04.
  * Happy coding!
  **/
 
-public class DetailActivity extends BaseActivity implements DetailContract.DetailPresenter {
+public class DetailActivity extends DetailView implements View.OnClickListener {
+
+    @BindView(R.id.repair_detail_onreceive_image)
+    LinearLayout onReceiveImage;
+    @BindView(R.id.repair_detail_onupdate_image)
+    LinearLayout onUpdateImage;
+    @BindView(R.id.repair_detail_onrepair_half_image)
+    LinearLayout onRepairHalfImage;
+    @BindView(R.id.repair_detail_onrepair_full_image)
+    LinearLayout onRepairFullImage;
+    @BindView(R.id.repair_detail_onfinish_image)
+    LinearLayout onFinishImage;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -31,16 +55,57 @@ public class DetailActivity extends BaseActivity implements DetailContract.Detai
     TextView detail_place;
     @BindView(R.id.detail_time)
     TextView detail_time;
-    @BindView(R.id.cardview_detail_onupdate)
-    CardView cardview_detail_onupdate;
-    @BindView(R.id.cardview_detail_onreceive)
-    CardView cardview_detail_onreceive;
-    @BindView(R.id.cardview_detail_onrepair_half)
-    CardView cardview_detail_onrepair_half;
-    @BindView(R.id.cardview_detail_onrepair_full)
-    CardView cardview_detail_onrepair_full;
-    @BindView(R.id.cardview_detail_onfinish)
-    CardView cardview_detail_onfinish;
+
+    @BindView(R.id.repair_detail_onreceive_linearlayout)
+    LinearLayout onReceiveLinearLayout;
+    @BindView(R.id.repair_detail_onrepair_half_linearlayout)
+    LinearLayout onRepairHalfLinearLayout;
+    @BindView(R.id.repair_detail_onrepair_half_complaint_linearlayout)
+    LinearLayout onRepairHalfComplaintLinearLayout;
+    @BindView(R.id.repair_detail_onrepair_full_linearlayout)
+    LinearLayout onRepairFullLinearLayout;
+    @BindView(R.id.repair_detail_onfinish_linearlayout)
+    LinearLayout onFinishLinearLayout;
+
+    @BindView(R.id.repair_detail_status_linearlayout)
+    LinearLayout statusTextViewLayout;
+    @BindView(R.id.repair_detail_num_linearlayout)
+    LinearLayout numberTextViewLayout;
+    @BindView(R.id.repair_detail_master_linearlayout)
+    LinearLayout masterTextViewLayout;
+    @BindView(R.id.repair_detail_master_phone_linearlayout)
+    LinearLayout masterPhoneTextViewLayout;
+    @BindView(R.id.repair_detail_expect_time_linearlayout)
+    LinearLayout expectTimeTextViewLayout;
+
+    @BindView(R.id.repair_detail_status_textview)
+    TextView statusTextView;
+    @BindView(R.id.repair_detail_num_textview)
+    TextView numberTextView;
+    @BindView(R.id.repair_detail_master_textview)
+    TextView masterTextView;
+    @BindView(R.id.repair_detail_master_phone_textview)
+    TextView masterPhoneTextView;
+    @BindView(R.id.repair_detail_expect_time_textview)
+    TextView expectTimeTextView;
+
+    @BindView(R.id.repair_detail_onreceive_button)
+    TextView onReceiveButton;
+    @BindView(R.id.repair_detail_onrepair_half_evaluation_button)
+    TextView onRepairHalfEvaluationButton;
+    @BindView(R.id.repair_detail_onrepair_half_complaint_button)
+    TextView onRepairHalfComplaintButton;
+    @BindView(R.id.repair_detail_onrepair_half_complaint_delete_button)
+    TextView onRepairComplaintDeleteButton;
+    @BindView(R.id.repair_detail_onrepair_full_button)
+    TextView onRepairFullButton;
+    @BindView(R.id.repair_detail_onfinish_button)
+    TextView onFinishButton;
+
+    DetailContract.DetailPresenter detailPresenter;
+
+    int id;
+    String[] status = {"报修信息已提交至维修方，请耐心等候", "维修方已接收报修信息", "维修方已确认维修完成(48h内可投诉）", "已确认维修完成，未评价", "已评价，维修完成", "已投诉"};
 
 
     @Override
@@ -62,18 +127,197 @@ public class DetailActivity extends BaseActivity implements DetailContract.Detai
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Intent intent = getIntent();
+        id = intent.getIntExtra("id", 1);
+        getData(id);
+
+        onReceiveButton.setOnClickListener(this);
+        onRepairHalfComplaintButton.setOnClickListener(this);
+        onRepairHalfEvaluationButton.setOnClickListener(this);
+        onRepairComplaintDeleteButton.setOnClickListener(this);
+        onRepairFullButton.setOnClickListener(this);
+        onFinishButton.setOnClickListener(this);
+
+    }
+
+    public void onClick(View v) {
+        if (v == onReceiveButton) {
+            Intent intent = new Intent(context, EvaluationActivity.class);
+            intent.putExtra("id", id);
+            context.startActivity(intent);
+        } else if (v == onRepairHalfEvaluationButton) {
+            Intent intent = new Intent(context, EvaluationActivity.class);
+            intent.putExtra("id", id);
+            context.startActivity(intent);
+        } else if (v == onRepairHalfComplaintButton) {
+            Intent intent = new Intent(context, ComplaintActivity.class);
+            intent.putExtra("id", id);
+            context.startActivity(intent);
+        } else if (v == onRepairComplaintDeleteButton) {
+            deleteOrder(id);
+        } else if (v == onRepairFullButton) {
+            Intent intent = new Intent(context, EvaluationActivity.class);
+            intent.putExtra("id", id);
+            context.startActivity(intent);
+        } else if (v == onFinishButton) {
+            deleteOrder(id);
+        }
     }
 
     @Override
-    public void setDetailData(DetailBean detailBean) {
-        detail_type.setText("");
-        detail_description.setText("");
-        detail_place.setText("");
-        detail_time.setText("");
+    public void setData(DetailBean detailBean) {
+        detail_type.setText(detailBean.data.items);
+        detail_description.setText(detailBean.data.detail);
+        detail_place.setText(detailBean.data.place.area.area_name + detailBean.data.place.room);
+        detail_time.setText(detailBean.data.created_at);
+        if (detailBean.data.complained == 0) {
+            switch (detailBean.data.state) {
+                case 0:
+                    onUpdateImage.setVisibility(View.VISIBLE);
+                    onReceiveImage.setVisibility(View.GONE);
+                    onRepairHalfImage.setVisibility(View.GONE);
+                    onRepairFullImage.setVisibility(View.GONE);
+                    onFinishImage.setVisibility(View.GONE);
+
+                    statusTextView.setText(status[0] + "\n" + detailBean.data.created_at);
+                    numberTextView.setText(String.valueOf(detailBean.data.id));
+
+                    masterTextViewLayout.setVisibility(View.GONE);
+                    masterPhoneTextViewLayout.setVisibility(View.GONE);
+                    expectTimeTextViewLayout.setVisibility(View.GONE);
+
+                    onReceiveLinearLayout.setVisibility(View.GONE);
+                    onRepairHalfLinearLayout.setVisibility(View.GONE);
+                    onRepairHalfComplaintLinearLayout.setVisibility(View.GONE);
+                    onRepairFullLinearLayout.setVisibility(View.GONE);
+                    onFinishLinearLayout.setVisibility(View.GONE);
+                    break;
+
+                case 1:
+                    onUpdateImage.setVisibility(View.GONE);
+                    onReceiveImage.setVisibility(View.VISIBLE);
+                    onRepairHalfImage.setVisibility(View.GONE);
+                    onRepairFullImage.setVisibility(View.GONE);
+                    onFinishImage.setVisibility(View.GONE);
+
+                    statusTextView.setText(status[1] + "\n" + detailBean.data.reacted_at +"\n\n" + status[0] + "\n" + detailBean.data.created_at);
+                    numberTextView.setText(String.valueOf(detailBean.data.id));
+                    masterTextView.setText("刘岳森");
+                    masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
+                    expectTimeTextView.setText(detailBean.data.predicted_at);
+
+                    expectTimeTextViewLayout.setVisibility(View.GONE);
+
+                    onReceiveLinearLayout.setVisibility(View.VISIBLE);
+                    onRepairHalfLinearLayout.setVisibility(View.GONE);
+                    onRepairHalfComplaintLinearLayout.setVisibility(View.GONE);
+                    onRepairFullLinearLayout.setVisibility(View.GONE);
+                    onFinishLinearLayout.setVisibility(View.GONE);
+                    break;
+
+                case 2:
+                    onUpdateImage.setVisibility(View.GONE);
+                    onReceiveImage.setVisibility(View.GONE);
+                    onRepairHalfImage.setVisibility(View.VISIBLE);
+                    onRepairFullImage.setVisibility(View.GONE);
+                    onFinishImage.setVisibility(View.GONE);
+
+                    statusTextView.setText(status[2] + "\n" + detailBean.data.repaired_at + "\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
+                    numberTextView.setText(String.valueOf(detailBean.data.id));
+                    masterTextView.setText(detailBean.data.accendant.accendant_name);
+                    masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
+                    expectTimeTextView.setText(detailBean.data.predicted_at);
+
+                    expectTimeTextViewLayout.setVisibility(View.GONE);
+
+                    onReceiveLinearLayout.setVisibility(View.GONE);
+                    onRepairHalfLinearLayout.setVisibility(View.VISIBLE);
+                    onRepairHalfComplaintLinearLayout.setVisibility(View.GONE);
+                    onRepairFullLinearLayout.setVisibility(View.GONE);
+                    onFinishLinearLayout.setVisibility(View.GONE);
+                    break;
+
+                case 3:
+                    onUpdateImage.setVisibility(View.GONE);
+                    onReceiveImage.setVisibility(View.GONE);
+                    onRepairHalfImage.setVisibility(View.GONE);
+                    onRepairFullImage.setVisibility(View.VISIBLE);
+                    onFinishImage.setVisibility(View.GONE);
+
+                    statusTextView.setText(status[3] + "\n" + detailBean.data.repaired_at +"\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
+                    numberTextView.setText(String.valueOf(detailBean.data.id));
+                    masterTextView.setText(detailBean.data.accendant.accendant_name);
+                    masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
+                    expectTimeTextView.setText(detailBean.data.predicted_at);
+
+                    expectTimeTextViewLayout.setVisibility(View.GONE);
+
+                    onReceiveLinearLayout.setVisibility(View.GONE);
+                    onRepairHalfLinearLayout.setVisibility(View.GONE);
+                    onRepairHalfComplaintLinearLayout.setVisibility(View.GONE);
+                    onRepairFullLinearLayout.setVisibility(View.VISIBLE);
+                    onFinishLinearLayout.setVisibility(View.GONE);
+                    break;
+
+                case 4:
+                    onUpdateImage.setVisibility(View.GONE);
+                    onReceiveImage.setVisibility(View.GONE);
+                    onRepairHalfImage.setVisibility(View.GONE);
+                    onRepairFullImage.setVisibility(View.GONE);
+                    onFinishImage.setVisibility(View.VISIBLE);
+
+                    statusTextView.setText(status[4] + "\n" + detailBean.data.grade.updated_at + "\n\n" + status[3] + "\n" + detailBean.data.repaired_at + "\n\n" + status[1] + detailBean.data.reacted_at +"\n\n" + status[0] + "\n"  + detailBean.data.created_at);
+                    numberTextView.setText(String.valueOf(detailBean.data.id));
+                    masterTextView.setText(detailBean.data.accendant.accendant_name);
+                    masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
+                    expectTimeTextView.setText(detailBean.data.predicted_at);
+
+                    expectTimeTextViewLayout.setVisibility(View.GONE);
+
+                    onReceiveLinearLayout.setVisibility(View.GONE);
+                    onRepairHalfLinearLayout.setVisibility(View.GONE);
+                    onRepairHalfComplaintLinearLayout.setVisibility(View.GONE);
+                    onRepairFullLinearLayout.setVisibility(View.GONE);
+                    onFinishLinearLayout.setVisibility(View.VISIBLE);
+                    break;
+
+            }
+        } else if (detailBean.data.complained == 1) {
+            onUpdateImage.setVisibility(View.GONE);
+            onReceiveImage.setVisibility(View.GONE);
+            onRepairHalfImage.setVisibility(View.VISIBLE);
+            onRepairFullImage.setVisibility(View.GONE);
+            onFinishImage.setVisibility(View.GONE);
+
+            statusTextView.setText(status[6] + "\n" + detailBean.data.complain.updated_at + "\n\n" + status[2] + "\n" + detailBean.data.repaired_at +"\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
+            numberTextView.setText(String.valueOf(detailBean.data.id));
+            masterTextView.setText(detailBean.data.accendant.accendant_name);
+            masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
+            expectTimeTextView.setText(detailBean.data.predicted_at);
+
+            expectTimeTextViewLayout.setVisibility(View.GONE);
+
+            onReceiveLinearLayout.setVisibility(View.GONE);
+            onRepairHalfLinearLayout.setVisibility(View.GONE);
+            onRepairHalfComplaintLinearLayout.setVisibility(View.VISIBLE);
+            onRepairFullLinearLayout.setVisibility(View.GONE);
+            onFinishLinearLayout.setVisibility(View.GONE);
+
+        }
+
     }
 
-    public static void activityStart(Context context) {
-        Intent intent = new Intent(context, DetailActivity.class);
-        context.startActivity(intent);
+    @Override
+    public void getData(int id) {
+        detailPresenter = new DetailPresenterImpl(this);
+        detailPresenter.getData(id);
+
     }
+
+    public void deleteOrder(int id) {
+        detailPresenter.deleteOrder(id);
+    }
+
+
 }
