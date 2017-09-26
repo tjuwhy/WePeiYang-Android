@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseActivity;
@@ -18,6 +19,10 @@ public class ComplaintActivity extends ComplaintContract.ComplaintView {
     Toolbar toolbar;
     @BindView(R.id.button_commit_complaint)
     Button complaintCommitButton;
+    @BindView(R.id.editText_reason_complaint)
+    EditText complaintReasonEditText;
+    @BindView(R.id.editText_detail_complaint)
+    EditText complaintComplaintEditText;
     ComplaintContract.ComplaintPresenter complaintPresenter;
 
     @Override

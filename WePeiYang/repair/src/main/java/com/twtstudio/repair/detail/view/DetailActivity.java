@@ -143,23 +143,23 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
 
     public void onClick(View v) {
         if (v == onReceiveButton) {
-            Intent intent = new Intent(context, EvaluationActivity.class);
+            Intent intent = new Intent(this, EvaluationActivity.class);
             intent.putExtra("id", id);
-            context.startActivity(intent);
+            this.startActivity(intent);
         } else if (v == onRepairHalfEvaluationButton) {
-            Intent intent = new Intent(context, EvaluationActivity.class);
+            Intent intent = new Intent(this, EvaluationActivity.class);
             intent.putExtra("id", id);
-            context.startActivity(intent);
+            this.startActivity(intent);
         } else if (v == onRepairHalfComplaintButton) {
-            Intent intent = new Intent(context, ComplaintActivity.class);
+            Intent intent = new Intent(this, ComplaintActivity.class);
             intent.putExtra("id", id);
-            context.startActivity(intent);
+            this.startActivity(intent);
         } else if (v == onRepairComplaintDeleteButton) {
             deleteOrder(id);
         } else if (v == onRepairFullButton) {
-            Intent intent = new Intent(context, EvaluationActivity.class);
+            Intent intent = new Intent(this, EvaluationActivity.class);
             intent.putExtra("id", id);
-            context.startActivity(intent);
+            this.startActivity(intent);
         } else if (v == onFinishButton) {
             deleteOrder(id);
         }
@@ -245,7 +245,7 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
                     onRepairFullImage.setVisibility(View.VISIBLE);
                     onFinishImage.setVisibility(View.GONE);
 
-                    statusTextView.setText(status[3] + "\n" + detailBean.data.repaired_at +"\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
+                    statusTextView.setText(status[3] + "\n" + detailBean.data.repaired_at + "\n\n" +  status[2] + "\n" + detailBean.data.repaired_at + "\n\n"+"\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
                     masterTextView.setText(detailBean.data.accendant.accendant_name);
                     masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);

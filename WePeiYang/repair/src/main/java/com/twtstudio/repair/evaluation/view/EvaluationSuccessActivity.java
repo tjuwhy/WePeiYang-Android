@@ -1,4 +1,4 @@
-package com.twtstudio.repair.message.view;
+package com.twtstudio.repair.evaluation.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,13 +9,19 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.twtstudio.repair.R;
-import com.twtstudio.repair.message.MessageContract;
+import com.twtstudio.repair.evaluation.EvaluationContract;
+import com.twtstudio.repair.message.view.CommitSuccessActivity;
 
 import java.util.Objects;
 
 import butterknife.BindView;
 
-public class CommitSuccessActivity extends MessageContract.MessageView {
+/**
+ * Created by liuyuesen on 2017/9/26.
+ */
+
+public class EvaluationSuccessActivity extends EvaluationContract.EvaluationView{
+
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.repair_evaluation_commit_success_image)
@@ -27,7 +33,7 @@ public class CommitSuccessActivity extends MessageContract.MessageView {
 
     @Override
     protected int getLayoutResourceId() {
-        return R.layout.activity_commit_success;
+        return R.layout.activity_evaluation_success;
     }
 
     @Override
@@ -62,11 +68,6 @@ public class CommitSuccessActivity extends MessageContract.MessageView {
             commitFailardCardView.setVisibility(View.VISIBLE);
             Toast.makeText(this,"评分添加失败",Toast.LENGTH_LONG).show();
         }
-    }
-
-    public static void activityStart(Context context) {
-        Intent intent = new Intent(context, CommitSuccessActivity.class);
-        context.startActivity(intent);
     }
 
 }

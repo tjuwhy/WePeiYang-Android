@@ -19,11 +19,15 @@
         android:orientation="vertical">
 
         <include
+            android:visibility="invisible"
+            android:id="@+id/repair_evaluation_commit_success_image"
             layout="@layout/cardview_message_onsuccess_commit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <include
+            android:visibility="invisible"
+            android:id="@+id/repair_evaluation_commit_fail_image"
             layout="@layout/cardview_message_onfail_commit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
