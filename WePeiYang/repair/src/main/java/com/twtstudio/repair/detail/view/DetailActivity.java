@@ -9,14 +9,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseActivity;
 import com.twtstudio.repair.complaint.view.ComplaintActivity;
+import com.twtstudio.repair.detail.DeleteBean;
 import com.twtstudio.repair.detail.DetailBean;
 import com.twtstudio.repair.detail.DetailContract;
 import com.twtstudio.repair.detail.presenter.DetailPresenterImpl;
 import com.twtstudio.repair.evaluation.view.EvaluationActivity;
+import com.twtstudio.repair.main.view.MainActivity;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -175,10 +178,6 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
             switch (detailBean.data.state) {
                 case 0:
                     onUpdateImage.setVisibility(View.VISIBLE);
-                    onReceiveImage.setVisibility(View.GONE);
-                    onRepairHalfImage.setVisibility(View.GONE);
-                    onRepairFullImage.setVisibility(View.GONE);
-                    onFinishImage.setVisibility(View.GONE);
 
                     statusTextView.setText(status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
@@ -195,13 +194,9 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
                     break;
 
                 case 1:
-                    onUpdateImage.setVisibility(View.GONE);
                     onReceiveImage.setVisibility(View.VISIBLE);
-                    onRepairHalfImage.setVisibility(View.GONE);
-                    onRepairFullImage.setVisibility(View.GONE);
-                    onFinishImage.setVisibility(View.GONE);
 
-                    statusTextView.setText(status[1] + "\n" + detailBean.data.reacted_at +"\n\n" + status[0] + "\n" + detailBean.data.created_at);
+                    statusTextView.setText(status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
                     masterTextView.setText("刘岳森");
                     masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
@@ -210,18 +205,10 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
                     expectTimeTextViewLayout.setVisibility(View.GONE);
 
                     onReceiveLinearLayout.setVisibility(View.VISIBLE);
-                    onRepairHalfLinearLayout.setVisibility(View.GONE);
-                    onRepairHalfComplaintLinearLayout.setVisibility(View.GONE);
-                    onRepairFullLinearLayout.setVisibility(View.GONE);
-                    onFinishLinearLayout.setVisibility(View.GONE);
                     break;
 
                 case 2:
-                    onUpdateImage.setVisibility(View.GONE);
-                    onReceiveImage.setVisibility(View.GONE);
                     onRepairHalfImage.setVisibility(View.VISIBLE);
-                    onRepairFullImage.setVisibility(View.GONE);
-                    onFinishImage.setVisibility(View.GONE);
 
                     statusTextView.setText(status[2] + "\n" + detailBean.data.repaired_at + "\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
@@ -231,21 +218,13 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
 
                     expectTimeTextViewLayout.setVisibility(View.GONE);
 
-                    onReceiveLinearLayout.setVisibility(View.GONE);
                     onRepairHalfLinearLayout.setVisibility(View.VISIBLE);
-                    onRepairHalfComplaintLinearLayout.setVisibility(View.GONE);
-                    onRepairFullLinearLayout.setVisibility(View.GONE);
-                    onFinishLinearLayout.setVisibility(View.GONE);
                     break;
 
                 case 3:
-                    onUpdateImage.setVisibility(View.GONE);
-                    onReceiveImage.setVisibility(View.GONE);
-                    onRepairHalfImage.setVisibility(View.GONE);
                     onRepairFullImage.setVisibility(View.VISIBLE);
-                    onFinishImage.setVisibility(View.GONE);
 
-                    statusTextView.setText(status[3] + "\n" + detailBean.data.repaired_at + "\n\n" +  status[2] + "\n" + detailBean.data.repaired_at + "\n\n"+"\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
+                    statusTextView.setText(status[3] + "\n" + detailBean.data.repaired_at + "\n\n" + status[2] + "\n" + detailBean.data.repaired_at + "\n\n" + "\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
                     masterTextView.setText(detailBean.data.accendant.accendant_name);
                     masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
@@ -253,21 +232,13 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
 
                     expectTimeTextViewLayout.setVisibility(View.GONE);
 
-                    onReceiveLinearLayout.setVisibility(View.GONE);
-                    onRepairHalfLinearLayout.setVisibility(View.GONE);
-                    onRepairHalfComplaintLinearLayout.setVisibility(View.GONE);
                     onRepairFullLinearLayout.setVisibility(View.VISIBLE);
-                    onFinishLinearLayout.setVisibility(View.GONE);
                     break;
 
                 case 4:
-                    onUpdateImage.setVisibility(View.GONE);
-                    onReceiveImage.setVisibility(View.GONE);
-                    onRepairHalfImage.setVisibility(View.GONE);
-                    onRepairFullImage.setVisibility(View.GONE);
                     onFinishImage.setVisibility(View.VISIBLE);
 
-                    statusTextView.setText(status[4] + "\n" + detailBean.data.grade.updated_at + "\n\n" + status[3] + "\n" + detailBean.data.repaired_at + "\n\n" + status[1] + detailBean.data.reacted_at +"\n\n" + status[0] + "\n"  + detailBean.data.created_at);
+                    statusTextView.setText(status[4] + "\n" + detailBean.data.grade.updated_at + "\n\n" + status[3] + "\n" + detailBean.data.repaired_at + "\n\n" + status[1] + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
                     masterTextView.setText(detailBean.data.accendant.accendant_name);
                     masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
@@ -275,22 +246,14 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
 
                     expectTimeTextViewLayout.setVisibility(View.GONE);
 
-                    onReceiveLinearLayout.setVisibility(View.GONE);
-                    onRepairHalfLinearLayout.setVisibility(View.GONE);
-                    onRepairHalfComplaintLinearLayout.setVisibility(View.GONE);
-                    onRepairFullLinearLayout.setVisibility(View.GONE);
                     onFinishLinearLayout.setVisibility(View.VISIBLE);
                     break;
 
             }
         } else if (detailBean.data.complained == 1) {
-            onUpdateImage.setVisibility(View.GONE);
-            onReceiveImage.setVisibility(View.GONE);
             onRepairHalfImage.setVisibility(View.VISIBLE);
-            onRepairFullImage.setVisibility(View.GONE);
-            onFinishImage.setVisibility(View.GONE);
 
-            statusTextView.setText(status[6] + "\n" + detailBean.data.complain.updated_at + "\n\n" + status[2] + "\n" + detailBean.data.repaired_at +"\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
+            statusTextView.setText(status[5] + "\n" + detailBean.data.complain.updated_at + "\n\n" + status[2] + "\n" + detailBean.data.repaired_at + "\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
             numberTextView.setText(String.valueOf(detailBean.data.id));
             masterTextView.setText(detailBean.data.accendant.accendant_name);
             masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
@@ -298,11 +261,7 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
 
             expectTimeTextViewLayout.setVisibility(View.GONE);
 
-            onReceiveLinearLayout.setVisibility(View.GONE);
-            onRepairHalfLinearLayout.setVisibility(View.GONE);
-            onRepairHalfComplaintLinearLayout.setVisibility(View.VISIBLE);
-            onRepairFullLinearLayout.setVisibility(View.GONE);
-            onFinishLinearLayout.setVisibility(View.GONE);
+            onFinishLinearLayout.setVisibility(View.VISIBLE);
 
         }
 
@@ -313,6 +272,11 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
         detailPresenter = new DetailPresenterImpl(this);
         detailPresenter.getData(id);
 
+    }
+
+    public void deleteCallBack(DeleteBean deleteBean) {
+        Toast.makeText(this, "删除成功", Toast.LENGTH_LONG).show();
+        finish();
     }
 
     public void deleteOrder(int id) {

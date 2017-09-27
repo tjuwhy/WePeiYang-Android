@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -11,10 +12,12 @@ import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseActivity;
 import com.twtstudio.repair.complaint.ComplaintBean;
 import com.twtstudio.repair.complaint.ComplaintContract;
+import com.twtstudio.repair.complaint.presenter.ComplaintPresenterImpl;
+import com.twtstudio.repair.evaluation.view.EvaluationSuccessActivity;
 
 import butterknife.BindView;
 
-public class ComplaintActivity extends ComplaintContract.ComplaintView {
+public class ComplaintActivity extends ComplaintContract.ComplaintView implements View.OnClickListener {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.button_commit_complaint)
@@ -22,8 +25,10 @@ public class ComplaintActivity extends ComplaintContract.ComplaintView {
     @BindView(R.id.editText_reason_complaint)
     EditText complaintReasonEditText;
     @BindView(R.id.editText_detail_complaint)
-    EditText complaintComplaintEditText;
+    EditText complaintDetailEditText;
     ComplaintContract.ComplaintPresenter complaintPresenter;
+
+    int id;
 
     @Override
     protected int getLayoutResourceId() {
@@ -45,7 +50,10 @@ public class ComplaintActivity extends ComplaintContract.ComplaintView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        complaintCommitButton.setOnClickListener(v -> ComplaintSuccessActivity.activityStart(ComplaintActivity.this));
+        Intent intent = getIntent();
+        id = intent.getIntExtra("id", 1);
+
+        complaintCommitButton.setOnClickListener(this);
     }
 
     public static void activityStart(Context context) {
@@ -53,9 +61,22 @@ public class ComplaintActivity extends ComplaintContract.ComplaintView {
         context.startActivity(intent);
     }
 
-    @Override
-    public void postData(ComplaintBean complaintBean){
 
+    @Override
+    public void complaintCallBack(ComplaintBean complaintBean) {
+        Intent intent = new Intent();
+        intent.putExtra("message", complaintBean.message);
+        intent.setClass(this, ComplaintSuccessActivity.class);
+        this.startActivity(intent);
+        finish();
     }
 
+
+    @Override
+    public void onClick(View v) {
+        if (v == complaintCommitButton) {
+            complaintPresenter = new ComplaintPresenterImpl(this);
+            complaintPresenter.postData(id, complaintReasonEditText.getText().toString(), complaintDetailEditText.getText().toString());
+        }
+    }
 }

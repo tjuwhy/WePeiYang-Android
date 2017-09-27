@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.twtstudio.repair.R;
+import com.twtstudio.repair.complaint.view.ComplaintSuccessActivity;
 import com.twtstudio.repair.evaluation.EvaluationBean;
 import com.twtstudio.repair.evaluation.EvaluationContract;
 import com.twtstudio.repair.evaluation.presenter.EvaluationPresenterImpl;
@@ -71,10 +72,6 @@ public class EvaluationActivity extends EvaluationContract.EvaluationView implem
         int star1 = (int) speedRatingBar.getRating();
         int star2 = (int) attitudeRatingBar.getRating();
         int star3 = (int) qualityRatingBar.getRating();
-//        String orderId = String.valueOf(id);
-//        String star1 = String.valueOf(speedRatingBar.getRating());
-//        String star2 = String.valueOf(attitudeRatingBar.getRating());
-//        String star3 = String.valueOf(qualityRatingBar.getRating());
         Map<String, Object> map = new HashMap<>();
         map.put("order_id", orderId);
         map.put("star_1", star1);
@@ -88,29 +85,6 @@ public class EvaluationActivity extends EvaluationContract.EvaluationView implem
     public void EvaluationCallBack(EvaluationBean evaluationBean) {
         Intent intent = new Intent();
         intent.putExtra("message",evaluationBean.message);
-//        if (evaluationBean.message == ""){
-//            intent.setClass(this, CommitSuccessActivity.class);
-//        }
-//        else if (evaluationBean.message == "已经添加过评分") {
-//            intent.setClass(this, CommitSuccessActivity.class);
-//            Toast.makeText(this,"您已经添加过评分啦",Toast.LENGTH_LONG);
-//        }
-//        else if (evaluationBean.message == "添加评分失败") {
-//            intent.setClass(this, CommitSuccessActivity.class);
-//            Toast.makeText(this,"添加评分失败",Toast.LENGTH_LONG);
-//        } else {
-//            intent.setClass(this, CommitSuccessActivity.class);
-//            Toast.makeText(this,"提交成功",Toast.LENGTH_LONG);
-//        }
-//        bundle.putString("shareOrSuccess", "success");
-//        bundle.putString("lostOrFound", lostOrFound);
-//        bundle.putString("imageUrl", Utils.getPicUrl(baseBean.data.get(0).picture));
-//        bundle.putString("id", String.valueOf(baseBean.data.get(0).id));
-//        bundle.putString("time", baseBean.data.get(0).time);
-//        bundle.putString("place", baseBean.data.get(0).place);
-//        bundle.putString("type", Utils.getType(baseBean.data.get(0).detail_type));
-//        bundle.putString("title", baseBean.data.get(0).title);
-//        intent.putExtras(bundle);
         intent.setClass(this, EvaluationSuccessActivity.class);
         this.startActivity(intent);
         finish();

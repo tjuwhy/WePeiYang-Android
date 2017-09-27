@@ -21,12 +21,17 @@ public class ComplaintApiClient extends ComplaintContract.ComplaintModel {
     }
 
     @Override
-    public void postData(ComplaintBean complaintBean) {
+    public void postData(int order_id, String reason, String detail) {
         complaintApi = RetrofitProvider.getRetrofit().create(ComplaintApi.class);
-        complaintApi.setComplaintData(complaintBean.data.order_id,complaintBean.data.reason,complaintBean.data.detail)
+        complaintApi.setComplaintData(order_id, reason, detail)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe();
 
+    }
+
+    @Override
+    public void complaintCallBack(ComplaintBean complaintBean) {
+        complaintPresenter.complaintCallBack(complaintBean);
     }
 }

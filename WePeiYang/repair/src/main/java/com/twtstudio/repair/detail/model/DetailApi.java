@@ -19,5 +19,5 @@ public interface DetailApi {
     Observable<DetailBean> loadingData (@Query("order_id") String id);
 
     @POST("repairs/order/delete")
-    Observable<DeleteBean> deledeData (@Query("order_id") String id);
+    Observable<DeleteBean> deleteData (@Query("order_id") int id);
 }

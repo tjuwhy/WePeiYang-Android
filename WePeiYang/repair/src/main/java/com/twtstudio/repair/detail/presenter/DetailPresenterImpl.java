@@ -1,5 +1,6 @@
 package com.twtstudio.repair.detail.presenter;
 
+import com.twtstudio.repair.detail.DeleteBean;
 import com.twtstudio.repair.detail.DetailBean;
 import com.twtstudio.repair.detail.DetailContract;
 import com.twtstudio.repair.detail.model.DetailApiClient;
@@ -28,7 +29,11 @@ public class DetailPresenterImpl extends DetailContract.DetailPresenter {
         detailModel.getData(id);
     }
 
-    public void deleteOrder(int id){
+    public void deleteCallBack(DeleteBean deleteBean) {
+        detailView.deleteCallBack(deleteBean);
+    }
+
+    public void deleteOrder(int id) {
         detailModel.deleteOrder(id);
     }
 }

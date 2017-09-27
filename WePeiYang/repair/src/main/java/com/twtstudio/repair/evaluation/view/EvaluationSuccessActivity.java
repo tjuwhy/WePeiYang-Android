@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.twtstudio.repair.R;
+import com.twtstudio.repair.base.BaseActivity;
 import com.twtstudio.repair.evaluation.EvaluationContract;
 import com.twtstudio.repair.message.view.CommitSuccessActivity;
 
@@ -16,11 +17,13 @@ import java.util.Objects;
 
 import butterknife.BindView;
 
+import static android.R.id.message;
+
 /**
  * Created by liuyuesen on 2017/9/26.
  */
 
-public class EvaluationSuccessActivity extends EvaluationContract.EvaluationView{
+public class EvaluationSuccessActivity extends BaseActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;

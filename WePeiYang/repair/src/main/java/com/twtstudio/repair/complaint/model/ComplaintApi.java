@@ -14,5 +14,5 @@ import rx.Observable;
 public interface ComplaintApi {
     @FormUrlEncoded
     @POST("repairs/complain/add")
-    Observable<ComplaintBean> setComplaintData (@Field("order_id" )String orderId,@Field("reason") String reason,@Field("detail")String detail);
+    Observable<ComplaintBean> setComplaintData (@Field("order_id" )int order_Id,@Field("reason") String reason,@Field("detail")String detail);
 }

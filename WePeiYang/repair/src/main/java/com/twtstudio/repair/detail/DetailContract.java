@@ -1,5 +1,7 @@
 package com.twtstudio.repair.detail;
 
+import android.widget.Toast;
+
 import com.twtstudio.repair.base.BaseActivity;
 import com.twtstudio.repair.base.BaseContract;
 
@@ -21,6 +23,8 @@ public class DetailContract implements BaseContract {
         public void deleteOrder(int id) {
 
         }
+        public void deleteCallBack (DeleteBean deleteBean){
+        }
     }
 
     public static abstract class DetailPresenter implements BaseContract.BasePresenter {
@@ -35,6 +39,8 @@ public class DetailContract implements BaseContract {
         public void deleteOrder(int id) {
 
         }
+        public void deleteCallBack (DeleteBean deleteBean){
+        }
     }
 
     public static abstract class DetailModel implements BaseContract.BaseModel {
@@ -48,6 +54,9 @@ public class DetailContract implements BaseContract {
 
         public void deleteOrder(int id) {
 
+        }
+
+        public void deleteCallBack (DeleteBean deleteBean){
         }
     }
 }

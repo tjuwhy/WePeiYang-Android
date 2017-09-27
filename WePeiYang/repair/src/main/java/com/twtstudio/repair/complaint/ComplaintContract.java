@@ -10,19 +10,28 @@ import com.twtstudio.repair.main.MainBean;
 
 public class ComplaintContract implements BaseContract {
     public static abstract class ComplaintView extends BaseActivity {
-        public void postData(ComplaintBean complaintBean){
+        public void postData(int order_id ,String reason , String detail){
+
+        }
+        public void complaintCallBack (ComplaintBean complaintBean  ){
 
         }
     }
 
     public static abstract class ComplaintPresenter implements BaseContract.BasePresenter {
-        public void postData(ComplaintBean complaintBean){
+        public void postData(int order_id ,String reason , String detail){
+
+        }
+        public void complaintCallBack (ComplaintBean complaintBean  ){
 
         }
     }
 
     public static abstract class ComplaintModel implements BaseModel {
-        public void postData(ComplaintBean complaintBean){
+        public void postData(int order_id ,String reason , String detail){
+
+        }
+        public void complaintCallBack (ComplaintBean complaintBean  ){
 
         }
     }

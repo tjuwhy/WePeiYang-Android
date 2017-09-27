@@ -49,6 +49,7 @@ public class MainActivity extends MainContract.MainView {
     MainBean mainBean = new MainBean();
 
     int mPreviousVisibleItem = 1;
+    boolean isLoadingData = false;
 
     @Override
     protected int getLayoutResourceId() {
@@ -121,8 +122,11 @@ public class MainActivity extends MainContract.MainView {
         floatingActionButton.setOnClickListener(v -> MessageActivity.activityStart(MainActivity.this));
 
         refreshLayout.setOnRefreshListener(() -> {
-            mainPresenter.getData();
-            mainBean.data.clear();
+            if ( isLoadingData == false){
+                isLoadingData = true;
+                mainPresenter.getData();
+            }
+
         });
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -138,9 +142,11 @@ public class MainActivity extends MainContract.MainView {
 
                 int totalCount = layoutManager.getItemCount();
                 int lastPositions;
+                int lastNumber = 0;
                 lastPositions = layoutManager.findLastVisibleItemPosition();
-                if (judgeOnButtom(lastPositions,totalCount) == true){
-                    Toast.makeText(MainActivity.this, "asdfdgds",Toast.LENGTH_SHORT).show();
+                if (judgeOnButtom(lastPositions,totalCount) == true && lastNumber != lastPositions){
+                    Toast.makeText(MainActivity.this, "已经到底啦",Toast.LENGTH_SHORT).show();
+                    lastNumber = lastPositions;
                 }
             }
 
@@ -156,15 +162,23 @@ public class MainActivity extends MainContract.MainView {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        mainPresenter.getData();
+    }
+
+    @Override
     public void getData() {
-        mainPresenter = new MainPresenterImpl(this);
         mainPresenter.getData();
     }
 
     @Override
     public void setData(MainBean mainBean) {
+        refreshLayout.setRefreshing(false);
+        this.mainBean.data.clear();
         this.mainBean.data.addAll(mainBean.data);
         recyclerViewAdapter.notifyDataSetChanged();
+        isLoadingData = false;
     }
 
 }

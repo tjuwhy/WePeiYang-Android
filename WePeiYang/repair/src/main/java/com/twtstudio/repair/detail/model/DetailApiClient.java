@@ -4,6 +4,7 @@ import android.widget.Toast;
 
 import com.twt.wepeiyang.commons.network.RetrofitProvider;
 import com.twt.wepeiyang.commons.network.RxErrorHandler;
+import com.twtstudio.repair.detail.DeleteBean;
 import com.twtstudio.repair.detail.DetailBean;
 import com.twtstudio.repair.detail.DetailContract;
 import com.twtstudio.repair.main.MainBean;
@@ -40,9 +41,13 @@ public class DetailApiClient extends DetailContract.DetailModel {
     }
 
     public void deleteOrder(int id){
-        detailApi.deledeData(String.valueOf(id))
+        detailApi.deleteData(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe();
+                .subscribe(this::deleteCallBack,new RxErrorHandler());
+    }
+
+    public void deleteCallBack (DeleteBean deleteBean){
+        detailPresenter.deleteCallBack(deleteBean);
     }
 }

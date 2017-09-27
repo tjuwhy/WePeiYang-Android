@@ -19,11 +19,13 @@
         android:orientation="vertical">
 
         <include
+            android:id="@+id/repair_complaint_fail_image"
             layout="@layout/cardview_success_onsuccess_complaint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <include
+            android:id="@+id/repair_complaint_success_image"
             layout="@layout/cardview_success_onfail_complaint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
