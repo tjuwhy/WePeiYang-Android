@@ -130,7 +130,7 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        detailPresenter = new DetailPresenterImpl(this);
         Intent intent = getIntent();
         id = intent.getIntExtra("id", 1);
         getData(id);
@@ -142,6 +142,13 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
         onRepairFullButton.setOnClickListener(this);
         onFinishButton.setOnClickListener(this);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setInvisible ();
+        getData(id);
     }
 
     public void onClick(View v) {
@@ -182,15 +189,15 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
                     statusTextView.setText(status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
 
-                    masterTextViewLayout.setVisibility(View.GONE);
-                    masterPhoneTextViewLayout.setVisibility(View.GONE);
-                    expectTimeTextViewLayout.setVisibility(View.GONE);
+                    masterTextViewLayout.setVisibility(View.INVISIBLE);
+                    masterPhoneTextViewLayout.setVisibility(View.INVISIBLE);
+                    expectTimeTextViewLayout.setVisibility(View.INVISIBLE);
 
-                    onReceiveLinearLayout.setVisibility(View.GONE);
-                    onRepairHalfLinearLayout.setVisibility(View.GONE);
-                    onRepairHalfComplaintLinearLayout.setVisibility(View.GONE);
-                    onRepairFullLinearLayout.setVisibility(View.GONE);
-                    onFinishLinearLayout.setVisibility(View.GONE);
+                    onReceiveLinearLayout.setVisibility(View.INVISIBLE);
+                    onRepairHalfLinearLayout.setVisibility(View.INVISIBLE);
+                    onRepairHalfComplaintLinearLayout.setVisibility(View.INVISIBLE);
+                    onRepairFullLinearLayout.setVisibility(View.INVISIBLE);
+                    onFinishLinearLayout.setVisibility(View.INVISIBLE);
                     break;
 
                 case 1:
@@ -269,7 +276,6 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
 
     @Override
     public void getData(int id) {
-        detailPresenter = new DetailPresenterImpl(this);
         detailPresenter.getData(id);
 
     }
@@ -282,6 +288,22 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
     public void deleteOrder(int id) {
         detailPresenter.deleteOrder(id);
     }
+
+    public void setInvisible (){
+        onUpdateImage.setVisibility(View.INVISIBLE);
+        onReceiveImage.setVisibility(View.INVISIBLE);
+        onRepairHalfImage.setVisibility(View.INVISIBLE);
+        onRepairFullImage.setVisibility(View.INVISIBLE);
+        onFinishImage.setVisibility(View.INVISIBLE);
+        onRepairHalfImage.setVisibility(View.INVISIBLE);
+
+        onReceiveLinearLayout.setVisibility(View.INVISIBLE);
+        onRepairHalfLinearLayout.setVisibility(View.INVISIBLE);
+        onRepairHalfComplaintLinearLayout.setVisibility(View.INVISIBLE);
+        onRepairFullLinearLayout.setVisibility(View.INVISIBLE);
+        onFinishLinearLayout.setVisibility(View.INVISIBLE);
+    }
+
 
 
 }

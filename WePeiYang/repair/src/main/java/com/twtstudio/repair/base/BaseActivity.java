@@ -39,6 +39,5 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseCont
                 toolbar.setNavigationOnClickListener(view -> onBackPressed());
             }
         }
-
     }
 }
