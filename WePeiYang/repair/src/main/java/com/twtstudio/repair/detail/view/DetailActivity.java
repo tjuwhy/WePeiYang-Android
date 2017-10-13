@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -105,6 +106,8 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
     @BindView(R.id.repair_detail_onfinish_button)
     TextView onFinishButton;
 
+    @BindView(R.id.repair_detail_button_framelayout)
+    FrameLayout frameLayout;
     DetailContract.DetailPresenter detailPresenter;
 
     int id;
@@ -189,10 +192,11 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
                     statusTextView.setText(status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
 
-                    masterTextViewLayout.setVisibility(View.INVISIBLE);
-                    masterPhoneTextViewLayout.setVisibility(View.INVISIBLE);
-                    expectTimeTextViewLayout.setVisibility(View.INVISIBLE);
+                    masterTextViewLayout.setVisibility(View.GONE);
+                    masterPhoneTextViewLayout.setVisibility(View.GONE);
+                    expectTimeTextViewLayout.setVisibility(View.GONE);
 
+                    frameLayout.setVisibility(View.GONE);
                     onReceiveLinearLayout.setVisibility(View.INVISIBLE);
                     onRepairHalfLinearLayout.setVisibility(View.INVISIBLE);
                     onRepairHalfComplaintLinearLayout.setVisibility(View.INVISIBLE);
