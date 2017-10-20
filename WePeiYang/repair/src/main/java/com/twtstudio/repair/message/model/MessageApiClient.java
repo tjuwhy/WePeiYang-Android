@@ -9,7 +9,9 @@ import com.twtstudio.repair.message.MessageContract;
 import com.twtstudio.repair.message.RoomListBean;
 import com.twtstudio.repair.message.TypeListBean;
 
+import java.util.ArrayList;
 import java.util.Map;
+import java.util.Stack;
 
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
@@ -52,9 +54,9 @@ public class MessageApiClient extends MessageContract.MessageModel {
                 .subscribe(this::getRoomListCallBack, new RxErrorHandler());
     }
 
-    public void getTypeList(int type_id) {
+    public void getTypeList(int type) {
         messageApi = RetrofitProvider.getRetrofit().create(MessageApi.class);
-        messageApi.getTypeList(type_id)
+        messageApi.getTypeList(type)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::getTypeListCallBack, new RxErrorHandler());
@@ -76,6 +78,4 @@ public class MessageApiClient extends MessageContract.MessageModel {
     public void getTypeListCallBack(TypeListBean typeListBean) {
         messagePresenter.getTypeListCallBack(typeListBean);
     }
-
-
 }

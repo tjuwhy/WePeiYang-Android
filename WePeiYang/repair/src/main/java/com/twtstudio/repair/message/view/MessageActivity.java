@@ -22,7 +22,10 @@ import com.twtstudio.repair.message.RoomListBean;
 import com.twtstudio.repair.message.TypeListBean;
 import com.twtstudio.repair.message.presenter.MessagePresenterImpl;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -50,20 +53,33 @@ public class MessageActivity extends MessageContract.MessageView {
     ImageView photoImageView;
     MessagePresenterImpl messagePresenter;
     int selectedBuilding;
-    String selectedRoom;
+    int selectedRoom;
     int selectedType;
-    int[] img_ids;
+    //int[] img_ids;
     String detail;
     int campus_id;
     String phone;
     Map<String, Object> map;
 
+    ArrayAdapter<String> arrayAdapterBuilding;
+    ArrayAdapter<String> arrayAdapterRoom;
+    ArrayAdapter<String> arrayAdapterType;
 
+    boolean isGetBuilding = false;
+boolean isGetRoom = false;
+    boolean isGetType = false;
     //这下面的两个数组是用于储存spinner中的可选数据
 
-    private String[] building = {"正园九斋", "齐园十三斋", "诚园八斋"};//
-    private String[] room = {"227", "228", "229"};
-    private String[] type = {"灯", "电源", "路由器", "笔记本电脑", "巴拉巴拉巴拉哔哩哔哩哔哩超级无敌大风吹强到爆帅炸空调", "脑子", "多肉", "石哥的性取向", "地板砖", "纱窗", "门", "水杯", "抽屉", "衣柜", "裤子", "石头", "空气"};
+    private List<String> building = new ArrayList<>();
+    private List<String> room = new ArrayList<>();
+    private List<String> type = new ArrayList<>();
+    private List<Integer> buildingID = new ArrayList<>();
+    private List<Integer> roomID = new ArrayList<>();
+    private List<Integer> typeID = new ArrayList<>();
+
+    //private String[] building = {"正园九斋", "齐园十三斋", "诚园八斋"};//
+    //private String[] room = {"227", "228", "229"};
+    //private String[] type = {"灯", "电源", "路由器", "笔记本电脑", "巴拉巴拉巴拉哔哩哔哩哔哩超级无敌大风吹强到爆帅炸空调", "脑子", "多肉", "石哥的性取向", "地板砖", "纱窗", "门", "水杯", "抽屉", "衣柜", "裤子", "石头", "空气"};
 
 
     //this port is for toolbar
@@ -83,7 +99,6 @@ public class MessageActivity extends MessageContract.MessageView {
         return true;
     }
 
-
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,20 +106,20 @@ public class MessageActivity extends MessageContract.MessageView {
         messagePresenter = new MessagePresenterImpl(this);
         getBuildingList();
         //this port is for spinnerAdapter
-        ArrayAdapter<String> arrayAdapterBuilding = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, building);
+        arrayAdapterBuilding = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, building);
         arrayAdapterBuilding.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerBuilding.setAdapter(arrayAdapterBuilding);
-        ArrayAdapter<String> arrayAdapterRoom = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, room);
+        arrayAdapterRoom = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, room);
         //arrayAdapterRoom.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerRoom.setAdapter(arrayAdapterRoom);
-        ArrayAdapter<String> arrayAdapterType = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, type);
+        arrayAdapterType = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, type);
         spinnerType.setAdapter(arrayAdapterType);
 
-        selectedBuilding = spinnerBuilding.getSelectedItemPosition();
-        selectedRoom = spinnerRoom.getSelectedItem().toString();
-        selectedType = spinnerType.getSelectedItemPosition();
-        detail = messageDescriptEditText.getText().toString();
-        phone = messagePhoneEditText.getText().toString();
+//        selectedBuilding = spinnerBuilding.getSelectedItemPosition();
+//        selectedRoom = spinnerRoom.getSelectedItem().toString();
+//        selectedType = spinnerType.getSelectedItemPosition();
+//        detail = messageDescriptEditText.getText().toString();
+//        phone = messagePhoneEditText.getText().toString();
         map = getMap();
 
         //this port is for spinnerOnClickListener
@@ -113,7 +128,34 @@ public class MessageActivity extends MessageContract.MessageView {
         spinnerBuilding.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedBuilding = spinnerBuilding.getSelectedItemPosition();
 
+                getRoomList(buildingID.get(selectedBuilding));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        spinnerRoom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedRoom = spinnerRoom.getSelectedItemPosition();
+                getTypeList(roomID.get(selectedRoom));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        spinnerType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedType= spinnerType.getSelectedItemPosition();
+                map = getMap();
+                postMessage(map);
             }
 
             @Override
@@ -144,17 +186,31 @@ public class MessageActivity extends MessageContract.MessageView {
     }
 
     public void getBuildingListCallBack(BuildingListBean buildingListBean) {
-
+        for (int i = 0; i < buildingListBean.data.size(); i++) {
+            building.add(buildingListBean.data.get(i).area_name);
+            buildingID.add(buildingListBean.data.get(i).id);
+        }
+        isGetBuilding = true;
+        arrayAdapterBuilding.notifyDataSetChanged();
     }
 
     public void getRoomListCallBack(RoomListBean roomListBean) {
-
+        for (int i = 1; i < roomListBean.data.size(); i++) {
+            room.add(roomListBean.data.get(i).room);
+            roomID.add(roomListBean.data.get(i).type);
+        }
+        isGetRoom = true;
+        arrayAdapterRoom.notifyDataSetChanged();
     }
 
     public void getTypeListCallBack(TypeListBean typeListBean) {
-
+        for (int i = 1; i < typeListBean.data.size(); i++) {
+            type.add(typeListBean.data.get(i).item);
+            typeID.add(typeListBean.data.get(i).type);
+        }
+        isGetType = true;
+        arrayAdapterType.notifyDataSetChanged();
     }
-
 
     private Map<String, Object> getMap() {
 
@@ -162,9 +218,9 @@ public class MessageActivity extends MessageContract.MessageView {
         map.put("area_id", selectedBuilding);
         map.put("campus_id", campus_id);
         map.put("room", selectedRoom);
-        map.put("img_ids[]", img_ids);
+        //map.put("image", img_ids);
         map.put("detail", detail);
-        map.put("type", selectedType);
+        map.put("items", selectedType);
         map.put("phone", phone);
         return map;
     }
@@ -175,3 +231,4 @@ public class MessageActivity extends MessageContract.MessageView {
     }
 
 }
+

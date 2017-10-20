@@ -52,7 +52,7 @@ public class MessagePresenterImpl extends MessageContract.MessagePresenter {
     }
 
     public void getTypeListCallBack(TypeListBean typeListBean) {
-
+        messageView.getTypeListCallBack(typeListBean);
     }
 
 

@@ -23,13 +23,13 @@ public interface MessageApi {
     @POST("repairs/order/add")
     Observable<MessageBean> submitMessage (@FieldMap Map<String ,Object> evaluationMap);
 
-    @GET ("repairs/area")
+    @GET ("repairs/order/area")
     Observable <BuildingListBean> getBuildingList ();
 
-    @GET ("repairs/room")
+    @GET ("repairs/order/room")
     Observable<RoomListBean> getRoomList (@Query("area_id") int area_id);
 
-    @GET ("")
-    Observable<TypeListBean> getTypeList (@Query("Type_id") int type_id);
+    @GET ("repairs/order/item")
+    Observable<TypeListBean> getTypeList (@Query("type") int type_id);
 
 }
