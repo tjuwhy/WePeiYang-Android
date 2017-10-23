@@ -1,5 +1,6 @@
 //include ':party'
 //include /*':preapp',*/ ':lib', ':gpa', ':schedule', ':fragmentation', ':bike', ':one', ':news', ':tjulibrary', ':classroomcore', ':fellowsearch', ':yellowpages', ':classroomquery'
-include ':auth', ':mvvmKit', ':commons', ':repair'
+//include ':auth', ':mvvmKit', ':commons', ':repair'
 //include ':devpeiyang'
 //include ':app'
+include ':repair'

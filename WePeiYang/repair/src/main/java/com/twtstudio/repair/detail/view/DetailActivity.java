@@ -186,7 +186,7 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
         detail_time.setText(detailBean.data.created_at);
         if (detailBean.data.complained == 0) {
             switch (detailBean.data.state) {
-                case 0:
+                case 0://已提交
                     onUpdateImage.setVisibility(View.VISIBLE);
 
                     statusTextView.setText(status[0] + "\n" + detailBean.data.created_at);
@@ -204,12 +204,12 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
                     onFinishLinearLayout.setVisibility(View.INVISIBLE);
                     break;
 
-                case 1:
+                case 1://维修方已经接受
                     onReceiveImage.setVisibility(View.VISIBLE);
 
                     statusTextView.setText(status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
-                    masterTextView.setText("刘岳森");
+                    masterTextView.setText(detailBean.data.accendant.accendant_name);
                     masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
                     expectTimeTextView.setText(detailBean.data.predicted_at);
 
@@ -218,7 +218,7 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
                     onReceiveLinearLayout.setVisibility(View.VISIBLE);
                     break;
 
-                case 2:
+                case 2://维修方确认维修完成
                     onRepairHalfImage.setVisibility(View.VISIBLE);
 
                     statusTextView.setText(status[2] + "\n" + detailBean.data.repaired_at + "\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
@@ -232,10 +232,10 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
                     onRepairHalfLinearLayout.setVisibility(View.VISIBLE);
                     break;
 
-                case 3:
+                case 3://学生确认维修完成
                     onRepairFullImage.setVisibility(View.VISIBLE);
 
-                    statusTextView.setText(status[3] + "\n" + detailBean.data.repaired_at + "\n\n" + status[2] + "\n" + detailBean.data.repaired_at + "\n\n" + "\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
+                    statusTextView.setText(status[3] + "\n" + detailBean.data.repaired_at + "\n\n" + status[2] + "\n" + detailBean.data.grade.updated_at + "\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
                     masterTextView.setText(detailBean.data.accendant.accendant_name);
                     masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
@@ -246,10 +246,10 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
                     onRepairFullLinearLayout.setVisibility(View.VISIBLE);
                     break;
 
-                case 4:
+                case 4://报修结束
                     onFinishImage.setVisibility(View.VISIBLE);
 
-                    statusTextView.setText(status[4] + "\n" + detailBean.data.grade.updated_at + "\n\n" + status[3] + "\n" + detailBean.data.repaired_at + "\n\n" + status[1] + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
+                    statusTextView.setText(status[4] + "\n" + detailBean.data.grade.updated_at + "\n\n" + status[3] + "\n" + detailBean.data.repaired_at + "\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
                     masterTextView.setText(detailBean.data.accendant.accendant_name);
                     masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);
@@ -261,7 +261,7 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
                     break;
 
             }
-        } else if (detailBean.data.complained == 1) {
+        } else if (detailBean.data.complained == 1) {//已投诉
             onRepairHalfImage.setVisibility(View.VISIBLE);
 
             statusTextView.setText(status[5] + "\n" + detailBean.data.complain.updated_at + "\n\n" + status[2] + "\n" + detailBean.data.repaired_at + "\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);

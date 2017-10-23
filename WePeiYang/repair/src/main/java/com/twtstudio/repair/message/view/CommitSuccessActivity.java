@@ -49,25 +49,13 @@ public class CommitSuccessActivity extends MessageContract.MessageView {
 
         Intent intent = getIntent();
         message = intent.getStringExtra("message");
-        if (Objects.equals(message, "")) {
+        if (message == null) {
             commitSuccessCardView.setVisibility(View.VISIBLE);
             Toast.makeText(this,"添加评分成功", Toast.LENGTH_LONG).show();
-
-        } else if (message.equals("已经添加过评分")) {
-            commitFailardCardView.setVisibility(View.VISIBLE);
-            Toast.makeText(this,"您已经添加过评分啦",Toast.LENGTH_LONG).show();
-        } else if (message.equals("评分添加失败") ){
-            commitFailardCardView.setVisibility(View.VISIBLE);
-            Toast.makeText(this,"评分添加失败",Toast.LENGTH_LONG).show();
         }
         else {
             commitFailardCardView.setVisibility(View.VISIBLE);
             Toast.makeText(this,"评分添加失败",Toast.LENGTH_LONG).show();
         }
-    }
-
-    public static void activityStart(Context context) {
-        Intent intent = new Intent(context, CommitSuccessActivity.class);
-        context.startActivity(intent);
     }
 }
