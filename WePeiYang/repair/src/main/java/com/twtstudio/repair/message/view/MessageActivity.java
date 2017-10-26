@@ -1,13 +1,16 @@
 package com.twtstudio.repair.message.view;
 
 import android.app.Activity;
+import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -30,7 +33,10 @@ import com.twtstudio.repair.message.RoomListBean;
 import com.twtstudio.repair.message.TypeListBean;
 import com.twtstudio.repair.message.presenter.MessagePresenterImpl;
 
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,6 +45,8 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 
 public class MessageActivity extends MessageContract.MessageView implements View.OnClickListener {
 
@@ -73,8 +81,8 @@ public class MessageActivity extends MessageContract.MessageView implements View
     boolean isGetBuilding = false;
     boolean isGetRoom = false;
     boolean isGetType = false;
-    private final int TAKE_PHOTO = 1;
-    private final int TAKE_PHOTO_REQUEST_CODE = 1;
+    private final int TAKE_PHOTO = 0;
+    private final int TAKE_PHOTO_REQUEST_CODE = 0;
     //这下面的两个数组是用于储存spinner中的可选数据
     private List<String> building = new ArrayList<>();
     private List<String> room = new ArrayList<>();
@@ -82,7 +90,10 @@ public class MessageActivity extends MessageContract.MessageView implements View
     private List<Integer> buildingID = new ArrayList<>();
     private List<Integer> roomID = new ArrayList<>();
     private List<Integer> typeID = new ArrayList<>();
-    File tempFile ;
+    File tempFile;
+    File file;
+    RequestBody requestBody;
+    MultipartBody multipartBody;
 
     //this port is for toolbar
     @Override
@@ -109,12 +120,12 @@ public class MessageActivity extends MessageContract.MessageView implements View
         setSpinnerAdapter();
         photoImageView.setOnClickListener(this);
         commitButton.setOnClickListener(this);
-        setSpinnerListener ();
+        setSpinnerListener();
 
     }
 
-    public void postMessage(Map<String, Object> map) {
-        messagePresenter.postMessage(map);
+    public void postMessage(Map<String, Object> map, File file) {
+        messagePresenter.postMessage(map, file);
     }
 
     public void getBuildingList() {
@@ -170,7 +181,6 @@ public class MessageActivity extends MessageContract.MessageView implements View
         arrayAdapterType.notifyDataSetChanged();
     }
 
-
     private Map<String, Object> getMap() {
         Map<String, Object> map = new HashMap<>();
         map.put("area_id", buildingID.get(selectedBuilding));
@@ -179,11 +189,11 @@ public class MessageActivity extends MessageContract.MessageView implements View
         //map.put("image", img_ids);
         map.put("detail", messageDescriptEditText.getText().toString());
         map.put("items", type.get(selectedType));
-        map.put("phone",messagePhoneEditText.getText().toString());
+        map.put("phone", messagePhoneEditText.getText().toString());
         return map;
     }
 
-    private void setSpinnerAdapter(){
+    private void setSpinnerAdapter() {
         arrayAdapterBuilding = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, building);
         arrayAdapterBuilding.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerBuilding.setAdapter(arrayAdapterBuilding);
@@ -198,7 +208,7 @@ public class MessageActivity extends MessageContract.MessageView implements View
         context.startActivity(intent);
     }
 
-    private void setSpinnerListener(){
+    private void setSpinnerListener() {
         spinnerBuilding.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -239,7 +249,7 @@ public class MessageActivity extends MessageContract.MessageView implements View
 
     @Override
     public void onClick(View v) {
-        if (v == photoImageView){
+        if (v == photoImageView) {
             String state = Environment.getExternalStorageState();
             if (state.equals(Environment.MEDIA_MOUNTED)) {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -252,10 +262,15 @@ public class MessageActivity extends MessageContract.MessageView implements View
                 Toast.makeText(getApplicationContext(), "请确认已经插入SD卡",
                         Toast.LENGTH_LONG).show();
             }
-        }
-        else if (v == commitButton){
-            map = getMap();
-            postMessage(map);
+        } else if (v == commitButton) {
+            if (file != null){
+                map = getMap();
+                postMessage(map, file);
+            }else{
+                Toast.makeText(getApplicationContext(), "图片是空的！！！！",
+                        Toast.LENGTH_LONG).show();
+            }
+
         }
     }
 
@@ -266,15 +281,51 @@ public class MessageActivity extends MessageContract.MessageView implements View
             case TAKE_PHOTO:
                 if (resultCode == RESULT_OK) {
                     Bitmap bmp = BitmapFactory.decodeFile(tempFile.getAbsolutePath());
+                    file = getFile(zipThePic(tempFile.getAbsolutePath()),Environment.getExternalStorageDirectory()+ "/temp1.jpg");
                     if (bmp != null) {
-                        photoImageView.setImageBitmap(bmp);
-                    }
-                    else {
-                        Toast.makeText(this,"图片是空的",Toast.LENGTH_LONG).show();
+                        photoImageView.setImageBitmap(centerSquareScaleBitmap(bmp, bmp.getWidth()));
+                    } else {
+                        Toast.makeText(this, "图片是空的", Toast.LENGTH_LONG).show();
                     }
                 }
                 break;
         }
+    }
+
+
+    private String getImagePath(Uri uri, String selection) {
+        String path = null;
+        Cursor cursor = getContentResolver().query(uri, null, selection, null, null);
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
+            }
+
+            cursor.close();
+        }
+        return path;
+    }
+
+    private File getFile(byte[] b, String outputFile) {
+        BufferedOutputStream stream = null;
+        File file = null;
+        try {
+            file = new File(outputFile);
+            FileOutputStream fstream = new FileOutputStream(file);
+            stream = new BufferedOutputStream(fstream);
+            stream.write(b);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (stream != null) {
+                try {
+                    stream.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        }
+        return file;
     }
 
     public static File getTempImage() {
@@ -289,6 +340,80 @@ public class MessageActivity extends MessageContract.MessageView implements View
             return tempFile;
         }
         return tempFile;
+    }
+
+    public static Bitmap centerSquareScaleBitmap(Bitmap bitmap, int edgeLength) {
+        if (null == bitmap || edgeLength <= 0) {
+            return null;
+        }
+
+        Bitmap result = bitmap;
+        int widthOrg = bitmap.getWidth();
+        int heightOrg = bitmap.getHeight();
+
+        if (widthOrg > edgeLength && heightOrg > edgeLength) {
+            //压缩到一个最小长度是edgeLength的bitmap
+            int longerEdge = (int) (edgeLength * Math.max(widthOrg, heightOrg) / Math.min(widthOrg, heightOrg));
+            int scaledWidth = widthOrg > heightOrg ? longerEdge : edgeLength;
+            int scaledHeight = widthOrg > heightOrg ? edgeLength : longerEdge;
+            Bitmap scaledBitmap;
+
+            try {
+                scaledBitmap = Bitmap.createScaledBitmap(bitmap, scaledWidth, scaledHeight, true);
+            } catch (Exception e) {
+                return null;
+            }
+
+            //从图中截取正中间的正方形部分。
+            int xTopLeft = (scaledWidth - edgeLength) / 2;
+            int yTopLeft = (scaledHeight - edgeLength) / 2;
+
+            try {
+                result = Bitmap.createBitmap(scaledBitmap, xTopLeft, yTopLeft, edgeLength, edgeLength);
+                scaledBitmap.recycle();
+            } catch (Exception e) {
+                return null;
+            }
+        }
+
+        return result;
+    }
+
+    private byte[] zipThePic(String filePath) {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(filePath, options);
+        int height = options.outHeight;
+        int width = options.outWidth;
+        int inSampleSize = 1;
+        int reqHeight = 800;
+        int reqWidth = 480;
+        if (height > reqHeight || width > reqWidth) {
+            final int heightRatio = Math.round((float) height / (float) reqHeight);
+            final int widthRatio = Math.round((float) width / (float) reqWidth);
+            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+        }
+        options.inSampleSize = calculateInSampleSize(options, 480, 800);
+        options.inJustDecodeBounds = false;
+        Bitmap bitmap = BitmapFactory.decodeFile(filePath, options);
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 60, baos);
+
+        return baos.toByteArray();
+    }
+
+    private static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+            final int heightRatio = Math.round((float) height / (float) reqHeight);
+            final int widthRatio = Math.round((float) width / (float) reqWidth);
+            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+        }
+        return inSampleSize;
     }
 }
 

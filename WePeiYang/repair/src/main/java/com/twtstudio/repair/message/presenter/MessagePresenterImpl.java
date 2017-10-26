@@ -8,7 +8,13 @@ import com.twtstudio.repair.message.TypeListBean;
 import com.twtstudio.repair.message.model.MessageApiClient;
 import com.twtstudio.repair.message.view.MessageActivity;
 
+import java.io.File;
+import java.util.List;
 import java.util.Map;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 
 /**
  * Created by liuyuesen on 2017/9/15.
@@ -23,8 +29,13 @@ public class MessagePresenterImpl extends MessageContract.MessagePresenter {
         this.apiClient = new MessageApiClient(this);
     }
 
-    public void postMessage(Map<String, Object> map) {
-        apiClient.postMessage(map);
+    public void postMessage(Map<String, Object> map, File file) {
+        MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);//表单类型
+        RequestBody imageBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+        builder.addFormDataPart("image", file.getName(), imageBody);//imgfile 后台接收图片流的参数名
+        MultipartBody.Part body = MultipartBody.Part.createFormData("image", file.getName(),imageBody);
+        apiClient.postMessage(map, body);
+
     }
 
     public void getBuildingList() {

@@ -4,3 +4,4 @@
 //include ':devpeiyang'
 //include ':app'
 include ':repair'
+include ':commons'

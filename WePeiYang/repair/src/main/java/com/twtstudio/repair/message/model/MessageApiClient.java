@@ -9,10 +9,15 @@ import com.twtstudio.repair.message.MessageContract;
 import com.twtstudio.repair.message.RoomListBean;
 import com.twtstudio.repair.message.TypeListBean;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Stack;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -30,9 +35,9 @@ public class MessageApiClient extends MessageContract.MessageModel {
     }
 
 
-    public void postMessage(Map<String, Object> map) {
+    public void postMessage(Map<String, Object> map, MultipartBody.Part part) {
         messageApi = RetrofitProvider.getRetrofit().create(MessageApi.class);
-        messageApi.submitMessage(map)
+        messageApi.submitMessage(map,part)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::messageCallBack, new RxErrorHandler());
