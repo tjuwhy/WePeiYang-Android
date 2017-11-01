@@ -43,6 +43,14 @@ public class MessageApiClient extends MessageContract.MessageModel {
                 .subscribe(this::messageCallBack, new RxErrorHandler());
     }
 
+    public void postMessage(Map<String, Object> map) {
+        messageApi = RetrofitProvider.getRetrofit().create(MessageApi.class);
+        messageApi.submitMessage(map)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(this::messageCallBack, new RxErrorHandler());
+    }
+
     public void getBuildingList() {
         messageApi = RetrofitProvider.getRetrofit().create(MessageApi.class);
         messageApi.getBuildingList()

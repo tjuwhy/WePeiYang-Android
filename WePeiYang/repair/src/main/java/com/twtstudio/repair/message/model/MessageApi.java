@@ -32,6 +32,10 @@ public interface MessageApi {
                                           @Part MultipartBody.Part part);
     //@Part("image") RequestBody requestBody);
 
+    @POST("repairs/order/add")
+    Observable<MessageBean> submitMessage(@QueryMap Map<String, Object> usermaps
+                                          );
+
     @GET("repairs/order/area")
     Observable<BuildingListBean> getBuildingList();
 

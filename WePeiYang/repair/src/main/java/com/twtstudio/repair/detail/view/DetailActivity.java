@@ -234,8 +234,7 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
 
                 case 3://学生确认维修完成
                     onRepairFullImage.setVisibility(View.VISIBLE);
-
-                    statusTextView.setText(status[3] + "\n" + detailBean.data.repaired_at + "\n\n" + status[2] + "\n" + detailBean.data.grade.updated_at + "\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
+                    statusTextView.setText(status[3] + "\n" + detailBean.data.repaired_at + "\n\n" + status[2] + "\n" + detailBean.data.repaired_at + "\n\n" + status[1] + "\n" + detailBean.data.reacted_at + "\n\n" + status[0] + "\n" + detailBean.data.created_at);
                     numberTextView.setText(String.valueOf(detailBean.data.id));
                     masterTextView.setText(detailBean.data.accendant.accendant_name);
                     masterPhoneTextView.setText(detailBean.data.accendant.accendant_phone);

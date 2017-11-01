@@ -17,7 +17,11 @@ import okhttp3.RequestBody;
 
 public class MessageContract implements BaseContract {
     public static abstract class MessageView extends BaseActivity {
-        public void postMessage(Map<String, Object> map,File file) {
+        public void postMessage(Map<String, Object> map, File file) {
+        }
+
+        public void postMessage(Map<String, Object> map) {
+
         }
 
         public void getBuildingList() {
@@ -52,7 +56,11 @@ public class MessageContract implements BaseContract {
 
     public static abstract class MessagePresenter implements BaseContract.BasePresenter {
 
-        public void postMessage(Map<String, Object> map,File file) {
+        public void postMessage(Map<String, Object> map, File file) {
+
+        }
+
+        public void postMessage(Map<String, Object> map) {
 
         }
 
@@ -88,6 +96,10 @@ public class MessageContract implements BaseContract {
     public static abstract class MessageModel implements BaseContract.BaseModel {
 
         public void postMessage(Map<String, Object> map, MultipartBody.Part part) {
+
+        }
+
+        public void postMessage(Map<String, Object> map) {
 
         }
 

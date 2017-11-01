@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseActivity;
@@ -56,12 +57,6 @@ public class ComplaintActivity extends ComplaintContract.ComplaintView implement
         complaintCommitButton.setOnClickListener(this);
     }
 
-    public static void activityStart(Context context) {
-        Intent intent = new Intent(context, ComplaintActivity.class);
-        context.startActivity(intent);
-    }
-
-
     @Override
     public void complaintCallBack(ComplaintBean complaintBean) {
         Intent intent = new Intent();
@@ -76,7 +71,16 @@ public class ComplaintActivity extends ComplaintContract.ComplaintView implement
     public void onClick(View v) {
         if (v == complaintCommitButton) {
             complaintPresenter = new ComplaintPresenterImpl(this);
-            complaintPresenter.postData(id, complaintReasonEditText.getText().toString(), complaintDetailEditText.getText().toString());
+            String reason = complaintReasonEditText.getText().toString();
+            String detail = complaintDetailEditText.getText().toString();
+            if (reason != null && detail != null){
+                complaintPresenter.postData(id, complaintReasonEditText.getText().toString(), complaintDetailEditText.getText().toString());
+            }
+            else if (reason == null){
+                Toast.makeText(this,"请您填写投诉原因",Toast.LENGTH_SHORT).show();
+            }else if (detail == null){
+                Toast.makeText(this,"请您填写投诉详情",Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

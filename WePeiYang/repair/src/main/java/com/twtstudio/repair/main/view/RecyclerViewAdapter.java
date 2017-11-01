@@ -70,23 +70,23 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             if (dataBean.complained == 0) {
                 if (dataBean.state == 4) {
                     itemViewHolder.itemStatus.setText("已完成");
-                    itemViewHolder.itemStatus.setTextColor(Color.rgb(128, 255, 00));
+                    itemViewHolder.itemStatus.setTextColor(Color.rgb(254, 210, 44));
                 } else if (dataBean.state == 3) {
                     itemViewHolder.itemStatus.setText("已确认");
-                    itemViewHolder.itemStatus.setTextColor(Color.rgb(128, 255, 00));
+                    itemViewHolder.itemStatus.setTextColor(Color.rgb(254, 210, 44));
                 } else if (dataBean.state == 2) {
                     itemViewHolder.itemStatus.setText("已维修");
-                    itemViewHolder.itemStatus.setTextColor(Color.rgb(128, 255, 00));
+                    itemViewHolder.itemStatus.setTextColor(Color.rgb(254, 210, 44));
                 } else if (dataBean.state == 1) {
                     itemViewHolder.itemStatus.setText("已接收");
-                    itemViewHolder.itemStatus.setTextColor(Color.rgb(128, 255, 00));
+                    itemViewHolder.itemStatus.setTextColor(Color.rgb(254, 210, 44));
                 } else if (dataBean.state == 0) {
                     itemViewHolder.itemStatus.setText("已上报");
-                    itemViewHolder.itemStatus.setTextColor(Color.rgb(128, 255, 00));
+                    itemViewHolder.itemStatus.setTextColor(Color.rgb(254, 210, 44));
                 }
             } else if (dataBean.complained == 1) {
                 itemViewHolder.itemStatus.setText("已投诉");
-                itemViewHolder.itemStatus.setTextColor(Color.rgb(255, 00, 00));
+                itemViewHolder.itemStatus.setTextColor(Color.rgb(255, 51, 51));
             }
 
             itemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {

@@ -92,15 +92,11 @@ dependencies {
     //ratingBar
     compile 'me.zhanghai.android.materialratingbar:library:1.0.2'
 //    compile
-    compile ('com.twt.service:auth:1.1.0') {
-        exclude group: 'com.twtservice', module: 'commons'
-    }
-//    compile 'com.twt.service:commons:1.2.0'
-    compile ('com.twt.service:mvvmkit:1.2.0') {
-        exclude group: 'com.twtservice', module: 'commons'
-    }
+    compile 'com.twt.service:auth:1.1.0'
+    compile 'com.twt.service:commons:1.2.0'
+    compile 'com.twt.service:mvvmkit:1.2.0'
 
 //    compile project(':auth')
 //    compile project(':mvvmKit')
-    compile project(':commons')
+//    compile project(':commons')
 }

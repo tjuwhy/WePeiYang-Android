@@ -24,6 +24,7 @@ import com.twtstudio.retrox.auth.login.LoginActivity;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import butterknife.BindView;
 
@@ -86,13 +87,18 @@ public class EvaluationActivity extends EvaluationContract.EvaluationView implem
         int star1 = (int) speedRatingBar.getRating();
         int star2 = (int) attitudeRatingBar.getRating();
         int star3 = (int) qualityRatingBar.getRating();
-        Map<String, Object> map = new HashMap<>();
-        map.put("order_id", orderId);
-        map.put("star_1", star1);
-        map.put("star_2", star2);
-        map.put("star_3", star3);
-        map.put("comment", detailTextView.getText());
-        return map;
+        if (detailTextView.getText().equals("")){
+            Toast.makeText(this,"请您认真填写评价哦",Toast.LENGTH_LONG).show();
+            return null;
+        }else{
+            Map<String, Object> map = new HashMap<>();
+            map.put("order_id", orderId);
+            map.put("star_1", star1);
+            map.put("star_2", star2);
+            map.put("star_3", star3);
+            map.put("comment", detailTextView.getText());
+            return map;
+        }
     }
 
     @Override
@@ -109,7 +115,10 @@ public class EvaluationActivity extends EvaluationContract.EvaluationView implem
     public void onClick(View v) {
         if (v == commitButton) {
             evaluationPresenter = new EvaluationPresenterImpl(this);
-            evaluationPresenter.postData(getUpdateMap());
+            Map<String,Object> map = getUpdateMap();
+            if (map != null){
+                evaluationPresenter.postData(getUpdateMap());
+            }
         }
     }
 }

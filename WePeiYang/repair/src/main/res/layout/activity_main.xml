@@ -16,20 +16,74 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp">
+
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/main_refresh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/main_recycler_view"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true" />
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/main_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="5dp" />
+
+                <LinearLayout
+                    android:id="@+id/repair_main_no_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="100dp"
+                        android:src="@drawable/nomessage" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="75dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="主子"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="30dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="您还没数据那"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="30dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </FrameLayout>
+
 
         </android.support.v4.widget.SwipeRefreshLayout>
+
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab_main"
             android:layout_width="20dp"
@@ -37,7 +91,7 @@
             android:layout_gravity="bottom|right"
             android:layout_marginBottom="12dp"
             android:layout_marginRight="16dp"
-            android:src="@drawable/repair_add"
+            android:src="@drawable/add3"
             app:fab_colorNormal="@color/colorPrimary"
             app:fab_elevationCompat="3dp" />
     </FrameLayout>

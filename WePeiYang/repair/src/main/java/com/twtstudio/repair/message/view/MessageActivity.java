@@ -1,6 +1,7 @@
 package com.twtstudio.repair.message.view;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
@@ -94,6 +95,7 @@ public class MessageActivity extends MessageContract.MessageView implements View
     File file;
     RequestBody requestBody;
     MultipartBody multipartBody;
+    public static ProgressDialog progressDialog;
 
     //this port is for toolbar
     @Override
@@ -126,6 +128,9 @@ public class MessageActivity extends MessageContract.MessageView implements View
 
     public void postMessage(Map<String, Object> map, File file) {
         messagePresenter.postMessage(map, file);
+    }
+    public void postMessage(Map<String, Object> map) {
+        messagePresenter.postMessage(map);
     }
 
     public void getBuildingList() {
@@ -182,15 +187,25 @@ public class MessageActivity extends MessageContract.MessageView implements View
     }
 
     private Map<String, Object> getMap() {
-        Map<String, Object> map = new HashMap<>();
-        map.put("area_id", buildingID.get(selectedBuilding));
-        map.put("campus_id", campus_id);
-        map.put("room", room.get(selectedRoom));
-        //map.put("image", img_ids);
-        map.put("detail", messageDescriptEditText.getText().toString());
-        map.put("items", type.get(selectedType));
-        map.put("phone", messagePhoneEditText.getText().toString());
-        return map;
+        String tempMessagePhoneEditText = messagePhoneEditText.getText().toString();
+        String tempMessageDescriptEditText = messageDescriptEditText.getText().toString();
+        if (tempMessageDescriptEditText.equals("")){
+            Toast.makeText(getApplicationContext(), "请您认真填写补充描述哦", Toast.LENGTH_LONG).show();
+            return null;
+        }else if (tempMessagePhoneEditText.equals("")){
+            Toast.makeText(getApplicationContext(), "请您填写您的联系电话", Toast.LENGTH_LONG).show();
+            return null;
+        }else {
+            Map<String, Object> map = new HashMap<>();
+            map.put("area_id", buildingID.get(selectedBuilding));
+            map.put("campus_id", campus_id);
+            map.put("room", room.get(selectedRoom));
+            //map.put("image", img_ids);
+            map.put("detail", messageDescriptEditText.getText().toString());
+            map.put("items", type.get(selectedType));
+            map.put("phone", messagePhoneEditText.getText().toString());
+            return map;
+        }
     }
 
     private void setSpinnerAdapter() {
@@ -201,11 +216,6 @@ public class MessageActivity extends MessageContract.MessageView implements View
         spinnerRoom.setAdapter(arrayAdapterRoom);
         arrayAdapterType = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, type);
         spinnerType.setAdapter(arrayAdapterType);
-    }
-
-    public static void activityStart(Context context) {
-        Intent intent = new Intent(context, MessageActivity.class);
-        context.startActivity(intent);
     }
 
     private void setSpinnerListener() {
@@ -263,14 +273,13 @@ public class MessageActivity extends MessageContract.MessageView implements View
                         Toast.LENGTH_LONG).show();
             }
         } else if (v == commitButton) {
-            if (file != null){
-                map = getMap();
+            map = getMap();
+            if ( map != null && file != null) {
                 postMessage(map, file);
-            }else{
-                Toast.makeText(getApplicationContext(), "图片是空的！！！！",
-                        Toast.LENGTH_LONG).show();
             }
-
+            else if (map != null && file == null){
+                postMessage(map);
+            }
         }
     }
 
@@ -281,29 +290,15 @@ public class MessageActivity extends MessageContract.MessageView implements View
             case TAKE_PHOTO:
                 if (resultCode == RESULT_OK) {
                     Bitmap bmp = BitmapFactory.decodeFile(tempFile.getAbsolutePath());
-                    file = getFile(zipThePic(tempFile.getAbsolutePath()),Environment.getExternalStorageDirectory()+ "/temp1.jpg");
+                    file = getFile(zipThePic(tempFile.getAbsolutePath()), Environment.getExternalStorageDirectory() + "/temp1.jpg");
                     if (bmp != null) {
-                        photoImageView.setImageBitmap(centerSquareScaleBitmap(bmp, bmp.getWidth()));
+                        photoImageView.setImageBitmap(ImageCrop(bmp, false));
                     } else {
                         Toast.makeText(this, "图片是空的", Toast.LENGTH_LONG).show();
                     }
                 }
                 break;
         }
-    }
-
-
-    private String getImagePath(Uri uri, String selection) {
-        String path = null;
-        Cursor cursor = getContentResolver().query(uri, null, selection, null, null);
-        if (cursor != null) {
-            if (cursor.moveToFirst()) {
-                path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
-            }
-
-            cursor.close();
-        }
-        return path;
     }
 
     private File getFile(byte[] b, String outputFile) {
@@ -342,41 +337,31 @@ public class MessageActivity extends MessageContract.MessageView implements View
         return tempFile;
     }
 
-    public static Bitmap centerSquareScaleBitmap(Bitmap bitmap, int edgeLength) {
-        if (null == bitmap || edgeLength <= 0) {
+    public static Bitmap ImageCrop(Bitmap bitmap, boolean isRecycled) {
+
+        if (bitmap == null) {
             return null;
         }
 
-        Bitmap result = bitmap;
-        int widthOrg = bitmap.getWidth();
-        int heightOrg = bitmap.getHeight();
+        int w = bitmap.getWidth(); // 得到图片的宽，高
+        int h = bitmap.getHeight();
 
-        if (widthOrg > edgeLength && heightOrg > edgeLength) {
-            //压缩到一个最小长度是edgeLength的bitmap
-            int longerEdge = (int) (edgeLength * Math.max(widthOrg, heightOrg) / Math.min(widthOrg, heightOrg));
-            int scaledWidth = widthOrg > heightOrg ? longerEdge : edgeLength;
-            int scaledHeight = widthOrg > heightOrg ? edgeLength : longerEdge;
-            Bitmap scaledBitmap;
+        int wh = w > h ? h : w;// 裁切后所取的正方形区域边长
 
-            try {
-                scaledBitmap = Bitmap.createScaledBitmap(bitmap, scaledWidth, scaledHeight, true);
-            } catch (Exception e) {
-                return null;
-            }
+        int retX = w > h ? (w - h) / 2 : 0;// 基于原图，取正方形左上角x坐标
+        int retY = w > h ? 0 : (h - w) / 2;
 
-            //从图中截取正中间的正方形部分。
-            int xTopLeft = (scaledWidth - edgeLength) / 2;
-            int yTopLeft = (scaledHeight - edgeLength) / 2;
-
-            try {
-                result = Bitmap.createBitmap(scaledBitmap, xTopLeft, yTopLeft, edgeLength, edgeLength);
-                scaledBitmap.recycle();
-            } catch (Exception e) {
-                return null;
-            }
+        Bitmap bmp = Bitmap.createBitmap(bitmap, retX, retY, wh, wh, null,
+                false);
+        if (isRecycled && bitmap != null && !bitmap.equals(bmp)
+                && !bitmap.isRecycled()) {
+            bitmap.recycle();
+            bitmap = null;
         }
 
-        return result;
+        // 下面这句是关键
+        return bmp;// Bitmap.createBitmap(bitmap, retX, retY, wh, wh, null,
+        // false);
     }
 
     private byte[] zipThePic(String filePath) {
@@ -415,5 +400,18 @@ public class MessageActivity extends MessageContract.MessageView implements View
         }
         return inSampleSize;
     }
+
+//    private void ShowLoadingDialog (Context context,String message,boolean isCancelable){
+//        if (processDia == null) {
+//            processDia= new ProgressDialog(context,R.style.dialog);
+//            //点击提示框外面是否取消提示框
+//            processDia.setCanceledOnTouchOutside(false);
+//            //点击返回键是否取消提示框
+//            processDia.setCancelable(isCancelable);
+//            processDia.setIndeterminate(true);
+//            processDia.setMessage(message);
+//            processDia.show();
+//        }
+//    }
 }
 

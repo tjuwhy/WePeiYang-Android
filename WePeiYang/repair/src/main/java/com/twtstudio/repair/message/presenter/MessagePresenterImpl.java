@@ -35,7 +35,10 @@ public class MessagePresenterImpl extends MessageContract.MessagePresenter {
         builder.addFormDataPart("image", file.getName(), imageBody);//imgfile 后台接收图片流的参数名
         MultipartBody.Part body = MultipartBody.Part.createFormData("image", file.getName(),imageBody);
         apiClient.postMessage(map, body);
+    }
 
+    public void postMessage(Map<String, Object> map) {
+        apiClient.postMessage(map);
     }
 
     public void getBuildingList() {

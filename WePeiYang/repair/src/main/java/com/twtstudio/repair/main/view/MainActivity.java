@@ -8,12 +8,15 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.twtstudio.repair.R;
 import com.twtstudio.repair.base.BaseBean;
 import com.twtstudio.repair.evaluation.view.EvaluationActivity;
+import com.twtstudio.repair.evaluation.view.EvaluationSuccessActivity;
 import com.twtstudio.repair.main.MainBean;
 import com.twtstudio.repair.main.MainContract;
 import com.twtstudio.repair.main.presenter.MainPresenterImpl;
@@ -28,13 +31,7 @@ import static com.twtstudio.repair.main.MainContract.*;
 
 
 public class MainActivity extends MainContract.MainView {
-    final private int RED = 110;
-    final private int GREEN = 111;
-    final private int BLUE = 112;
     final private int YELLOW = 113;
-    final private int GRAY= 114;
-    final private int CYAN= 115;
-    final private int BLACK= 116;
     @BindView(R.id.main_recycler_view)
     RecyclerView recyclerView;
     @BindView(R.id.main_refresh)
@@ -43,11 +40,14 @@ public class MainActivity extends MainContract.MainView {
     Toolbar toolbar;
     @BindView(R.id.fab_main)
     FloatingActionButton floatingActionButton;
+    @BindView(R.id.repair_main_no_message)
+    LinearLayout noMessageLinearLayout;
     RecyclerViewAdapter recyclerViewAdapter;
     LinearLayoutManager layoutManager;
     MainContract.MainPresenter mainPresenter;
     MainBean mainBean = new MainBean();
 
+    boolean haveData = false;
     int mPreviousVisibleItem = 1;
     boolean isLoadingData = false;
 
@@ -70,36 +70,18 @@ public class MainActivity extends MainContract.MainView {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(1,RED,4,"红色");
-        menu.add(1,GREEN,2,"绿色");
-        menu.add(1,BLUE,3,"蓝色");
-        menu.add(1,YELLOW,1,"黄色");
-        menu.add(1,GRAY,5,"灰色");
-        menu.add(1,CYAN,6,"蓝绿色");
-        menu.add(1,BLACK,7,"黑色");
+        menu.add(1, YELLOW, 1, "登录");
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id){
-            case RED:
-                break;
-            case GREEN:
-                break;
-            case BLUE:
-                break;
+        switch (id) {
             case YELLOW:
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
-                break;
-            case GRAY:
-                break;
-            case CYAN:
-                break;
-            case BLACK:
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -115,16 +97,21 @@ public class MainActivity extends MainContract.MainView {
         recyclerViewAdapter = new RecyclerViewAdapter(this, mainBean);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(recyclerViewAdapter);
-        mainPresenter.getData();
+        onNoData(haveData);
         floatingActionButton.show(true);
-        floatingActionButton.hide(false);
+//        floatingActionButton.hide(false);
 
-        floatingActionButton.setOnClickListener(v -> MessageActivity.activityStart(MainActivity.this));
+        floatingActionButton.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, MessageActivity.class);
+            startActivity(intent);
+        });
 
         refreshLayout.setOnRefreshListener(() -> {
-            if ( isLoadingData == false){
+            if (isLoadingData == false) {
                 isLoadingData = true;
                 mainPresenter.getData();
+                floatingActionButton.show(true);
             }
 
         });
@@ -161,6 +148,17 @@ public class MainActivity extends MainContract.MainView {
         });
     }
 
+    private void onNoData (boolean haveData){
+        if (haveData){
+            recyclerView.setVisibility(View.VISIBLE);
+            noMessageLinearLayout.setVisibility(View.INVISIBLE);
+        }
+        else{
+            recyclerView.setVisibility(View.INVISIBLE);
+            noMessageLinearLayout.setVisibility(View.VISIBLE);
+        }
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -169,6 +167,7 @@ public class MainActivity extends MainContract.MainView {
 
     @Override
     public void getData() {
+        refreshLayout.setRefreshing(true);
         mainPresenter.getData();
     }
 
@@ -179,6 +178,13 @@ public class MainActivity extends MainContract.MainView {
         this.mainBean.data.addAll(mainBean.data);
         recyclerViewAdapter.notifyDataSetChanged();
         isLoadingData = false;
+        if (this.mainBean.data != null){
+            haveData = true;
+        }
+        else{
+            haveData = false;
+        }
+        onNoData(haveData);
     }
 
 }
