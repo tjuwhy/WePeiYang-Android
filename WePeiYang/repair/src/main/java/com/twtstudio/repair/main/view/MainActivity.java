@@ -20,10 +20,14 @@ import com.twtstudio.repair.evaluation.view.EvaluationSuccessActivity;
 import com.twtstudio.repair.main.MainBean;
 import com.twtstudio.repair.main.MainContract;
 import com.twtstudio.repair.main.presenter.MainPresenterImpl;
+import com.twtstudio.repair.message.RoomListBean;
 import com.twtstudio.repair.message.view.MessageActivity;
 import com.twtstudio.retrox.auth.login.LoginActivity;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -167,15 +171,18 @@ public class MainActivity extends MainContract.MainView {
 
     @Override
     public void getData() {
+        isLoadingData = true;
         refreshLayout.setRefreshing(true);
         mainPresenter.getData();
     }
 
     @Override
     public void setData(MainBean mainBean) {
+        List<MainBean.DataBean> dataBeanList = mainBean.data;
+        Collections.reverse(dataBeanList);
         refreshLayout.setRefreshing(false);
         this.mainBean.data.clear();
-        this.mainBean.data.addAll(mainBean.data);
+        this.mainBean.data.addAll(dataBeanList);
         recyclerViewAdapter.notifyDataSetChanged();
         isLoadingData = false;
         if (this.mainBean.data != null){
@@ -186,5 +193,4 @@ public class MainActivity extends MainContract.MainView {
         }
         onNoData(haveData);
     }
-
 }

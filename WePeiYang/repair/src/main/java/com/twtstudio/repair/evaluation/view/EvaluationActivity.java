@@ -41,8 +41,8 @@ public class EvaluationActivity extends EvaluationContract.EvaluationView implem
     TextView detailTextView;
     @BindView(R.id.repair_evaluation_commit_button)
     Button commitButton;
-    DetailActivity detailActivity;
 
+    boolean onLoading = false;
     EvaluationContract.EvaluationPresenter evaluationPresenter;
 
 
@@ -87,7 +87,7 @@ public class EvaluationActivity extends EvaluationContract.EvaluationView implem
         int star1 = (int) speedRatingBar.getRating();
         int star2 = (int) attitudeRatingBar.getRating();
         int star3 = (int) qualityRatingBar.getRating();
-        if (detailTextView.getText().equals("")){
+        if (detailTextView.getText().toString().equals("")){
             Toast.makeText(this,"请您认真填写评价哦",Toast.LENGTH_LONG).show();
             return null;
         }else{
@@ -103,6 +103,7 @@ public class EvaluationActivity extends EvaluationContract.EvaluationView implem
 
     @Override
     public void EvaluationCallBack(EvaluationBean evaluationBean) {
+        onLoading = false;
         Intent intent = new Intent();
         intent.putExtra("message", evaluationBean.message);
         intent.setClass(this, EvaluationSuccessActivity.class);
@@ -114,11 +115,15 @@ public class EvaluationActivity extends EvaluationContract.EvaluationView implem
     @Override
     public void onClick(View v) {
         if (v == commitButton) {
-            evaluationPresenter = new EvaluationPresenterImpl(this);
-            Map<String,Object> map = getUpdateMap();
-            if (map != null){
-                evaluationPresenter.postData(getUpdateMap());
+            if (onLoading == false){
+                evaluationPresenter = new EvaluationPresenterImpl(this);
+                Map<String,Object> map = getUpdateMap();
+                if (map != null){
+                    evaluationPresenter.postData(map);
+                    onLoading = true;
+                }
             }
+
         }
     }
 }

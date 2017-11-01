@@ -51,11 +51,11 @@ public class CommitSuccessActivity extends MessageContract.MessageView {
         message = intent.getStringExtra("message");
         if (message == null) {
             commitSuccessCardView.setVisibility(View.VISIBLE);
-            Toast.makeText(this,"添加评分成功", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"报修成功", Toast.LENGTH_LONG).show();
         }
         else {
             commitFailardCardView.setVisibility(View.VISIBLE);
-            Toast.makeText(this,"评分添加失败",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"报修失败",Toast.LENGTH_LONG).show();
         }
     }
 }

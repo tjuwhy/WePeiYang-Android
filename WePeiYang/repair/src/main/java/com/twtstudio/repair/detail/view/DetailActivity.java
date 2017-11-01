@@ -284,7 +284,7 @@ public class DetailActivity extends DetailView implements View.OnClickListener {
     }
 
     public void deleteCallBack(DeleteBean deleteBean) {
-        Toast.makeText(this, "删除成功", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "删除成功", Toast.LENGTH_SHORT).show();
         finish();
     }
 

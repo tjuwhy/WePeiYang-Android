@@ -79,9 +79,7 @@ public class MessageActivity extends MessageContract.MessageView implements View
     ArrayAdapter<String> arrayAdapterBuilding;
     ArrayAdapter<String> arrayAdapterRoom;
     ArrayAdapter<String> arrayAdapterType;
-    boolean isGetBuilding = false;
-    boolean isGetRoom = false;
-    boolean isGetType = false;
+    boolean onLoading = false;
     private final int TAKE_PHOTO = 0;
     private final int TAKE_PHOTO_REQUEST_CODE = 0;
     //这下面的两个数组是用于储存spinner中的可选数据
@@ -91,11 +89,9 @@ public class MessageActivity extends MessageContract.MessageView implements View
     private List<Integer> buildingID = new ArrayList<>();
     private List<Integer> roomID = new ArrayList<>();
     private List<Integer> typeID = new ArrayList<>();
+
     File tempFile;
     File file;
-    RequestBody requestBody;
-    MultipartBody multipartBody;
-    public static ProgressDialog progressDialog;
 
     //this port is for toolbar
     @Override
@@ -123,7 +119,6 @@ public class MessageActivity extends MessageContract.MessageView implements View
         photoImageView.setOnClickListener(this);
         commitButton.setOnClickListener(this);
         setSpinnerListener();
-
     }
 
     public void postMessage(Map<String, Object> map, File file) {
@@ -134,18 +129,29 @@ public class MessageActivity extends MessageContract.MessageView implements View
     }
 
     public void getBuildingList() {
-        messagePresenter.getBuildingList();
+        if (onLoading == false){
+            onLoading =true;
+            messagePresenter.getBuildingList();
+        }
     }
 
     public void getRoomList(int area_id) {
-        messagePresenter.getRoomList(area_id);
+        if (onLoading == false){
+            onLoading = true;
+            messagePresenter.getRoomList(area_id);
+        }
     }
 
     public void getTypeList(int type_id) {
-        messagePresenter.getTypeList(type_id);
+        if (onLoading == false){
+            onLoading = true;
+            messagePresenter.getTypeList(type_id);
+        }
+
     }
 
     public void messageCallBack(MessageBean messageBean) {
+        onLoading = false;
         Intent intent = new Intent();
         intent.putExtra("message", messageBean.err_msg);
         intent.setClass(MessageActivity.this, CommitSuccessActivity.class);
@@ -154,35 +160,35 @@ public class MessageActivity extends MessageContract.MessageView implements View
     }
 
     public void getBuildingListCallBack(BuildingListBean buildingListBean) {
+        onLoading = false;
         building.clear();
         buildingID.clear();
         for (int i = 0; i < buildingListBean.data.size(); i++) {
             building.add(buildingListBean.data.get(i).area_name);
             buildingID.add(buildingListBean.data.get(i).id);
         }
-        isGetBuilding = true;
         arrayAdapterBuilding.notifyDataSetChanged();
     }
 
     public void getRoomListCallBack(RoomListBean roomListBean) {
+        onLoading = false;
         room.clear();
         roomID.clear();
         for (int i = 1; i < roomListBean.data.size(); i++) {
             room.add(roomListBean.data.get(i).room);
             roomID.add(roomListBean.data.get(i).type);
         }
-        isGetRoom = true;
         arrayAdapterRoom.notifyDataSetChanged();
     }
 
     public void getTypeListCallBack(TypeListBean typeListBean) {
+        onLoading = false;
         type.clear();
         typeID.clear();
         for (int i = 1; i < typeListBean.data.size(); i++) {
             type.add(typeListBean.data.get(i).item);
             typeID.add(typeListBean.data.get(i).type);
         }
-        isGetType = true;
         arrayAdapterType.notifyDataSetChanged();
     }
 
@@ -200,7 +206,6 @@ public class MessageActivity extends MessageContract.MessageView implements View
             map.put("area_id", buildingID.get(selectedBuilding));
             map.put("campus_id", campus_id);
             map.put("room", room.get(selectedRoom));
-            //map.put("image", img_ids);
             map.put("detail", messageDescriptEditText.getText().toString());
             map.put("items", type.get(selectedType));
             map.put("phone", messagePhoneEditText.getText().toString());
@@ -273,13 +278,18 @@ public class MessageActivity extends MessageContract.MessageView implements View
                         Toast.LENGTH_LONG).show();
             }
         } else if (v == commitButton) {
-            map = getMap();
-            if ( map != null && file != null) {
-                postMessage(map, file);
+            if (onLoading == false){
+                map = getMap();
+                if ( map != null && file != null) {
+                    postMessage(map, file);
+                    onLoading = true;
+                }
+                else if (map != null && file == null){
+                    postMessage(map);
+                    onLoading = true;
+                }
             }
-            else if (map != null && file == null){
-                postMessage(map);
-            }
+
         }
     }
 
@@ -401,17 +411,5 @@ public class MessageActivity extends MessageContract.MessageView implements View
         return inSampleSize;
     }
 
-//    private void ShowLoadingDialog (Context context,String message,boolean isCancelable){
-//        if (processDia == null) {
-//            processDia= new ProgressDialog(context,R.style.dialog);
-//            //点击提示框外面是否取消提示框
-//            processDia.setCanceledOnTouchOutside(false);
-//            //点击返回键是否取消提示框
-//            processDia.setCancelable(isCancelable);
-//            processDia.setIndeterminate(true);
-//            processDia.setMessage(message);
-//            processDia.show();
-//        }
-//    }
 }
 

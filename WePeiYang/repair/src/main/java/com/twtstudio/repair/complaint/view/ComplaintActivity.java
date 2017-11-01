@@ -28,7 +28,7 @@ public class ComplaintActivity extends ComplaintContract.ComplaintView implement
     @BindView(R.id.editText_detail_complaint)
     EditText complaintDetailEditText;
     ComplaintContract.ComplaintPresenter complaintPresenter;
-
+    boolean onLoading;
     int id;
 
     @Override
@@ -59,6 +59,7 @@ public class ComplaintActivity extends ComplaintContract.ComplaintView implement
 
     @Override
     public void complaintCallBack(ComplaintBean complaintBean) {
+        onLoading = false;
         Intent intent = new Intent();
         intent.putExtra("message", complaintBean.message);
         intent.setClass(this, ComplaintSuccessActivity.class);
@@ -70,16 +71,18 @@ public class ComplaintActivity extends ComplaintContract.ComplaintView implement
     @Override
     public void onClick(View v) {
         if (v == complaintCommitButton) {
-            complaintPresenter = new ComplaintPresenterImpl(this);
-            String reason = complaintReasonEditText.getText().toString();
-            String detail = complaintDetailEditText.getText().toString();
-            if (reason != null && detail != null){
-                complaintPresenter.postData(id, complaintReasonEditText.getText().toString(), complaintDetailEditText.getText().toString());
-            }
-            else if (reason == null){
-                Toast.makeText(this,"请您填写投诉原因",Toast.LENGTH_SHORT).show();
-            }else if (detail == null){
-                Toast.makeText(this,"请您填写投诉详情",Toast.LENGTH_SHORT).show();
+            if (onLoading == false){
+                complaintPresenter = new ComplaintPresenterImpl(this);
+                String reason = complaintReasonEditText.getText().toString();
+                String detail = complaintDetailEditText.getText().toString();
+                if (reason.equals("") == false && detail.equals("") == false) {
+                    complaintPresenter.postData(id, reason, detail);
+                    onLoading = true;
+                } else if (reason.equals("")) {
+                    Toast.makeText(this, "请您填写投诉原因", Toast.LENGTH_SHORT).show();
+                } else if (detail.equals("")) {
+                    Toast.makeText(this, "请您填写投诉详情", Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }

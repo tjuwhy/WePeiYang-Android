@@ -19,14 +19,16 @@
         android:orientation="vertical">
 
         <include
+            android:visibility="invisible"
             android:id="@+id/repair_complaint_fail_image"
-            layout="@layout/cardview_success_onsuccess_complaint"
+            layout="@layout/cardview_success_onfail_complaint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <include
+            android:visibility="invisible"
             android:id="@+id/repair_complaint_success_image"
-            layout="@layout/cardview_success_onfail_complaint"
+            layout="@layout/cardview_success_onsuccess_complaint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </RelativeLayout>

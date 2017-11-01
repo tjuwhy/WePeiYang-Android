@@ -1,6 +1,7 @@
 package com.twtstudio.repair.complaint.model;
 
 import com.twt.wepeiyang.commons.network.RetrofitProvider;
+import com.twt.wepeiyang.commons.network.RxErrorHandler;
 import com.twtstudio.repair.complaint.ComplaintBean;
 import com.twtstudio.repair.complaint.ComplaintContract;
 import com.twtstudio.repair.main.MainBean;
@@ -26,8 +27,7 @@ public class ComplaintApiClient extends ComplaintContract.ComplaintModel {
         complaintApi.setComplaintData(order_id, reason, detail)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe();
-
+                .subscribe(this::complaintCallBack, new RxErrorHandler());
     }
 
     @Override

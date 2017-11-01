@@ -52,17 +52,16 @@ public class ComplaintSuccessActivity extends BaseActivity {
         message = intent.getStringExtra("message");
         if (Objects.equals(message, "")) {
             complaintSuccessImage.setVisibility(View.VISIBLE);
-            Toast.makeText(this, "添加评分成功", Toast.LENGTH_LONG).show();
-
-        } else if (message.equals("已经添加过评分")) {
+            Toast.makeText(this, "添加评分成功", Toast.LENGTH_SHORT).show();
+        } else if (message.equals("维修单投诉失败")) {
             complaintFailImage.setVisibility(View.VISIBLE);
-            Toast.makeText(this, "您已经添加过评分啦", Toast.LENGTH_LONG).show();
-        } else if (message.equals("评分添加失败")) {
+            Toast.makeText(this, "维修单投诉失败", Toast.LENGTH_SHORT).show();
+        } else if (message.equals("维修单投诉记录失败")) {
             complaintFailImage.setVisibility(View.VISIBLE);
-            Toast.makeText(this, "评分添加失败", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "维修单投诉记录失败", Toast.LENGTH_SHORT).show();
         } else {
             complaintFailImage.setVisibility(View.VISIBLE);
-            Toast.makeText(this, "评分添加失败", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "维修单投诉失败", Toast.LENGTH_SHORT).show();
         }
     }
 }
