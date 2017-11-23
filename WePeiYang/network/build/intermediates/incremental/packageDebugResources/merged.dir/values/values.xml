@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="default_connection_order">
+        <item>tjuwlan优先</item>
+        <item>tju_lib优先</item>
+    </string-array>
+    <string-array name="default_connection_value">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <color name="colorAccent">#00a1e9</color>
+    <color name="colorPrimary">#00a1e9</color>
+    <color name="colorPrimaryDark">#00a1e9</color>
+    <color name="main_net">#00a1e9</color>
+    <color name="main_net_unselected">#c8ccd3</color>
+    <color name="net_background">#eeeeee</color>
+    <color name="net_black">#000000</color>
+    <color name="net_common_word">#666666</color>
+    <color name="net_hint_blue">#86daff</color>
+    <color name="net_hint_gray">#c8ccd3</color>
+    <color name="net_icon_background">#13a8df</color>
+    <color name="net_main_word">#333333</color>
+    <color name="net_sub_word">#999999</color>
+    <color name="net_switch">#cccccc</color>
+    <color name="net_white">#ffffff</color>
+    <color name="widget_word">#2e2e2e</color>
+    <string name="app_name">一键上网</string>
+    <string name="item_account_leftdata">剩余流量：</string>
+    <string name="item_account_pay">账户与流量充值（当前余额：</string>
+    <string name="item_account_tv1">本月流量（共</string>
+    <string name="item_account_tv2">）</string>
+    <string name="item_account_usagedata">已用流量：</string>
+    <string name="item_spy_ip">IP地址：</string>
+    <string name="item_spy_time">上线时间：</string>
+    <string name="pref_auto_connect_wlan">pref_auto_connect_wlan</string>
+    <string name="pref_auto_logout">pref_auto_logout</string>
+    <string name="pref_default_connect_order">pref_default_connect_order</string>
+    <string name="pref_default_value">0</string>
+    <string name="status">状态：</string>
+    <string name="studentid">学号：</string>
+    <string name="username">姓名：</string>
+    <string name="widget_wifi_name">已接入校园网：</string>
+    <string name="widget_wifi_status">接入状态：</string>
+    <string name="widget_wlan_status">WLAN状态：</string>
+    <string name="wlan_name">热点名称：</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/main_net</item>
+
+    </style>
+    <style name="Dialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="NetworkCheckboxStyle" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/network_checkbox_selector</item>
+
+    </style>
+    <style name="NetworkEditTextStyle" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/widget_word</item>
+    </style>
+</resources>

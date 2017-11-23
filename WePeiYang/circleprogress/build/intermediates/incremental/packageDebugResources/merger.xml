@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main$Generated" generated="true"><source path="/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/src/main/res"/><source path="/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/generated/res/rs/debug"/><source path="/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/generated/res/resValues/debug"/></dataSet><dataSet config="debug$Generated" generated="true"><source path="/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/src/debug/res"/></dataSet><dataSet config="main" generated-set="main$Generated"><source path="/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/src/main/res"><file path="/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/src/main/res/values/dimens.xml" qualifiers=""><dimen name="text_size_31">31sp</dimen><dimen name="text_size_32">32sp</dimen><dimen name="text_size_10">10sp</dimen><dimen name="text_size_33">33sp</dimen><dimen name="text_size_11">11sp</dimen><dimen name="xlarge">25dp</dimen><dimen name="text_size_34">34sp</dimen><dimen name="text_size_12">12sp</dimen><dimen name="text_size_35">35sp</dimen><dimen name="text_size_13">13sp</dimen><dimen name="text_size_8">8sp</dimen><dimen name="text_size_14">14sp</dimen><dimen name="text_size_9">9sp</dimen><dimen name="normal">15dp</dimen><dimen name="text_size_15">15sp</dimen><dimen name="text_size_16">16sp</dimen><dimen name="text_size_7">7sp</dimen><dimen name="text_size_30">30sp</dimen><dimen name="text_size_17">17sp</dimen><dimen name="text_size_18">18sp</dimen><dimen name="text_size_19">19sp</dimen><dimen name="text_size_20">20sp</dimen><dimen name="text_size_21">21sp</dimen><dimen name="text_size_22">22sp</dimen><dimen name="text_size_23">23sp</dimen><dimen name="text_size_24">24sp</dimen><dimen name="text_size_25">25sp</dimen><dimen name="text_size_26">26sp</dimen><dimen name="medium">10dp</dimen><dimen name="xxlarge">30dp</dimen><dimen name="large">20dp</dimen><dimen name="small">5dp</dimen><dimen name="text_size_28">28sp</dimen><dimen name="text_size_29">29sp</dimen></file><file path="/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/src/main/res/values/strings.xml" qualifiers=""><string name="app_name">CircleProgress</string></file><file path="/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/src/main/res/values/attrs.xml" qualifiers=""><attr format="boolean" name="antiAlias"/><attr format="integer" name="animTime"/><attr format="float" name="startAngle"/><attr format="color|reference" name="valueColor"/><declare-styleable name="WaveProgress">
+        
+        <attr name="antiAlias"/>
+        
+        <attr format="integer" name="darkWaveAnimTime"/>
+        
+        <attr format="integer" name="lightWaveAnimTime"/>
+        
+        <attr name="maxValue"/>
+        
+        <attr name="value"/>
+        <attr name="valueColor"/>
+        <attr name="valueSize"/>
+        
+        <attr name="hint"/>
+        <attr name="hintSize"/>
+        <attr name="hintColor"/>
+        
+        <attr format="dimension" name="circleWidth"/>
+        
+        <attr format="color|reference" name="circleColor"/>
+        
+        <attr format="color|reference" name="bgCircleColor"/>
+        
+        <attr format="boolean" name="lockWave"/>
+        
+        <attr format="integer" name="waveNum"/>
+        
+        <attr format="dimension" name="waveHeight"/>
+        
+        <attr format="color|reference" name="darkWaveColor"/>
+        
+        <attr format="boolean" name="showLightWave"/>
+        
+        <attr format="color|reference" name="lightWaveColor"/>
+        
+        <attr format="enum" name="lightWaveDirect">
+            <enum name="L2R" value="0"/>
+            <enum name="R2L" value="1"/>
+        </attr>
+    </declare-styleable><attr format="integer" name="precision"/><attr format="dimension" name="unitSize"/><attr format="float" name="value"/><declare-styleable name="DialProgress">
+        <attr name="antiAlias"/>
+        <attr name="startAngle"/>
+        <attr name="sweepAngle"/>
+        <attr name="animTime"/>
+        <attr name="maxValue"/>
+        <attr name="value"/>
+        <attr name="precision"/>
+        <attr name="valueSize"/>
+        <attr name="valueColor"/>
+        <attr name="textOffsetPercentInRadius"/>
+        
+        <attr name="unit"/>
+        <attr name="unitSize"/>
+        <attr name="unitColor"/>
+        
+        <attr name="hint"/>
+        <attr name="hintSize"/>
+        <attr name="hintColor"/>
+        
+        <attr name="arcWidth"/>
+        
+        <attr format="dimension|reference" name="dialWidth"/>
+        
+        <attr format="integer" name="dialIntervalDegree"/>
+        
+        <attr name="arcColors"/>
+        
+        <attr name="bgArcColor"/>
+        
+        <attr format="color|reference" name="dialColor"/>
+    </declare-styleable><attr format="color|reference" name="arcColor2"/><attr format="color|reference" name="hintColor"/><attr format="color|reference" name="arcColor1"/><attr format="float" name="sweepAngle"/><attr format="float" name="maxValue"/><attr format="color|reference" name="arcColor3"/><attr format="color|reference" name="arcColors"/><attr format="dimension" name="valueSize"/><attr format="color|reference" name="unitColor"/><declare-styleable name="CircleProgressBar">
+        <attr name="antiAlias"/>
+        <attr name="startAngle"/>
+        <attr name="sweepAngle"/>
+        <attr name="animTime"/>
+        <attr name="maxValue"/>
+        <attr name="value"/>
+        <attr name="precision"/>
+        <attr name="valueSize"/>
+        <attr name="valueColor"/>
+        <attr name="textOffsetPercentInRadius"/>
+        
+        <attr name="hint"/>
+        <attr name="hintSize"/>
+        <attr name="hintColor"/>
+        
+        <attr name="unit"/>
+        <attr name="unitSize"/>
+        <attr name="unitColor"/>
+        
+        <attr name="arcWidth"/>
+        <attr name="arcColors"/>
+        
+        <attr name="bgArcColor"/>
+        
+        <attr format="dimension" name="bgArcWidth"/>
+    </declare-styleable><attr format="color|reference" name="bgArcColor"/><attr format="dimension" name="hintSize"/><attr format="float" name="textOffsetPercentInRadius"/><attr format="string|reference" name="unit"/><attr format="string|reference" name="hint"/><attr format="dimension" name="arcWidth"/></file></source><source path="/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/generated/res/rs/debug"/><source path="/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/generated/res/resValues/debug"/></dataSet><dataSet config="debug" generated-set="debug$Generated"><source path="/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/src/debug/res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="DialProgress"><attr name="antiAlias"/><attr name="startAngle"/><attr name="sweepAngle"/><attr name="animTime"/><attr name="maxValue"/><attr name="value"/><attr name="precision"/><attr name="valueSize"/><attr name="valueColor"/><attr name="textOffsetPercentInRadius"/><attr name="unit"/><attr name="unitSize"/><attr name="unitColor"/><attr name="hint"/><attr name="hintSize"/><attr name="hintColor"/><attr name="arcWidth"/><attr format="dimension|reference" name="dialWidth"/><attr format="integer" name="dialIntervalDegree"/><attr name="arcColors"/><attr name="bgArcColor"/><attr format="color|reference" name="dialColor"/></declare-styleable><declare-styleable name="WaveProgress"><attr name="antiAlias"/><attr format="integer" name="darkWaveAnimTime"/><attr format="integer" name="lightWaveAnimTime"/><attr name="maxValue"/><attr name="value"/><attr name="valueColor"/><attr name="valueSize"/><attr name="hint"/><attr name="hintSize"/><attr name="hintColor"/><attr format="dimension" name="circleWidth"/><attr format="color|reference" name="circleColor"/><attr format="color|reference" name="bgCircleColor"/><attr format="boolean" name="lockWave"/><attr format="integer" name="waveNum"/><attr format="dimension" name="waveHeight"/><attr format="color|reference" name="darkWaveColor"/><attr format="boolean" name="showLightWave"/><attr format="color|reference" name="lightWaveColor"/><attr format="enum" name="lightWaveDirect">
+            <enum name="L2R" value="0"/>
+            <enum name="R2L" value="1"/>
+        </attr></declare-styleable><declare-styleable name="CircleProgressBar"><attr name="antiAlias"/><attr name="startAngle"/><attr name="sweepAngle"/><attr name="animTime"/><attr name="maxValue"/><attr name="value"/><attr name="precision"/><attr name="valueSize"/><attr name="valueColor"/><attr name="textOffsetPercentInRadius"/><attr name="hint"/><attr name="hintSize"/><attr name="hintColor"/><attr name="unit"/><attr name="unitSize"/><attr name="unitColor"/><attr name="arcWidth"/><attr name="arcColors"/><attr name="bgArcColor"/><attr format="dimension" name="bgArcWidth"/></declare-styleable></configuration></mergedItems></merger>

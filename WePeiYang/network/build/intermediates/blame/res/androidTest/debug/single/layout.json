@@ -1,0 +1,314 @@
+[
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_dialog_title_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/dialog_wifi_error.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/dialog_wifi_error.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_navigation_menu_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/select_dialog_item_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/select_dialog_multichoice_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/notification_template_lines_media.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_action_mode_bar.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_list_menu_item_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_bottom_sheet_dialog.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_action_menu_item_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/notification_template_media.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_layout_snackbar.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/notification_template_part_time.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_menu_item_action_area.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/item_account_detail_cv.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/item_account_detail_cv.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/fragment_wifi_main_login.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/fragment_wifi_main_login.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_action_menu_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/activity_mock.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/7bb517920d63ceca825fd44c8119ac2cc157167c/output/res/layout/activity_mock.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/tab_first_edition.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/tab_first_edition.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_layout_tab_icon.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_navigation_item_header.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_item_header.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_navigation_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/activity_net_set.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/activity_net_set.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/ui_glide_thumbnail.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/4fbc06f658465536159b59110db957dad392cd0b/output/res/layout/ui_glide_thumbnail.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/activity_net_main.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/activity_net_main.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/yanzhenjie_item_default.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/c6a5151a94a011c55c66b00fecf9a789da59c506/output/res/layout/yanzhenjie_item_default.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/notification_action_tombstone.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/item_account_pay_cv.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/item_account_pay_cv.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_bottom_navigation_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_bottom_navigation_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_navigation_item_subheader.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/fragment_account_main.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/fragment_account_main.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/dialog_account_pay.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/dialog_account_pay.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_search_view.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_navigation_item_separator.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_action_mode_close_item_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/toast_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/7f6c42f5094d75035393ad27f6b5045afda0bc94/output/res/layout/toast_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/ui_progress_pie_indicator.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/0a1368bd2c77bfe7a7aefafe0d096a2671dbd136/output/res/layout/ui_progress_pie_indicator.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/notification_template_media_custom.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_template_media_custom.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_screen_toolbar.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_layout_tab_text.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_layout_tab_text.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_list_menu_item_radio.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/alerter_alert_view.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/7bb517920d63ceca825fd44c8119ac2cc157167c/output/res/layout/alerter_alert_view.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/fragment_wifi_main_connect.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/fragment_wifi_main_connect.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_screen_simple.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/item_set_detail.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/item_set_detail.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/dialog_spy_verify.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/dialog_spy_verify.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/notification_action.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/item_spy_status_cv.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/item_spy_status_cv.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/tab_layout.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/tab_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_screen_content_include.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/widget_layout.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/widget_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/fragment_spy_main.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/fragment_spy_main.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_alert_dialog_title_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/notification_template_icon_group.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/dialog_wifi_login.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/dialog_wifi_login.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/dialog_wifi_login_tip.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/bundles/debug/res/layout/dialog_wifi_login_tip.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/umeng_socialize_oauth_dialog.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f936da036fdae708059bf8d1170672baee271d5e/output/res/layout/umeng_socialize_oauth_dialog.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/abc_select_dialog_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_text_input_password_icon.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_navigation_menu.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_menu.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/androidTest/debug/layout/design_layout_snackbar_include.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_layout_snackbar_include.xml"
+    }
+]

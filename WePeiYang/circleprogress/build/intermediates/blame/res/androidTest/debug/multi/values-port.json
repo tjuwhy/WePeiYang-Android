@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-port/values-port.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "/Users/liuyuesen/.android/build-cache/f8fd12fb6cc2268c51494bbb948ac73709cdfa14/output/res/values-port/values-port.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 55,
+                        "endOffset": 106
+                    }
+                }
+            }
+        ]
+    }
+]

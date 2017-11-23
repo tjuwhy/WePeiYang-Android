@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.twtstudio.service.classroom"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="25" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.twtstudio.service.classroom.view.MainActivity" />
+        <activity android:name="com.twtstudio.service.classroom.view.CollectedPage" />
+        <activity android:name="com.twtstudio.service.classroom.view.RoomqueryChooseCampus" />
+    </application>
+
+</manifest>

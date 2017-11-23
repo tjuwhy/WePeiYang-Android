@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/menu/lf_waterfall_menu.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/menu/lf_waterfall_menu.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/menu/lf_detail_menu.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/menu/lf_detail_menu.xml"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_notifications.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/7bb517920d63ceca825fd44c8119ac2cc157167c/output/res/drawable-anydpi-v21/ic_notifications.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/network/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_face.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/7bb517920d63ceca825fd44c8119ac2cc157167c/output/res/drawable-anydpi-v21/ic_face.xml"
+    }
+]

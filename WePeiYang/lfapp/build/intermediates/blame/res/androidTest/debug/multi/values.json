@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "/Users/liuyuesen/.android/build-cache/c0b15f9d5c9e03234b4c7639e3e5350f81cbbf03/output/res/values/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                  
+    
+
+                 
+                            
+                                                                                  
+                                          
+           
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:tag="layout/activity_classroom_on_load_more_item_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/tools">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:text="加载失败"
+            android:tag="binding_1"                                           
+            />
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:tag="binding_2"                                                 
+            />
+    </FrameLayout>
+         

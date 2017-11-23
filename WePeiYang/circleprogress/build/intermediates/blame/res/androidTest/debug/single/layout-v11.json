@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/intermediates/res/merged/androidTest/debug/layout-v11/notification_media_action.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f8fd12fb6cc2268c51494bbb948ac73709cdfa14/output/res/layout-v11/notification_media_action.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/intermediates/res/merged/androidTest/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f8fd12fb6cc2268c51494bbb948ac73709cdfa14/output/res/layout-v11/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/intermediates/res/merged/androidTest/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f8fd12fb6cc2268c51494bbb948ac73709cdfa14/output/res/layout-v11/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/intermediates/res/merged/androidTest/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f8fd12fb6cc2268c51494bbb948ac73709cdfa14/output/res/layout-v11/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/intermediates/res/merged/androidTest/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f8fd12fb6cc2268c51494bbb948ac73709cdfa14/output/res/layout-v11/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/intermediates/res/merged/androidTest/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f8fd12fb6cc2268c51494bbb948ac73709cdfa14/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+    }
+]

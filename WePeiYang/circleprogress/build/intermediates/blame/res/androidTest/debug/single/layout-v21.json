@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/intermediates/res/merged/androidTest/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f8fd12fb6cc2268c51494bbb948ac73709cdfa14/output/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/intermediates/res/merged/androidTest/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f8fd12fb6cc2268c51494bbb948ac73709cdfa14/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/intermediates/res/merged/androidTest/debug/layout-v21/notification_action.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f8fd12fb6cc2268c51494bbb948ac73709cdfa14/output/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/circleprogress/build/intermediates/res/merged/androidTest/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f8fd12fb6cc2268c51494bbb948ac73709cdfa14/output/res/layout-v21/notification_action_tombstone.xml"
+    }
+]

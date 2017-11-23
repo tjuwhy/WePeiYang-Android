@@ -1,0 +1,358 @@
+[
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_template_media_custom.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/activity_mock.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/7bb517920d63ceca825fd44c8119ac2cc157167c/output/res/layout/activity_mock.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_dialog_detail_pic.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_dialog_detail_pic.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_release_cardview_cardinfo.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_release_cardview_cardinfo.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/toast_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/7f6c42f5094d75035393ad27f6b5045afda0bc94/output/res/layout/toast_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_release_cardview_info.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_release_cardview_info.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_activity_success.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_activity_success.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/ui_glide_thumbnail.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/4fbc06f658465536159b59110db957dad392cd0b/output/res/layout/ui_glide_thumbnail.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/fragment_photo_selection.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/ca62e649632e56217462a85c80d04aba33372fb2/output/res/layout/fragment_photo_selection.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_bottom_sheet_dialog.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/fragment_preview_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/ca62e649632e56217462a85c80d04aba33372fb2/output/res/layout/fragment_preview_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_layout_tab_text.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_item_mylist.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_item_mylist.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/photo_grid_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/ca62e649632e56217462a85c80d04aba33372fb2/output/res/layout/photo_grid_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_bottom_navigation_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_bottom_navigation_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_item_waterfall.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_item_waterfall.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_item_release_type.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_item_release_type.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/photo_capture_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/ca62e649632e56217462a85c80d04aba33372fb2/output/res/layout/photo_capture_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_activity_waterfall.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_activity_waterfall.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_release_cardview_contact.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_release_cardview_contact.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_fragment_mylist.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_fragment_mylist.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/alerter_alert_view.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/7bb517920d63ceca825fd44c8119ac2cc157167c/output/res/layout/alerter_alert_view.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_release_cardview_cardinfo_noname.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_release_cardview_cardinfo_noname.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_fragment_waterfall.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_fragment_waterfall.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_release_cardview_delete.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_release_cardview_delete.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/album_list_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/ca62e649632e56217462a85c80d04aba33372fb2/output/res/layout/album_list_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_menu_item_action_area.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_activity_release.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_activity_release.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_common_toolbar.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_common_toolbar.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/umeng_socialize_oauth_dialog.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/f936da036fdae708059bf8d1170672baee271d5e/output/res/layout/umeng_socialize_oauth_dialog.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_item_waterfall_type.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_item_waterfall_type.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_activity_search.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_activity_search.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/activity_photo_preview.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/ca62e649632e56217462a85c80d04aba33372fb2/output/res/layout/activity_photo_preview.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/activity_lfapp__main.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/src/main/res/layout/activity_lfapp__main.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_waterfall_cardview_types.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_waterfall_cardview_types.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/ui_progress_pie_indicator.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/0a1368bd2c77bfe7a7aefafe0d096a2671dbd136/output/res/layout/ui_progress_pie_indicator.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_activity_detail.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_activity_detail.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/activity_login.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/bffe8a3861bcbe6b22e644f8a7710fd8e0f3cdaa/output/res/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_release_cardview_publish.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_release_cardview_publish.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/activity_matisse.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/ca62e649632e56217462a85c80d04aba33372fb2/output/res/layout/activity_matisse.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_activity_mylist.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_activity_mylist.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_release_cardview_confirm.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_release_cardview_confirm.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_menu.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/photo_grid_content.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/ca62e649632e56217462a85c80d04aba33372fb2/output/res/layout/photo_grid_content.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/5859e24cb95f811d9f60dd9c1be479f882ea66c2/output/res/layout/design_navigation_item_header.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/lf_release_cardview_moreinfo.xml",
+        "source": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lostfound/build/intermediates/bundles/default/res/layout/lf_release_cardview_moreinfo.xml"
+    },
+    {
+        "merged": "/Users/liuyuesen/AndroidStudioProjects/WePeiYang-Android/WePeiYang/lfapp/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/liuyuesen/.android/build-cache/30ef8b592cc63c45df15ed16028809757117888f/output/res/layout/abc_list_menu_item_checkbox.xml"
+    }
+]
