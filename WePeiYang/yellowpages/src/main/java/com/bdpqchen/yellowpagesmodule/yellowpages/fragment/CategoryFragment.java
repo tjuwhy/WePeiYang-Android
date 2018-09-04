@@ -34,7 +34,6 @@ import static com.bdpqchen.yellowpagesmodule.yellowpages.activity.DepartmentActi
  */
 
 public class CategoryFragment extends Fragment implements ExpandableListView.OnGroupClickListener, ExpandableListView.OnGroupCollapseListener, ExpandableListView.OnGroupExpandListener, ExpandableListView.OnChildClickListener {
-
     public String[] groupStrings = {"校级部门", "院级部门", "其他部门"};
 
     @BindView(R2.id.expand_list_view)

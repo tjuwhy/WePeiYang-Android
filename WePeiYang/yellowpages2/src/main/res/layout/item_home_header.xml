@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:src="@drawable/banner"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:contentDescription="@string/banner" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/tju1895"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/tju1895"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/lib"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/text1895"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="1895"
+            app:layout_constraintTop_toBottomOf="@id/tju1895"
+            app:layout_constraintStart_toStartOf="@id/tju1895"
+            app:layout_constraintEnd_toEndOf="@id/tju1895"/>
+
+        <ImageView
+            android:id="@+id/lib"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/library"
+            app:layout_constraintEnd_toStartOf="@id/hospital"
+            app:layout_constraintStart_toEndOf="@id/tju1895"
+            app:layout_constraintBottom_toBottomOf="@id/tju1895"/>
+
+        <TextView
+            android:id="@+id/libtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="图书馆"
+            app:layout_constraintStart_toStartOf="@id/lib"
+            app:layout_constraintEnd_toEndOf="@id/lib"
+            app:layout_constraintTop_toBottomOf="@id/lib"/>
+
+        <ImageView
+            android:id="@+id/hospital"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/red_cross"
+            app:layout_constraintStart_toEndOf="@id/lib"
+            app:layout_constraintEnd_toStartOf="@id/dormitory"
+            app:layout_constraintBottom_toBottomOf="@id/tju1895" />
+
+        <TextView
+            android:id="@+id/xiaoyiyuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="校医院"
+            app:layout_constraintStart_toStartOf="@id/hospital"
+            app:layout_constraintEnd_toEndOf="@id/hospital"
+            app:layout_constraintTop_toBottomOf="@id/hospital"/>
+
+        <ImageView
+            android:id="@+id/dormitory"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/dormitory"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/hospital"
+            app:layout_constraintBottom_toBottomOf="@id/tju1895"/>
+
+        <TextView
+            android:id="@+id/wri_par"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="宿舍管理中心"
+            app:layout_constraintStart_toStartOf="@id/dormitory"
+            app:layout_constraintEnd_toEndOf="@id/dormitory"
+            app:layout_constraintTop_toBottomOf="@id/dormitory"/>
+
+        <ImageView
+            android:id="@+id/bike"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/bike"
+            app:layout_constraintStart_toStartOf="@id/tju1895"
+            app:layout_constraintTop_toBottomOf="@+id/text1895" />
+
+        <TextView
+            android:id="@+id/wri_bike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="自行车"
+            app:layout_constraintStart_toStartOf="@id/bike"
+            app:layout_constraintEnd_toEndOf="@id/bike"
+            app:layout_constraintTop_toBottomOf="@id/bike"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="12dp"
+            />
+
+        <ImageView
+            android:id="@+id/team"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/youth_league_committee"
+            app:layout_constraintStart_toStartOf="@id/lib"
+            app:layout_constraintBottom_toBottomOf="@id/bike"/>
+
+        <TextView
+            android:id="@+id/wri_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="团委"
+            app:layout_constraintStart_toStartOf="@id/team"
+            app:layout_constraintEnd_toEndOf="@id/team"
+            app:layout_constraintTop_toBottomOf="@id/team"/>
+
+        <ImageView
+            android:id="@+id/bank"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/bank"
+            app:layout_constraintStart_toStartOf="@id/hospital"
+            app:layout_constraintBottom_toBottomOf="@id/bike"/>
+
+        <TextView
+            android:id="@+id/wri_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="银行"
+            app:layout_constraintStart_toStartOf="@id/bank"
+            app:layout_constraintEnd_toEndOf="@id/bank"
+            app:layout_constraintTop_toBottomOf="@id/bank"/>
+
+        <ImageView
+            android:id="@+id/fix"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/repair"
+            app:layout_constraintBottom_toBottomOf="@id/bike"
+            app:layout_constraintStart_toStartOf="@+id/dormitory" />
+
+        <TextView
+            android:id="@+id/wri_fix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="维修中心"
+            app:layout_constraintStart_toStartOf="@id/fix"
+            app:layout_constraintEnd_toEndOf="@id/fix"
+            app:layout_constraintTop_toBottomOf="@id/fix"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#eeeeee"/>
+
+</LinearLayout>
