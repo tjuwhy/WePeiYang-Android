@@ -6,7 +6,7 @@ apply from: '../maven_push.gradle'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
         minSdkVersion 19
@@ -39,32 +39,23 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.2'
-
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
-
-//    compile project(':commons')
+    //    compile project(':commons')
     compile 'com.twt.service:commons:1.2.0'
-
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
-
     //注解
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-
     //动画
     compile 'com.daimajia.easing:library:2.0@aar'
     compile 'com.daimajia.androidanimations:library:2.2@aar'
-
     //搜索框
     compile 'com.github.arimorty:floatingsearchview:2.0.3'
-
     //日志
     compile 'com.orhanobut:logger:1.15'
-
     //网络
     compile 'io.reactivex:rxjava:1.1.5'
     compile 'io.reactivex:rxandroid:1.2.0'
@@ -73,10 +64,7 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
     compile 'com.squareup.okhttp3:okhttp:3.0.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
-
     //存储
     compile 'com.orhanobut:hawk:2.0.1'
     compile 'org.greenrobot:greendao:3.2.0'
-
-
 }

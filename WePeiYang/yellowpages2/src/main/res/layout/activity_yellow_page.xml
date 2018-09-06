@@ -29,6 +29,7 @@
                 android:layout_marginStart="16dp"/>
 
             <ImageView
+                android:id="@+id/yellow_page_search"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:padding="12dp"
@@ -49,4 +50,9 @@
         android:id="@+id/phone_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eeeeee"/>
 </LinearLayout>

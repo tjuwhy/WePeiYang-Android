@@ -1,5 +1,6 @@
 package com.example.yellowpages2
 
+import android.animation.ObjectAnimator
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
@@ -52,8 +53,12 @@ class GroupItem(val groupData: GroupData,val expandable: Expandable) : Item {
             holder.itemView.setOnClickListener {
                 if(item.groupData.isExpanded){
                     item.expandable.collapse(item.groupData.groupIndex)
+                    item.groupData.isExpanded = false
+                    ObjectAnimator.ofFloat(holder.arrowIv,"rotation",90f, 0f).setDuration(500).start()
                 } else {
                     item.expandable.expand(item.groupData.groupIndex)
+                    item.groupData.isExpanded = true
+                    ObjectAnimator.ofFloat(holder.arrowIv,"rotation",0f, 90f).setDuration(500).start()
                 }
             }
         }
@@ -69,6 +74,29 @@ class GroupItem(val groupData: GroupData,val expandable: Expandable) : Item {
     }
 
     class GroupViewHolder(itemView: View, val arrowIv:ImageView,val groupTitle:TextView) : RecyclerView.ViewHolder(itemView)
+}
+
+class SubItem(val name:String ,val groupIndex: Int,val childIndex: Int) : Item {
+    override val controller: ItemController
+        get() = Controller
+
+    companion object Controller : ItemController{
+        override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
+            val layoutInflater = parent.context.layoutInflater
+            val view = layoutInflater.inflate(R.layout.item_home_sub,parent,false)
+            val textView = view.findViewById<TextView>(R.id.sub_text)
+            return ViewHolder(view , textView)
+        }
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: Item) {
+            holder as ViewHolder
+            item as SubItem
+            holder.textView.text = item.name
+        }
+
+    }
+
+    class ViewHolder(itemView: View, val textView: TextView):RecyclerView.ViewHolder(itemView)
 }
 
 class ChildItem(val phoneNum : String,val isStared:Boolean,val groupIndex: Int,val childIndex:Int) : Item{

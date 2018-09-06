@@ -39,8 +39,6 @@ fun RecyclerView.withItems(items: List<Item>) {
     adapter = ItemAdapter(ItemManager(items.toMutableList()))
 }
 
-fun RecyclerView.withItems(init: MutableList<Item>.() -> Unit) = withItems(mutableListOf<Item>().apply(init))
-
 interface ItemManagerAbstract : MutableList<Item> {
     var observer: RecyclerView.Adapter<RecyclerView.ViewHolder>?
 }
@@ -77,8 +75,8 @@ class ItemManager(private val delegated: MutableList<Item> = mutableListOf()) : 
         /**
          * 对于一个Collection的ViewType注册，先进行一次去重
          */
-        private fun ensureControllers(items: Collection<Item>): Unit =
-                items.distinctBy(Item::controller).forEach(ItemControllerManager::ensureController)
+        private fun ensureControllers(items: Collection<Item>): kotlin.Unit =
+                items.distinctBy(Item::controller).forEach{t -> ensureController(t)}
 
         /**
          * 根据ItemController获取对应的Item -> 代理Adapter.getItemViewType
@@ -198,13 +196,6 @@ class ItemManager(private val delegated: MutableList<Item> = mutableListOf()) : 
         result.dispatchUpdatesTo(observer)
     }
 
-    fun refreshAll(init: MutableList<Item>.() -> Unit) = refreshAll(mutableListOf<Item>().apply(init))
-
-    fun autoRefresh(init: MutableList<Item>.() -> Unit) {
-        val snapshot = this.itemListSnapshot.toMutableList()
-        snapshot.apply(init)
-        refreshAll(snapshot)
-    }
 
 }
 

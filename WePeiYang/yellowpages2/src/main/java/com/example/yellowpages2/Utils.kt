@@ -13,7 +13,7 @@ interface Expandable{
 
 //fun MutableList<Item>.groupItem(groupData: GroupData) = add(GroupItem(groupData.title,groupData.groupIndex))
 
-class ExpandableHelper(recyclerView : RecyclerView, var groupData: Array<GroupData>, private val childArray:Array<Array<ChildData>> ):Expandable{
+class ExpandableHelper(recyclerView : RecyclerView, var groupData: Array<GroupData>, private val childArray:Array<Array<SubData>> ):Expandable{
 
     var itemManager: ItemManager = ItemManager()
     val items = mutableListOf<Item>(HeaderItem())
@@ -24,16 +24,15 @@ class ExpandableHelper(recyclerView : RecyclerView, var groupData: Array<GroupDa
         itemManager.addAll(items)
     }
 
-//    @RequiresApi(Build.VERSION_CODES.N)
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun collapse(index: Int) {
-        var targetIndex = index + 1
+        var targetStart = 2 + index
         for (i in 0 until index){
-            targetIndex += if (groupData[i].isExpanded) childArray[i].size else 0
+            targetStart += if (groupData[i].isExpanded) childArray[i].size else 0
         }
-        for (i in targetIndex+1 .. targetIndex + childArray[index].size){
-            itemManager.removeAt(i)
+        for (i in 0 until childArray[index].size){
+            itemManager.removeAt(targetStart)
         }
-        groupData[index].isExpanded = false
     }
 
     override fun expand(index: Int) {
@@ -41,8 +40,8 @@ class ExpandableHelper(recyclerView : RecyclerView, var groupData: Array<GroupDa
         for (i in 0 until index){
             targetIndex += if (groupData[i].isExpanded) childArray[i].size else 0
         }
-        itemManager.addAll(targetIndex+2/*Header*/,childArray[index].map { it -> ChildItem(it.phone,it.isStared,it.groupIndex,it.childIndex) })
-        groupData[index].isExpanded = true
+        itemManager.addAll(targetIndex+2/*Header*/,childArray[index].
+                map { it -> if (it.type == 0) SubItem(it.title,it.groupIndex,it.childIndex) else ChildItem(it.phone,it.isStared,it.groupIndex,it.childIndex)})
     }
 
 }

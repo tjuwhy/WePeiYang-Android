@@ -3,4 +3,3 @@
 //include ':auth', ':mvvmKit', ':commons', ':lostfound', ':lfapp','classroom','network','circleprogress'
 //include ':devpeiyang'
 include ':app', ':commons', ':tjulibrary', ':schedule', ':gpa2', ':auth', ':bike', ':tjunet', ':schedule2', ':party', ':vpbs', ':news2', ':yellowpages2',':yellowpages'
-//include ':network'

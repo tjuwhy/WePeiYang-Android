@@ -112,7 +112,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    [':auth', ':bike', ':commons', ':gpa2', ':schedule', ':tjulibrary', ':tjunet', ':party', ':schedule2', ':news2'].each {
+    [':auth', ':bike', ':commons', ':gpa2', ':schedule', ':tjulibrary', ':tjunet', ':party', ':schedule2', ':news2', ':yellowpages2'].each {
         implementation project(it)
     }
     implementation 'com.twt.service:fragmentation:1.1.0'
@@ -129,6 +129,7 @@ dependencies {
     implementation 'agency.tango.android:material-intro-screen:0.0.5'
     implementation 'com.github.shem8:material-login:2.1.1'
     implementation 'de.hdodenhof:circleimageview:2.1.0'
+
 
     debugImplementation 'me.ele:uetool:1.0.12'
     releaseImplementation 'me.ele:uetool-no-op:1.0.12'
