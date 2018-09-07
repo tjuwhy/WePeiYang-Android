@@ -1,6 +1,7 @@
 package com.example.yellowpages2
 
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
@@ -136,3 +137,33 @@ class ChildItem(val phoneNum : String,val isStared:Boolean,val groupIndex: Int,v
     class ChildViewHolder(itemView: View ,val phoneTv:TextView, val isStared: ImageView, val phoneIv:ImageView):RecyclerView.ViewHolder(itemView)
 }
 
+class SearchHistoryItem(val content: String) : Item {
+
+    companion object Cotroller : ItemController {
+        @SuppressLint("StaticFieldLeak")
+        lateinit var imageView: ImageView
+
+        override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
+            val inflater = parent.context.layoutInflater
+            val view = inflater.inflate(R.layout.item_search_history, parent, false)
+            val textView = view.findViewById<TextView>(R.id.text_search_history)
+            imageView = view.findViewById(R.id.item_search_delete)
+            return ViewHolder(view, textView)
+        }
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: Item) {
+            holder as ViewHolder
+            item as SearchHistoryItem
+            holder.textView.text = item.content
+            holder.textView.setOnLongClickListener {
+                imageView.visibility = View.VISIBLE
+                true
+            }
+        }
+    }
+
+    override val controller: ItemController
+        get() = Cotroller
+
+    class ViewHolder(itemView: View, val textView: TextView) : RecyclerView.ViewHolder(itemView)
+}

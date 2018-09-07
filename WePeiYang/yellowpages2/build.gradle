@@ -55,6 +55,8 @@ dependencies {
     implementation "org.jetbrains.anko:anko-appcompat-v7:0.10.5"
     implementation "org.jetbrains.anko:anko-sdk25-coroutines:0.10.5"
     implementation "org.jetbrains.anko:anko-appcompat-v7-coroutines:0.10.5"
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+
 
 
 }
