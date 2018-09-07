@@ -1,8 +1,15 @@
 package com.example.yellowpages2
 
+import android.content.Context
 import android.os.Build
 import android.support.annotation.RequiresApi
 import android.support.v7.widget.RecyclerView
+import java.text.Collator
+
+interface UpdateCallBack{
+
+    fun updateView()
+}
 
 interface Expandable{
 
@@ -13,15 +20,22 @@ interface Expandable{
 
 //fun MutableList<Item>.groupItem(groupData: GroupData) = add(GroupItem(groupData.title,groupData.groupIndex))
 
-class ExpandableHelper(recyclerView : RecyclerView, var groupData: Array<GroupData>, private val childArray:Array<Array<SubData>> ):Expandable{
+class ExpandableHelper(val context :Context,recyclerView : RecyclerView, var groupData: Array<GroupData>, private val childArray:Array<Array<SubData>> ):Expandable{
 
     var itemManager: ItemManager = ItemManager()
-    val items = mutableListOf<Item>(HeaderItem())
+    val items = mutableListOf<Item>(HeaderItem(context))
     init{
         recyclerView.adapter = ItemAdapter(itemManager)
         groupData.map { it -> GroupItem(it,this) }
-        items.addAll(groupData.map { it -> GroupItem(it,this)})
+        items.addAll(groupData.map { it ->
+            GroupItem(it,this)
+        })
         itemManager.addAll(items)
+        groupData.forEachIndexed { index, groupData ->
+            if (groupData.isExpanded){
+                expand(index)
+            }
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -41,8 +55,19 @@ class ExpandableHelper(recyclerView : RecyclerView, var groupData: Array<GroupDa
             targetIndex += if (groupData[i].isExpanded) childArray[i].size else 0
         }
         itemManager.addAll(targetIndex+2/*Header*/,childArray[index].
-                map { it -> if (it.type == 0) SubItem(it.title,it.groupIndex,it.childIndex) else ChildItem(it.phone,it.isStared,it.groupIndex,it.childIndex)})
+                map { it -> if (it.type == ITEM_SECOND) SubItem(context,it.title,it.groupIndex,it.childIndex,index) else
+                    ChildItem(context,it.title, it.phone,it.isStared, it.thirdId)})
     }
 
 }
 
+class Selector(val content:String):Comparable<Selector>{
+
+    val comparator = Collator.getInstance(java.util.Locale.CHINA)!!
+
+    override fun compareTo(other: Selector): Int {
+        return comparator.compare(content, other.content)
+    }
+
+
+}

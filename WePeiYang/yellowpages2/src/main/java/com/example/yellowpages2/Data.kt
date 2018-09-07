@@ -1,7 +1,20 @@
 package com.example.yellowpages2
 
 import android.support.v4.app.INotificationSideChannel
+import com.twt.wepeiyang.commons.experimental.preference.hawk
 import java.util.*
+
+object YellowPagePreference{
+
+    var seachHistory : List<String> by hawk("search_histoty", listOf())
+
+    var phoneBean : PhoneBean? by hawk("phoneBean",null)
+
+	var collectionList : Array<SubData> by hawk("collection_list", arrayOf())
+
+	var subArray : Array<Array<SubData>> by hawk("sub_data_list", arrayOf(arrayOf()))
+
+}
 
 const val ITEM_SECOND = 0
 const val ITEM_COLLECTION = 1
@@ -18,7 +31,8 @@ data class SubData(
         val childIndex: Int,
         val type : Int = ITEM_SECOND,
         val phone: String = "0",
-        val isStared: Boolean = false
+        val isStared: Boolean = false,
+        val thirdId : Int = 0
 )
 
 data class ChildData(
@@ -28,21 +42,39 @@ data class ChildData(
         val childIndex:Int
 )
 
+
 data class PhoneBean(
-        val category_list: List<Category>
+		val category_list: List<Category>
 )
 
 data class Category(
-        val category_name: String,
-        val department_list: List<Department>
+		val category_name: String,
+		val department_list: List<Department>
 )
 
 data class Department(
-        val department_name: String,
-        val unit_list: List<Unit>
+		val id: Int,
+		val department_name: String,
+		val department_attach: String,
+		val unit_list: List<Unit>
 )
 
 data class Unit(
-        val item_name: String,
-        val item_phone: String
+		val id: Int,
+		val item_name: String,
+		val item_phone: String,
+		val item_attach: String
 )
+
+data class UpDateBean(
+		val status: String,
+		val data: List<CollectionBean>
+)
+
+data class CollectionBean(
+		val id: String,
+		val item_name: String,
+		val item_phone: String,
+		val item_attach: String
+)
+

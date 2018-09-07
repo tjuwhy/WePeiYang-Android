@@ -56,5 +56,6 @@ dependencies {
     implementation "org.jetbrains.anko:anko-sdk25-coroutines:0.10.5"
     implementation "org.jetbrains.anko:anko-appcompat-v7-coroutines:0.10.5"
 
-
 }
+
+kotlin { experimental { coroutines 'enable' } }
