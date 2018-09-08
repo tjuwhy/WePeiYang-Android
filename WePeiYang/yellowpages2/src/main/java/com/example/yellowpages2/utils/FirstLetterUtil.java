@@ -1,19 +1,20 @@
-package com.example.yellowpages2;
+package com.example.yellowpages2.utils;
 
 public class FirstLetterUtil {
     private static int BEGIN = 45217;
     private static int END = 63486; // 按照声母表示，这个表是在GB2312中的出现的第一个汉字，也就是说“啊”是代表首字母a的第一个汉字。
     // // i, u, v都不做声母, 自定规则跟随前面的字母
-    private static char[] chartable = { '啊', '芭', '擦', '搭', '蛾', '发', '噶', '哈',
+    private static char[] chartable = {'啊', '芭', '擦', '搭', '蛾', '发', '噶', '哈',
             '哈', '击', '喀', '垃', '妈', '拿', '哦', '啪', '期', '然', '撒', '塌', '塌',
-            '塌', '挖', '昔', '压', '匝', };
+            '塌', '挖', '昔', '压', '匝',};
     // 二十六个字母区间对应二十七个端点
     // GB2312码汉字区间十进制表示
     private static int[] table = new int[27];
     // 对应首字母区间表
-    private static char[] initialtable = { 'a', 'b', 'c', 'd', 'e', 'f', 'g',
+    private static char[] initialtable = {'a', 'b', 'c', 'd', 'e', 'f', 'g',
             'h', 'h', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-            't', 't', 'w', 'x', 'y', 'z', };
+            't', 't', 'w', 'x', 'y', 'z',};
+
     // 初始化
     static {
         for (int i = 0; i < 26; i++) {

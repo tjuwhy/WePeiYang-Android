@@ -1,8 +1,6 @@
-package com.example.yellowpages2
+package com.example.yellowpages2.view
 
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
@@ -10,19 +8,26 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
-import android.view.View
-import android.view.WindowManager
 import android.widget.ImageView
-import android.widget.Toast
+import com.example.yellowpages2.*
+import com.example.yellowpages2.model.GroupData
+import com.example.yellowpages2.model.SubData
+import com.example.yellowpages2.model.YellowPagePreference
+import com.example.yellowpages2.service.getPhone
+import com.example.yellowpages2.service.getUserCollection
+import com.example.yellowpages2.utils.ExpandableHelper
+import com.example.yellowpages2.utils.ItemAdapter
+import com.example.yellowpages2.utils.ItemManager
 import com.twt.wepeiyang.commons.experimental.cache.RefreshState
-import com.twt.wepeiyang.commons.experimental.extensions.fitSystemWindowWithStatusBar
 import es.dmoral.toasty.Toasty
 import org.jetbrains.anko.coroutines.experimental.asReference
 
-class HomeActivity : AppCompatActivity() {
+class YellowPageActivity : AppCompatActivity() {
 
     lateinit var toolbar: Toolbar
     private val groupArray = arrayOf("我的收藏", "校级部门", "院级部门", "其他部门")
+
+    lateinit var itemManager: ItemManager
     lateinit var recyclerView: RecyclerView
     lateinit var searchIcon: ImageView
     private var groupCount = 0
@@ -35,11 +40,13 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_yellow_page)
 
         searchIcon = findViewById(R.id.yellow_page_search)
-
         recyclerView = findViewById(R.id.phone_rv)
+
+        itemManager = ItemManager()
+        recyclerView.adapter = ItemAdapter(itemManager)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val activity = this@HomeActivity.asReference()
+        val activity = this@YellowPageActivity.asReference()
         getPhone { }
         getUserCollection { refreshState ->
             when (refreshState) {
@@ -60,6 +67,5 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
 
 }

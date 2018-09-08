@@ -1,10 +1,10 @@
-package com.example.yellowpages2
+package com.example.yellowpages2.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.MenuItemCompat
 import android.view.Menu
-import android.view.MenuItem
+import com.example.yellowpages2.R
 import scut.carson_ho.searchview.SearchView
 
 class SearchActivity : AppCompatActivity() {

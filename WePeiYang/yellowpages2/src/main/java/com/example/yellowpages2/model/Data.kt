@@ -1,8 +1,6 @@
-package com.example.yellowpages2
+package com.example.yellowpages2.model
 
-import android.support.v4.app.INotificationSideChannel
 import com.twt.wepeiyang.commons.experimental.preference.hawk
-import java.util.*
 
 object YellowPagePreference{
 
@@ -27,13 +25,13 @@ data class GroupData(
 )
 
 data class SubData(
-        val title:String = "",
-        val groupIndex: Int = 0,
-        val childIndex: Int = 0,
-        val type : Int = ITEM_SECOND,
-        val phone: String = "0",
-        val isStared: Boolean = false,
-        val thirdId : Int = 0,
+		val title:String = "",
+		val groupIndex: Int = 0,
+		val childIndex: Int = 0,
+		val type : Int = ITEM_SECOND,
+		val phone: String = "0",
+		val isStared: Boolean = false,
+		val thirdId : Int = 0,
 		val firstChar: Char = '#'
 )
 
@@ -43,7 +41,6 @@ data class ChildData(
         val groupIndex: Int,
         val childIndex:Int
 )
-
 
 data class PhoneBean(
 		val category_list: List<Category>
