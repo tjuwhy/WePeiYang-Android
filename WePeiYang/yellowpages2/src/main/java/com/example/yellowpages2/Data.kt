@@ -18,6 +18,7 @@ object YellowPagePreference{
 
 const val ITEM_SECOND = 0
 const val ITEM_COLLECTION = 1
+const val ITEM_CHAR = 2
 
 data class GroupData(
         val title:String,
@@ -26,13 +27,14 @@ data class GroupData(
 )
 
 data class SubData(
-        val title:String,
-        val groupIndex: Int,
-        val childIndex: Int,
+        val title:String = "",
+        val groupIndex: Int = 0,
+        val childIndex: Int = 0,
         val type : Int = ITEM_SECOND,
         val phone: String = "0",
         val isStared: Boolean = false,
-        val thirdId : Int = 0
+        val thirdId : Int = 0,
+		val firstChar: Char = '#'
 )
 
 data class ChildData(

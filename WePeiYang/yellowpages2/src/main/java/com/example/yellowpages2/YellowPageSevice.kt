@@ -44,9 +44,21 @@ fun getPhone(callback: suspend (RefreshState<Unit>) -> Unit = {}){
             val childData = mutableListOf<Array<SubData>>()
             phoneBean.category_list.map {category ->
                 var childIndex = 0
-                childData.add(category.department_list
+                val list = category.department_list
                         .map { SubData(it.department_name,it.department_attach.toInt(),childIndex++,thirdId = it.id) }
-                        .toTypedArray())
+                        .sortedBy { Selector(it.title)}
+                var num = 0
+                var oldChar = ';'
+                val result = mutableListOf<SubData>()
+                list.forEach {
+                    val newChar = FirstLetterUtil.getFirstLetter(it.title)[0].toUpperCase()
+                    if (oldChar!=newChar){
+                        result.add(num++, SubData(type = ITEM_CHAR , firstChar = newChar))
+                        oldChar = newChar
+                    }
+                    result.add(num++,it)
+                }
+                childData.add(result.toTypedArray())
             }
             YellowPagePreference.phoneBean = phoneBean
             YellowPagePreference.subArray = childData.toTypedArray()
@@ -61,13 +73,22 @@ fun getUserCollection(callback: suspend (RefreshState<Unit>) -> Unit = {}){
             callback(RefreshState.Failure(it))
         }?.let { collectionList ->
             var childIndex = 0
-            YellowPagePreference.collectionList = collectionList.
+            val list = collectionList.
                     map { SubData(it.item_name,0,childIndex++, ITEM_COLLECTION,it.item_phone,true,it.id.toInt() ) }
-                    .sortedBy {
-                        Selector(it.title)
-                    }.toTypedArray()
+                    .sortedBy { Selector(it.title) }
+            var num = 0
+            var oldChar = ';'
+            val result = mutableListOf<SubData>()
+            list.forEach {
+                val newChar = FirstLetterUtil.getFirstLetter(it.title)[0].toUpperCase()
+                if (oldChar!=newChar){
+                    result.add(num++, SubData(type = ITEM_CHAR , firstChar = newChar))
+                    oldChar = newChar
+                }
+                result.add(num++,it)
+            }
+            YellowPagePreference.collectionList = result.toTypedArray()
             callback(RefreshState.Success(Unit))
-
         }
     }
 }
@@ -80,6 +101,7 @@ fun update(id : Int,callback: suspend (RefreshState<Unit>,String) -> Unit){
             var childIndex = 0
             YellowPagePreference.collectionList = updateBean.data
                     .map { SubData(it.item_name,0,childIndex++, ITEM_COLLECTION,it.item_phone,true,it.id.toInt() )}
+                    .sortedBy { Selector(it.title) }
                     .toTypedArray()
             callback(RefreshState.Success(Unit),updateBean.status)
         }

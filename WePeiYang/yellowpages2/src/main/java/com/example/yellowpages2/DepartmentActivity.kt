@@ -6,33 +6,44 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.TextView
 import android.widget.Toast
+import android.support.v7.widget.Toolbar
+import android.widget.ImageView
+import com.twt.wepeiyang.commons.experimental.extensions.enableLightStatusBarMode
+import com.twt.wepeiyang.commons.experimental.extensions.fitSystemWindowWithStatusBar
 
 class DepartmentActivity : AppCompatActivity() {
 
-    lateinit var title : String
-    lateinit var unitList: List<Unit>
-    lateinit var departmentTv : TextView
+    lateinit var title: String
+    private lateinit var unitList: List<Unit>
+    private lateinit var arrowBack : ImageView
+    private lateinit var departmentTv: TextView
     lateinit var recyclerView: RecyclerView
+    lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_department)
-        val firstIndex = intent.getIntExtra("first_index",0)
-        val secondIndex = intent.getIntExtra("second_index",0)
-        title = YellowPagePreference.phoneBean!!.category_list[firstIndex].department_list[secondIndex].department_name
-        unitList = YellowPagePreference.phoneBean!!.category_list[firstIndex].department_list[secondIndex].unit_list
+        toolbar = findViewById(R.id.toolbar)
+        arrowBack = findViewById(R.id.department_arrow_back)
         departmentTv = findViewById(R.id.department_name)
         recyclerView = findViewById(R.id.recycler_view_department)
+        val firstIndex = intent.getIntExtra("first_index", 0)
+        val secondIndex = intent.getIntExtra("second_index", 0)
+        title = YellowPagePreference.phoneBean!!.category_list[firstIndex].department_list[secondIndex].department_name
+        unitList = YellowPagePreference.phoneBean!!.category_list[firstIndex].department_list[secondIndex].unit_list
         departmentTv.text = title
+        arrowBack.setOnClickListener {
+            onBackPressed()
+        }
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.withItems(unitList.map {unit ->
+        recyclerView.withItems(unitList.map { unit ->
             var flag = false
             YellowPagePreference.collectionList.forEach {
-                if (it.thirdId == unit.id){
+                if (it.thirdId == unit.id) {
                     flag = true
                 }
             }
-            ChildItem(this,unit.item_name,unit.item_phone,flag,unit.id)
+            ChildItem(this, unit.item_name, unit.item_phone, flag, unit.id)
         })
     }
 }

@@ -5,11 +5,7 @@ import android.os.Build
 import android.support.annotation.RequiresApi
 import android.support.v7.widget.RecyclerView
 import java.text.Collator
-
-interface UpdateCallBack{
-
-    fun updateView()
-}
+import kotlin.experimental.and
 
 interface Expandable{
 
@@ -55,19 +51,25 @@ class ExpandableHelper(val context :Context,recyclerView : RecyclerView, var gro
             targetIndex += if (groupData[i].isExpanded) childArray[i].size else 0
         }
         itemManager.addAll(targetIndex+2/*Header*/,childArray[index].
-                map { it -> if (it.type == ITEM_SECOND) SubItem(context,it.title,it.groupIndex,it.childIndex,index) else
-                    ChildItem(context,it.title, it.phone,it.isStared, it.thirdId)})
+                map { it ->
+                    when(it.type){
+                    ITEM_SECOND -> SubItem(context,it.title,it.groupIndex,it.childIndex,index)
+                    ITEM_COLLECTION -> ChildItem(context,it.title, it.phone,it.isStared, it.thirdId)
+                    ITEM_CHAR -> CharItem(it.firstChar)
+                        else -> {CharItem(it.firstChar)}
+                }
+                }
+        )
     }
 
 }
 
 class Selector(val content:String):Comparable<Selector>{
 
-    val comparator = Collator.getInstance(java.util.Locale.CHINA)!!
+    private val comparator = Collator.getInstance(java.util.Locale.CHINA)!!
 
     override fun compareTo(other: Selector): Int {
         return comparator.compare(content, other.content)
     }
-
 
 }

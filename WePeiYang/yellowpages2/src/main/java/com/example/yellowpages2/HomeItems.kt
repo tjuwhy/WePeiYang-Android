@@ -28,7 +28,7 @@ class HeaderItem(val context: Context) : Item {
         override fun onBindViewHolder(holder: android.support.v7.widget.RecyclerView.ViewHolder, item: Item) {
             item as HeaderItem
             holder as HeaderViewHolder
-            val viewList = arrayListOf<ImageView>(holder.tju1895, holder.libIv,
+            val viewList = arrayListOf(holder.tju1895, holder.libIv,
                     holder.hospitalIv, holder.dormitoryIv, holder.bikeIv, holder.teamIv, holder.bankIv, holder.fixIv)
             viewList.forEachIndexed { index, imageView ->
                 imageView.setOnClickListener {
@@ -184,7 +184,7 @@ class ChildItem(val context: Context,val name: String ,val phoneNum : String,var
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 item.context.startActivity(intent)
             }
-            holder.itemView.setOnLongClickListener {
+            holder.itemView.setOnClickListener {
                 val items = arrayListOf("复制号码","新建联系人","报错/反馈")
                 val normalDialog = AlertDialog.Builder(item.context)
                 normalDialog.setItems(items.toTypedArray()){ _, which ->
@@ -232,7 +232,6 @@ class ChildItem(val context: Context,val name: String ,val phoneNum : String,var
                     }
                 }
                 normalDialog.show()
-                true
             }
         }
 
@@ -250,8 +249,34 @@ class ChildItem(val context: Context,val name: String ,val phoneNum : String,var
     class ChildViewHolder(itemView: View, val thirdName: TextView ,val phoneTv:TextView, val isStared: ImageView, val phoneIv:ImageView):RecyclerView.ViewHolder(itemView)
 }
 
+class CharItem(val a :Char):Item{
+
+    companion object Cotroller :ItemController{
+        override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
+            val inflater = parent.context.layoutInflater
+            val view = inflater.inflate(R.layout.item_char,parent,false)
+            val char = view.findViewById<TextView>(R.id.item_text_char)
+            return ViewHolder(view,char)
+        }
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: Item) {
+            item as CharItem
+            holder as ViewHolder
+            holder.char.text = item.a.toString()
+        }
+
+    }
+
+    class ViewHolder(itemView: View, val char: TextView) : RecyclerView.ViewHolder(itemView)
+
+    override val controller: ItemController
+        get() = Cotroller
+
+}
+
 private fun addExtra(intent: Intent, firstIndex: Int, secondIndex: Int) {
     intent.putExtra("first_index", firstIndex)
     intent.putExtra("second_index", secondIndex)
 }
+
 

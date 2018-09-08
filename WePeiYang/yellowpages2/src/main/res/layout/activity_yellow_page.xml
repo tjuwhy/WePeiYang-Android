@@ -12,7 +12,7 @@
         android:background="#00a1e9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/home_toolbar"
+        android:id="@+id/toolbar"
         >
 
         <android.support.constraint.ConstraintLayout
@@ -51,7 +51,8 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/phone_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"/>
 
     <View
         android:layout_width="match_parent"
