@@ -3,10 +3,11 @@
     package="com.example.yellowpages2">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application>
         <activity
-            android:name=".HomeActivity"
+            android:name=".view.YellowPageActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -14,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".view.SearchActivity" />
+        <activity android:name=".view.DepartmentActivity" />
     </application>
 
 </manifest>

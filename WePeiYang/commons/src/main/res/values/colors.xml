@@ -19,7 +19,6 @@
 
     <!--用于普通级段落 信息 引导词-->
     <color name="common_lv1">#666666</color>
-
     <!--用于辅助、次要的文字信息-->
     <color name="common_lv2">#999999</color>
 

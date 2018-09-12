@@ -17,11 +17,11 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/tju1895"
+            android:id="@+id/food"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginTop="12dp"
-            android:src="@drawable/tju1895"
+            android:src="@drawable/food"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/lib"
@@ -32,10 +32,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="1895"
-            app:layout_constraintTop_toBottomOf="@id/tju1895"
-            app:layout_constraintStart_toStartOf="@id/tju1895"
-            app:layout_constraintEnd_toEndOf="@id/tju1895"/>
+            android:text="订餐"
+            app:layout_constraintTop_toBottomOf="@id/food"
+            app:layout_constraintStart_toStartOf="@id/food"
+            app:layout_constraintEnd_toEndOf="@id/food"/>
 
         <ImageView
             android:id="@+id/lib"
@@ -43,8 +43,8 @@
             android:layout_height="64dp"
             android:src="@drawable/library"
             app:layout_constraintEnd_toStartOf="@id/hospital"
-            app:layout_constraintStart_toEndOf="@id/tju1895"
-            app:layout_constraintBottom_toBottomOf="@id/tju1895"/>
+            app:layout_constraintStart_toEndOf="@id/food"
+            app:layout_constraintBottom_toBottomOf="@id/food"/>
 
         <TextView
             android:id="@+id/libtext"
@@ -64,7 +64,7 @@
             android:src="@drawable/red_cross"
             app:layout_constraintStart_toEndOf="@id/lib"
             app:layout_constraintEnd_toStartOf="@id/dormitory"
-            app:layout_constraintBottom_toBottomOf="@id/tju1895" />
+            app:layout_constraintBottom_toBottomOf="@id/food" />
 
         <TextView
             android:id="@+id/xiaoyiyuan"
@@ -85,14 +85,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@id/hospital"
-            app:layout_constraintBottom_toBottomOf="@id/tju1895"/>
+            app:layout_constraintBottom_toBottomOf="@id/food"/>
 
         <TextView
             android:id="@+id/wri_par"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="宿舍管理中心"
+            android:text="物业"
             app:layout_constraintStart_toStartOf="@id/dormitory"
             app:layout_constraintEnd_toEndOf="@id/dormitory"
             app:layout_constraintTop_toBottomOf="@id/dormitory"/>
@@ -103,7 +103,7 @@
             android:layout_height="64dp"
             android:layout_marginTop="8dp"
             android:src="@drawable/bike"
-            app:layout_constraintStart_toStartOf="@id/tju1895"
+            app:layout_constraintStart_toStartOf="@id/food"
             app:layout_constraintTop_toBottomOf="@+id/text1895" />
 
         <TextView
@@ -111,7 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="自行车"
+            android:text="交通"
             app:layout_constraintStart_toStartOf="@id/bike"
             app:layout_constraintEnd_toEndOf="@id/bike"
             app:layout_constraintTop_toBottomOf="@id/bike"
@@ -157,7 +157,7 @@
             android:id="@+id/fix"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:src="@drawable/repair"
+            android:src="@drawable/shield"
             app:layout_constraintBottom_toBottomOf="@id/bike"
             app:layout_constraintStart_toStartOf="@+id/dormitory" />
 
@@ -165,7 +165,7 @@
             android:id="@+id/wri_fix"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="维修中心"
+            android:text="保卫处"
             app:layout_constraintStart_toStartOf="@id/fix"
             app:layout_constraintEnd_toEndOf="@id/fix"
             app:layout_constraintTop_toBottomOf="@id/fix"/>
