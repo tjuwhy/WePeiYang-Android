@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar
 import android.widget.ImageView
 import com.example.yellowpages2.*
 import com.example.yellowpages2.model.Unit
-import com.example.yellowpages2.model.YellowPagePreference
+import com.example.yellowpages2.utils.YellowPagePreference
 import com.example.yellowpages2.utils.withItems
 
 class DepartmentActivity : AppCompatActivity() {
@@ -22,6 +22,8 @@ class DepartmentActivity : AppCompatActivity() {
     private lateinit var departmentTv: TextView
     lateinit var recyclerView: RecyclerView
     lateinit var toolbar: Toolbar
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

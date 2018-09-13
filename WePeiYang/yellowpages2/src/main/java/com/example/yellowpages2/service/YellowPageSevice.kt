@@ -3,16 +3,14 @@ package com.example.yellowpages2.service
 import com.example.yellowpages2.utils.FirstLetterUtil
 import com.example.yellowpages2.utils.Selector
 import com.example.yellowpages2.model.*
+import com.example.yellowpages2.utils.YellowPagePreference
 import com.twt.wepeiyang.commons.experimental.cache.*
 import com.twt.wepeiyang.commons.experimental.extensions.awaitAndHandle
 import com.twt.wepeiyang.commons.experimental.network.ServiceFactory
 import kotlinx.coroutines.experimental.Deferred
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 import kotlin.Unit
 
 interface YellowPageSevice {
@@ -26,8 +24,9 @@ interface YellowPageSevice {
     @GET("v1/yellowpage/updateCollection")
     fun updateCollection(@Query("id") tid: Int): Deferred<UpDateBean>
 
-//    @POST("v1/yellowpage/query")
-//    fun search(@Body() string : String) :
+    @POST("v1/yellowpage/query")
+    @FormUrlEncoded
+    fun search(@Field("query") keyword: String) : Deferred<SearchBean>
 
     companion object : YellowPageSevice by ServiceFactory()
 }
@@ -100,6 +99,16 @@ fun update(id: Int, callback: suspend (RefreshState<Unit>, String) -> Unit) {
                     .sortedBy { Selector(it.title) }
                     .toTypedArray()
             callback(RefreshState.Success(Unit), updateBean.status)
+        }
+    }
+}
+
+fun search(keyword: String,callback: suspend (RefreshState<Unit>, SearchBean?) -> Unit){
+    launch(UI) {
+        YellowPageSevice.search(keyword).awaitAndHandle {
+            callback(RefreshState.Failure(it),null)
+        }?.let {
+            callback(RefreshState.Success(Unit),it)
         }
     }
 }

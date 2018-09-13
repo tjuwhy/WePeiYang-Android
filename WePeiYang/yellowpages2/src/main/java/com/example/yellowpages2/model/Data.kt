@@ -2,17 +2,6 @@ package com.example.yellowpages2.model
 
 import com.twt.wepeiyang.commons.experimental.preference.hawk
 
-object YellowPagePreference{
-
-    var seachHistory : List<String> by hawk("search_histoty", listOf())
-
-    var phoneBean : PhoneBean? by hawk("phoneBean",null)
-
-	var collectionList : Array<SubData> by hawk("collection_list", arrayOf())
-
-	var subArray : Array<Array<SubData>> by hawk("sub_data_list", arrayOf(arrayOf()))
-
-}
 
 const val ITEM_SECOND = 0
 const val ITEM_COLLECTION = 1
@@ -77,3 +66,9 @@ data class CollectionBean(
 		val item_attach: String
 )
 
+data class SearchBean(
+		val id: Int,
+		val department_name: String,
+		val department_attach: Int,
+		val unit_list: List<Unit>
+)

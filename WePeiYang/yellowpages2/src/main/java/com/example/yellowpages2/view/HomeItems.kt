@@ -2,6 +2,7 @@ package com.example.yellowpages2.view
 
 import android.animation.ObjectAnimator
 import android.content.*
+import android.media.Image
 import android.net.Uri
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.RecyclerView
@@ -170,7 +171,6 @@ class ChildItem(val context: Context, val name: String, val phoneNum: String, va
                                 }
                             }
                             is RefreshState.Failure -> {
-
                                 Toasty.error(item.context, "$str，请检查网络")
                             }
                         }
@@ -273,9 +273,67 @@ class CharItem(val a: Char) : Item {
 
 }
 
+class SearchHistoryItem(val context: Context,val str: String,val block: (String) -> Unit): Item{
+
+    companion object Controller : ItemController{
+        override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
+            val inflater = parent.context.layoutInflater
+            val view = inflater.inflate(R.layout.item_search_history,parent,false)
+            val text = view.findViewById<TextView>(R.id.history_text)
+            return ViewHolder(view,text)
+        }
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: Item) {
+            item as SearchHistoryItem
+            holder as ViewHolder
+            holder.textView.text = item.str
+            holder.itemView.setOnClickListener {
+                item.block(item.str)
+            }
+        }
+    }
+
+    override val controller: ItemController
+        get() = Controller
+
+    class ViewHolder(itemView: View, val textView: TextView):RecyclerView.ViewHolder(itemView)
+
+}
+
+class SingleTextItem(val content : String,val block: () -> Unit): Item {
+
+    companion object Controller : ItemController {
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: Item) {
+            holder as ViewHolder
+            item as SingleTextItem
+            holder.singleText.text = item.content
+            holder.itemView.setOnClickListener {
+                item.block()
+            }
+        }
+
+        override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
+            val inflater = parent.context.layoutInflater
+            val view = inflater.inflate(R.layout.item_single_text,parent,false)
+            val singleText = view.findViewById<TextView>(R.id.single_text)
+            return ViewHolder(view,singleText)
+        }
+
+    }
+
+    class ViewHolder(itemView: View?, val singleText: TextView):RecyclerView.ViewHolder(itemView)
+
+    override val controller: ItemController
+        get() = Controller
+}
+
+
 private fun addExtra(intent: Intent, firstIndex: Int, secondIndex: Int) {
     intent.putExtra("first_index", firstIndex)
     intent.putExtra("second_index", secondIndex)
 }
+
+
 
 

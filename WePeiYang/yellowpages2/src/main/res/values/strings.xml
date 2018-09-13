@@ -5,4 +5,5 @@
     <string name="tju1895">1895</string>
     <string name="groupTitle">其他部门</string>
     <string name="childContent">2745873(老)</string>
+    <string name="searchHint">请输入你要搜索的内容</string>
 </resources>
