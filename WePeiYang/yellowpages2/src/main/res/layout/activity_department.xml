@@ -29,6 +29,16 @@
                 app:layout_constraintTop_toTopOf="parent"
                 />
 
+            <EditText
+                android:id="@+id/department_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="48dp"
+                android:layout_marginEnd="56dp"
+                android:visibility="gone"
+                />
+
             <TextView
                 android:textColor="#EEEEEE"
                 android:layout_width="wrap_content"

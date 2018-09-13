@@ -1,18 +1,24 @@
 package com.example.yellowpages2.view
 
 import android.animation.ObjectAnimator
-import android.content.*
-import android.media.Image
+import android.content.ClipboardManager
+import android.content.Context
+import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.RecyclerView
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import com.example.yellowpages2.*
+import com.example.yellowpages2.R
 import com.example.yellowpages2.model.GroupData
+import com.example.yellowpages2.model.SearchBean
 import com.example.yellowpages2.service.update
 import com.example.yellowpages2.utils.Expandable
 import com.example.yellowpages2.utils.Item
@@ -21,6 +27,8 @@ import com.twt.wepeiyang.commons.experimental.cache.RefreshState
 import es.dmoral.toasty.Toasty
 import org.jetbrains.anko.layoutInflater
 import org.jetbrains.anko.sdk25.coroutines.onClick
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 class HeaderItem(val context: Context) : Item {
 
@@ -184,7 +192,7 @@ class ChildItem(val context: Context, val name: String, val phoneNum: String, va
                 item.context.startActivity(intent)
             }
             holder.itemView.setOnClickListener {
-                val items = arrayListOf("复制号码", "新建联系人", "报错/反馈")
+                val items = arrayListOf("复制号码", /*"新建联系人",*/ "报错/反馈")
                 val normalDialog = AlertDialog.Builder(item.context)
                 normalDialog.setItems(items.toTypedArray()) { _, which ->
                     when (which) {
@@ -193,31 +201,31 @@ class ChildItem(val context: Context, val name: String, val phoneNum: String, va
                             cm.text = item.phoneNum.trim()
                             Toast.makeText(item.context, "已复制到剪贴板", Toast.LENGTH_SHORT).show()
                         }
-                        1 -> {
-
-                            //申请读写联系人权限
-//                            val permission = ContextCompat.checkSelfPermission(item.context,android.Manifest.permission.WRITE_CONTACTS)
-//                            if (permission == PackageManager.PERMISSION_DENIED){
-//                                ActivityCompat.requestPermissions(item.context as Activity, arrayOf(android.Manifest.permission.WRITE_CONTACTS,android.Manifest.permission.READ_CONTACTS),321)
-//                            }
-//                            val values = ContentValues()
-//                            val rawContractUri = item.context.contentResolver.insert(ContactsContract.RawContacts.CONTENT_URI,values)
-//                            val rawContactId = ContentUris.parseId(rawContractUri)
-//                            values.clear()
-//                            values.put(ContactsContract.Contacts.Data.RAW_CONTACT_ID, rawContactId)
-//                            values.put(ContactsContract.Contacts.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE)
-//                            values.put(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, item.name)
-//                            item.context.contentResolver.insert(android.provider.ContactsContract.Contacts.CONTENT_URI,values)
+//                        1 -> {
 //
-//                            values.clear()
-//                            values.put(ContactsContract.Contacts.Data.RAW_CONTACT_ID,rawContactId)
-//                            values.put(ContactsContract.Contacts.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)//待修改分类
-//                            values.put(ContactsContract.CommonDataKinds.Phone.NUMBER,item.phoneNum)
-//                            values.put(ContactsContract.CommonDataKinds.Phone.TYPE, if (item.phoneNum.length == 11) ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE else ContactsContract.CommonDataKinds.Phone.TYPE_OTHER)
-//                            item.context.contentResolver.insert(android.provider.ContactsContract.Contacts.CONTENT_URI,values)
-
-                        }
-                        2 -> {
+//                            //申请读写联系人权限
+////                            val permission = ContextCompat.checkSelfPermission(item.context,android.Manifest.permission.WRITE_CONTACTS)
+////                            if (permission == PackageManager.PERMISSION_DENIED){
+////                                ActivityCompat.requestPermissions(item.context as Activity, arrayOf(android.Manifest.permission.WRITE_CONTACTS,android.Manifest.permission.READ_CONTACTS),321)
+////                            }
+////                            val values = ContentValues()
+////                            val rawContractUri = item.context.contentResolver.insert(ContactsContract.RawContacts.CONTENT_URI,values)
+////                            val rawContactId = ContentUris.parseId(rawContractUri)
+////                            values.clear()
+////                            values.put(ContactsContract.Contacts.Data.RAW_CONTACT_ID, rawContactId)
+////                            values.put(ContactsContract.Contacts.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE)
+////                            values.put(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, item.name)
+////                            item.context.contentResolver.insert(android.provider.ContactsContract.Contacts.CONTENT_URI,values)
+////
+////                            values.clear()
+////                            values.put(ContactsContract.Contacts.Data.RAW_CONTACT_ID,rawContactId)
+////                            values.put(ContactsContract.Contacts.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)//待修改分类
+////                            values.put(ContactsContract.CommonDataKinds.Phone.NUMBER,item.phoneNum)
+////                            values.put(ContactsContract.CommonDataKinds.Phone.TYPE, if (item.phoneNum.length == 11) ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE else ContactsContract.CommonDataKinds.Phone.TYPE_OTHER)
+////                            item.context.contentResolver.insert(android.provider.ContactsContract.Contacts.CONTENT_URI,values)
+//
+//                        }
+                        1 -> {
                             val normalDialog1 = AlertDialog.Builder(item.context)
                             normalDialog1.setMessage("号码/名称有误？大佬要加群反馈下吗？")
                                     .setPositiveButton("加吧") { _, _ ->
@@ -328,6 +336,71 @@ class SingleTextItem(val content : String,val block: () -> Unit): Item {
         get() = Controller
 }
 
+
+class SearchResultItem(val context: Context, val searchBean: SearchBean, val query: String) : Item {
+
+
+    companion object Cotroller : ItemController {
+        override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
+            val inflater = parent.context.layoutInflater
+            val view = inflater.inflate(R.layout.item_search_result, parent, false)
+            val textView = view.findViewById<TextView>(R.id.item_sear_result_text1)
+            val textView2 = view.findViewById<TextView>(R.id.item_sear_result_text2)
+            return ViewHolder(view, textView, textView2)
+        }
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: Item) {
+            holder as ViewHolder
+            item as SearchResultItem
+            var content = ""
+            val subList = item.searchBean.unit_list?.map { it.item_name }
+            subList?.apply {
+                if (this.size > 1){
+                    this.forEach {
+                        content+= "$it、"
+                    }
+                } else if (this.size == 1){
+                    content += this[0]
+                }
+            }
+            holder.textView2!!.setSingleLine()
+            holder.textView!!.text = matchText(item.searchBean.department_name, item.query)
+            holder.textView2.text = matchText( content, item.query)
+            holder.itemView.setOnClickListener {
+                val intent = Intent(item.context, DepartmentActivity::class.java)
+                val id = item.searchBean.department_attach - 1
+                intent.putExtra("first_index", id)
+                intent.putExtra("second_index",when(id){
+                    0 -> item.searchBean.id - 1
+                    1 -> item.searchBean.id - 29
+                    2 -> item.searchBean.id - 54
+                    else -> 0
+                })
+                item.context.startActivity(intent)
+            }
+        }
+
+        private fun matchText(text: String, keyword: String): SpannableString {
+            val ss = SpannableString(text)
+            val pattern: Pattern = Pattern.compile(keyword)
+            val matcher: Matcher = pattern.matcher(ss)
+            while (matcher.find()) {
+                val start: Int = matcher.start()
+                val end: Int = matcher.end()
+                ss.setSpan(ForegroundColorSpan(Color.parseColor("#45a0e3")), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+            }
+            return ss
+        }
+    }
+
+    class ViewHolder(itemView: View?, val textView: TextView?, val textView2: TextView?) : RecyclerView.ViewHolder(itemView)
+
+    override val controller: ItemController
+        get() = Cotroller
+
+
+}
 
 private fun addExtra(intent: Intent, firstIndex: Int, secondIndex: Int) {
     intent.putExtra("first_index", firstIndex)

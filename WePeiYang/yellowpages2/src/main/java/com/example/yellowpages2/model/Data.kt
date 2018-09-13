@@ -70,5 +70,5 @@ data class SearchBean(
 		val id: Int,
 		val department_name: String,
 		val department_attach: Int,
-		val unit_list: List<Unit>
+		val unit_list: List<Unit>?
 )

@@ -23,8 +23,6 @@ class DepartmentActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var toolbar: Toolbar
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_department)

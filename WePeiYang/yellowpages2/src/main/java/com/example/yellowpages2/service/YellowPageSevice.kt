@@ -26,7 +26,7 @@ interface YellowPageSevice {
 
     @POST("v1/yellowpage/query")
     @FormUrlEncoded
-    fun search(@Field("query") keyword: String) : Deferred<SearchBean>
+    fun search(@Field("query") keyword: String) : Deferred<List<SearchBean>>
 
     companion object : YellowPageSevice by ServiceFactory()
 }
@@ -103,7 +103,7 @@ fun update(id: Int, callback: suspend (RefreshState<Unit>, String) -> Unit) {
     }
 }
 
-fun search(keyword: String,callback: suspend (RefreshState<Unit>, SearchBean?) -> Unit){
+fun search(keyword: String,callback: suspend (RefreshState<Unit>, List<SearchBean>?) -> Unit){
     launch(UI) {
         YellowPageSevice.search(keyword).awaitAndHandle {
             callback(RefreshState.Failure(it),null)

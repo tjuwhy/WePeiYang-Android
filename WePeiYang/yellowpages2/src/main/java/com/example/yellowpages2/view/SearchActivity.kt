@@ -71,8 +71,6 @@ class SearchActivity : AppCompatActivity() {
             intent.putExtra("search_content",text)
             editText.setText("")
             startActivity(intent)
-        } else {
-            Toast.makeText(this,"请输入搜索内容",Toast.LENGTH_SHORT).show()
         }
     }
 
