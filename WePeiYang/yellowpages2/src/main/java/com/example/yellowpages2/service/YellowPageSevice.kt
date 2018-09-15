@@ -2,8 +2,6 @@ package com.example.yellowpages2.service
 
 import com.example.yellowpages2.utils.FirstLetterUtil
 import com.example.yellowpages2.utils.Selector
-import com.example.yellowpages2.model.*
-import com.example.yellowpages2.utils.YellowPagePreference
 import com.twt.wepeiyang.commons.experimental.cache.*
 import com.twt.wepeiyang.commons.experimental.extensions.awaitAndHandle
 import com.twt.wepeiyang.commons.experimental.network.ServiceFactory

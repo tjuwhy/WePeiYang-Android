@@ -2,7 +2,7 @@ package com.example.yellowpages2.utils
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
-import com.example.yellowpages2.model.*
+import com.example.yellowpages2.service.*
 import com.example.yellowpages2.view.*
 import java.text.Collator
 

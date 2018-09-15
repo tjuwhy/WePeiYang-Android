@@ -1,6 +1,4 @@
-package com.example.yellowpages2.model
-
-import com.twt.wepeiyang.commons.experimental.preference.hawk
+package com.example.yellowpages2.service
 
 
 const val ITEM_SECOND = 0
@@ -14,14 +12,14 @@ data class GroupData(
 )
 
 data class SubData(
-		val title:String = "",
-		val groupIndex: Int = 0,
-		val childIndex: Int = 0,
-		val type : Int = ITEM_SECOND,
-		val phone: String = "0",
-		val isStared: Boolean = false,
-		val thirdId : Int = 0,
-		val firstChar: Char = '#'
+        val title:String = "",
+        val groupIndex: Int = 0,
+        val childIndex: Int = 0,
+        val type : Int = ITEM_SECOND,
+        val phone: String = "0",
+        val isStared: Boolean = false,
+        val thirdId : Int = 0,
+        val firstChar: Char = '#'
 )
 
 data class ChildData(

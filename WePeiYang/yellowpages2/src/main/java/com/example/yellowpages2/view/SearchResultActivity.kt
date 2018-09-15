@@ -1,6 +1,5 @@
 package com.example.yellowpages2.view
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -31,16 +30,16 @@ class SearchResultActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         arrowBackIv = findViewById(R.id.search_result_arrow_back)
-        search(keyWord){ refreshState, beanList ->
+        search(keyWord) { refreshState, beanList ->
             when (refreshState) {
                 is RefreshState.Success -> {
-                    recyclerView.withItems(beanList!!.map { SearchResultItem(this,it,keyWord) })
-                    if (beanList.isEmpty()){
-                        Toast.makeText(this,"未找到相关结果，请更换关键字重新搜索",Toast.LENGTH_SHORT).show()
+                    recyclerView.withItems(beanList!!.map { SearchResultItem(this, it, keyWord) })
+                    if (beanList.isEmpty()) {
+                        Toast.makeText(this, "未找到相关结果，请更换关键字重新搜索", Toast.LENGTH_SHORT).show()
                     }
                 }
                 is RefreshState.Failure -> {
-                    Toasty.error(this,"出现了一些问题${refreshState.throwable}")
+                    Toasty.error(this, "出现了一些问题${refreshState.throwable}")
                 }
             }
         }

@@ -2,4 +2,5 @@
 <resources>
     <color name="colorMainBg">#EEEEEE</color>
     <color name="editText">#ed2c2c2c</color>
+    <color name="bar">#FF00a1e9</color>
 </resources>

@@ -9,19 +9,20 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
+import android.view.WindowManager
 import android.widget.ImageView
-import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.yellowpages2.*
-import com.example.yellowpages2.model.GroupData
-import com.example.yellowpages2.model.SubData
+import com.example.yellowpages2.service.GroupData
+import com.example.yellowpages2.service.SubData
 import com.example.yellowpages2.service.getPhone
 import com.example.yellowpages2.service.getUserCollection
 import com.example.yellowpages2.utils.ExpandableHelper
 import com.example.yellowpages2.utils.ItemAdapter
 import com.example.yellowpages2.utils.ItemManager
-import com.example.yellowpages2.utils.YellowPagePreference
+import com.example.yellowpages2.service.YellowPagePreference
 import com.twt.wepeiyang.commons.experimental.cache.RefreshState
+import com.twt.wepeiyang.commons.experimental.extensions.fitSystemWindowWithStatusBar
 import es.dmoral.toasty.Toasty
 import org.jetbrains.anko.coroutines.experimental.asReference
 
@@ -44,6 +45,9 @@ class YellowPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_yellow_page)
 
+        toolbar = findViewById(R.id.toolbar)
+        fitSystemWindowWithStatusBar(toolbar)
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         searchIcon = findViewById(R.id.yellow_page_search)
         recyclerView = findViewById(R.id.phone_rv)
         swipeRefreshLayout = findViewById(R.id.yellow_page_srl)
@@ -71,7 +75,7 @@ class YellowPageActivity : AppCompatActivity() {
         if (!isRefreshing){
             Toast.makeText(this,"正在加载，请稍候",Toast.LENGTH_SHORT).show()
         }
-        getUserCollection ()
+        getUserCollection()
         getPhone { refreshState ->
             when (refreshState) {
                 is RefreshState.Success -> {
@@ -81,7 +85,7 @@ class YellowPageActivity : AppCompatActivity() {
                     ExpandableHelper(this, recyclerView, groupData.toTypedArray(), childDatas.toTypedArray())
                 }
                 is RefreshState.Failure -> {
-                    if (YellowPagePreference.subArray.isNotEmpty()){
+                    if (YellowPagePreference.subArray.isNotEmpty()) {
                         val childDatas = mutableListOf<Array<SubData>>()
                         childDatas.add(YellowPagePreference.collectionList)
                         childDatas.addAll(YellowPagePreference.subArray)

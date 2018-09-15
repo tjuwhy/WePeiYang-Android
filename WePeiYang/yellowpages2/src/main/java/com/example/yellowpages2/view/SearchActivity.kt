@@ -9,9 +9,12 @@ import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.Toast
 import com.example.yellowpages2.R
-import com.example.yellowpages2.utils.*
+import com.example.yellowpages2.service.YellowPagePreference
+import com.example.yellowpages2.utils.Item
+import com.example.yellowpages2.utils.ItemAdapter
+import com.example.yellowpages2.utils.ItemManager
+import com.example.yellowpages2.utils.withItems
 
 class SearchActivity : AppCompatActivity() {
 

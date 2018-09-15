@@ -1,6 +1,5 @@
 package com.example.yellowpages2.view
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -9,15 +8,14 @@ import android.widget.TextView
 import android.support.v7.widget.Toolbar
 import android.widget.ImageView
 import com.example.yellowpages2.*
-import com.example.yellowpages2.model.Unit
-import com.example.yellowpages2.utils.YellowPagePreference
+import com.example.yellowpages2.service.Unit
+import com.example.yellowpages2.service.YellowPagePreference
 import com.example.yellowpages2.utils.withItems
 
 class DepartmentActivity : AppCompatActivity() {
 
     lateinit var title: String
     private lateinit var unitList: List<Unit>
-    private lateinit var iconSearch: ImageView
     private lateinit var arrowBack: ImageView
     private lateinit var departmentTv: TextView
     lateinit var recyclerView: RecyclerView
@@ -29,7 +27,6 @@ class DepartmentActivity : AppCompatActivity() {
 
         toolbar = findViewById(R.id.toolbar)
         arrowBack = findViewById(R.id.department_arrow_back)
-        iconSearch = findViewById(R.id.department_search_icon)
         departmentTv = findViewById(R.id.department_name)
         recyclerView = findViewById(R.id.recycler_view_department)
 
@@ -41,9 +38,6 @@ class DepartmentActivity : AppCompatActivity() {
         departmentTv.text = title
         arrowBack.setOnClickListener {
             onBackPressed()
-        }
-        iconSearch.setOnClickListener {
-            startActivity(Intent(this, SearchActivity::class.java))
         }
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.withItems(unitList.map { unit ->

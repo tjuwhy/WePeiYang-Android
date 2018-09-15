@@ -10,7 +10,8 @@
         android:src="@drawable/banner"
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:contentDescription="@string/banner" />
+        android:contentDescription="@string/banner"
+        android:scaleType="fitXY"/>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"

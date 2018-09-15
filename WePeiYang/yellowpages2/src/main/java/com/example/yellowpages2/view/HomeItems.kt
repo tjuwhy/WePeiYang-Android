@@ -17,8 +17,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.yellowpages2.R
-import com.example.yellowpages2.model.GroupData
-import com.example.yellowpages2.model.SearchBean
+import com.example.yellowpages2.service.GroupData
+import com.example.yellowpages2.service.SearchBean
 import com.example.yellowpages2.service.update
 import com.example.yellowpages2.utils.Expandable
 import com.example.yellowpages2.utils.Item
@@ -281,9 +281,9 @@ class CharItem(val a: Char) : Item {
 
 }
 
-class SearchHistoryItem(val context: Context,val str: String,val block: (String) -> Unit): Item{
+class SearchHistoryItem(val context: Context,val str: String,val block: (String) -> Unit): Item {
 
-    companion object Controller : ItemController{
+    companion object Controller : ItemController {
         override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
             val inflater = parent.context.layoutInflater
             val view = inflater.inflate(R.layout.item_search_history,parent,false)
