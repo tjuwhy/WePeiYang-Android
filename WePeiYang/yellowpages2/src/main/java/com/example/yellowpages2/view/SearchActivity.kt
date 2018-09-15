@@ -11,16 +11,16 @@ import android.widget.EditText
 import android.widget.ImageView
 import com.example.yellowpages2.R
 import com.example.yellowpages2.service.YellowPagePreference
-import com.example.yellowpages2.utils.Item
-import com.example.yellowpages2.utils.ItemAdapter
-import com.example.yellowpages2.utils.ItemManager
-import com.example.yellowpages2.utils.withItems
+import com.twt.wepeiyang.commons.ui.rec.Item
+import com.twt.wepeiyang.commons.ui.rec.ItemAdapter
+import com.twt.wepeiyang.commons.ui.rec.ItemManager
+import com.twt.wepeiyang.commons.ui.rec.withItems
 
 class SearchActivity : AppCompatActivity() {
 
     var items = mutableListOf<Item>()
     private lateinit var arrowBack : ImageView
-    val itemManager = ItemManager()
+    private val itemManager = ItemManager()
     lateinit var editText: EditText
     lateinit var iconSearch : ImageView
     lateinit var recyclerView: RecyclerView
@@ -37,8 +37,8 @@ class SearchActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.search_history_rv)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = ItemAdapter(itemManager)
-        recyclerView.withItems(YellowPagePreference.seachHistory.map{ t -> SearchHistoryItem(this,t){ search(t) } })
-        if (YellowPagePreference.seachHistory.size > 0){
+        recyclerView.withItems(YellowPagePreference.searchHistory.map { t -> SearchHistoryItem(this, t) { search(t) } })
+        if (YellowPagePreference.searchHistory.size > 0) {
             itemManager.add(SingleTextItem("清空历史"){clearHistory()})
         }
 
@@ -63,10 +63,10 @@ class SearchActivity : AppCompatActivity() {
 
     private fun search(text : String){
         if (text != ""){
-            YellowPagePreference.seachHistory.remove(text)
-            YellowPagePreference.seachHistory.add(text)
-            items = YellowPagePreference.seachHistory.reversed().map { it -> SearchHistoryItem(this,it){search(it)} }.toMutableList()
-            if (YellowPagePreference.seachHistory.size != 0){
+            YellowPagePreference.searchHistory.remove(text)
+            YellowPagePreference.searchHistory.add(text)
+            items = YellowPagePreference.searchHistory.reversed().map { it -> SearchHistoryItem(this, it) { search(it) } }.toMutableList()
+            if (YellowPagePreference.searchHistory.size != 0) {
                 items.add(SingleTextItem("清空历史"){clearHistory()})
             }
             recyclerView.withItems(items)
@@ -79,7 +79,7 @@ class SearchActivity : AppCompatActivity() {
 
     private fun clearHistory(){
         items.clear()
-        YellowPagePreference.seachHistory.clear()
+        YellowPagePreference.searchHistory.clear()
         recyclerView.withItems(items)
     }
 }

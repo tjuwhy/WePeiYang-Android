@@ -2,16 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <ImageView
-        android:src="@drawable/banner"
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:contentDescription="@string/banner"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/banner" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,9 +23,9 @@
             android:layout_height="64dp"
             android:layout_marginTop="12dp"
             android:src="@drawable/food"
+            app:layout_constraintEnd_toStartOf="@id/lib"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/lib"
             tools:ignore="ContentDescription" />
 
         <TextView
@@ -34,18 +34,18 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="订餐"
-            app:layout_constraintTop_toBottomOf="@id/food"
+            app:layout_constraintEnd_toEndOf="@id/food"
             app:layout_constraintStart_toStartOf="@id/food"
-            app:layout_constraintEnd_toEndOf="@id/food"/>
+            app:layout_constraintTop_toBottomOf="@id/food" />
 
         <ImageView
             android:id="@+id/lib"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:src="@drawable/library"
+            app:layout_constraintBottom_toBottomOf="@id/food"
             app:layout_constraintEnd_toStartOf="@id/hospital"
-            app:layout_constraintStart_toEndOf="@id/food"
-            app:layout_constraintBottom_toBottomOf="@id/food"/>
+            app:layout_constraintStart_toEndOf="@id/food" />
 
         <TextView
             android:id="@+id/libtext"
@@ -53,9 +53,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="图书馆"
-            app:layout_constraintStart_toStartOf="@id/lib"
             app:layout_constraintEnd_toEndOf="@id/lib"
-            app:layout_constraintTop_toBottomOf="@id/lib"/>
+            app:layout_constraintStart_toStartOf="@id/lib"
+            app:layout_constraintTop_toBottomOf="@id/lib" />
 
         <ImageView
             android:id="@+id/hospital"
@@ -63,9 +63,9 @@
             android:layout_height="64dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/red_cross"
-            app:layout_constraintStart_toEndOf="@id/lib"
+            app:layout_constraintBottom_toBottomOf="@id/food"
             app:layout_constraintEnd_toStartOf="@id/dormitory"
-            app:layout_constraintBottom_toBottomOf="@id/food" />
+            app:layout_constraintStart_toEndOf="@id/lib" />
 
         <TextView
             android:id="@+id/xiaoyiyuan"
@@ -73,21 +73,21 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="校医院"
-            app:layout_constraintStart_toStartOf="@id/hospital"
             app:layout_constraintEnd_toEndOf="@id/hospital"
-            app:layout_constraintTop_toBottomOf="@id/hospital"/>
+            app:layout_constraintStart_toStartOf="@id/hospital"
+            app:layout_constraintTop_toBottomOf="@id/hospital" />
 
         <ImageView
-            android:scaleType="centerCrop"
             android:id="@+id/dormitory"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/dormitory"
+            app:layout_constraintBottom_toBottomOf="@id/food"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@id/hospital"
-            app:layout_constraintBottom_toBottomOf="@id/food"/>
+            app:layout_constraintStart_toEndOf="@id/hospital" />
 
         <TextView
             android:id="@+id/wri_par"
@@ -95,9 +95,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="物业"
-            app:layout_constraintStart_toStartOf="@id/dormitory"
             app:layout_constraintEnd_toEndOf="@id/dormitory"
-            app:layout_constraintTop_toBottomOf="@id/dormitory"/>
+            app:layout_constraintStart_toStartOf="@id/dormitory"
+            app:layout_constraintTop_toBottomOf="@id/dormitory" />
 
         <ImageView
             android:id="@+id/bike"
@@ -112,48 +112,47 @@
             android:id="@+id/wri_bike"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
             android:gravity="center"
             android:text="交通"
-            app:layout_constraintStart_toStartOf="@id/bike"
-            app:layout_constraintEnd_toEndOf="@id/bike"
-            app:layout_constraintTop_toBottomOf="@id/bike"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="12dp"
-            />
+            app:layout_constraintEnd_toEndOf="@id/bike"
+            app:layout_constraintStart_toStartOf="@id/bike"
+            app:layout_constraintTop_toBottomOf="@id/bike" />
 
         <ImageView
             android:id="@+id/team"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:src="@drawable/part"
-            app:layout_constraintStart_toStartOf="@id/lib"
-            app:layout_constraintBottom_toBottomOf="@id/bike"/>
+            app:layout_constraintBottom_toBottomOf="@id/bike"
+            app:layout_constraintStart_toStartOf="@id/lib" />
 
         <TextView
             android:id="@+id/wri_team"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="团委"
-            app:layout_constraintStart_toStartOf="@id/team"
             app:layout_constraintEnd_toEndOf="@id/team"
-            app:layout_constraintTop_toBottomOf="@id/team"/>
+            app:layout_constraintStart_toStartOf="@id/team"
+            app:layout_constraintTop_toBottomOf="@id/team" />
 
         <ImageView
             android:id="@+id/bank"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:src="@drawable/bank"
-            app:layout_constraintStart_toStartOf="@id/hospital"
-            app:layout_constraintBottom_toBottomOf="@id/bike"/>
+            app:layout_constraintBottom_toBottomOf="@id/bike"
+            app:layout_constraintStart_toStartOf="@id/hospital" />
 
         <TextView
             android:id="@+id/wri_bank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="银行"
-            app:layout_constraintStart_toStartOf="@id/bank"
             app:layout_constraintEnd_toEndOf="@id/bank"
-            app:layout_constraintTop_toBottomOf="@id/bank"/>
+            app:layout_constraintStart_toStartOf="@id/bank"
+            app:layout_constraintTop_toBottomOf="@id/bank" />
 
         <ImageView
             android:id="@+id/fix"
@@ -168,14 +167,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="保卫处"
-            app:layout_constraintStart_toStartOf="@id/fix"
             app:layout_constraintEnd_toEndOf="@id/fix"
-            app:layout_constraintTop_toBottomOf="@id/fix"/>
+            app:layout_constraintStart_toStartOf="@id/fix"
+            app:layout_constraintTop_toBottomOf="@id/fix" />
     </android.support.constraint.ConstraintLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:background="#eeeeee"/>
+        android:background="#eeeeee" />
 
 </LinearLayout>

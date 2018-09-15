@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.YellowPageActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".view.YellowPageActivity">
 
 
     <android.support.v7.widget.Toolbar
-        android:background="#00a1e9"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/toolbar"
-        >
+        android:background="#00a1e9">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -22,27 +21,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:layout_marginStart="16dp"
                 android:text="黄页"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:textColor="#eeeeee"
-                android:layout_marginStart="16dp"/>
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/yellow_page_search"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="@string/search_icon"
                 android:padding="12dp"
                 android:scaleType="centerCrop"
-                android:contentDescription="@string/search_icon"
                 android:src="@drawable/search"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginEnd="12dp"
-                />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
 
@@ -57,12 +55,12 @@
             android:id="@+id/phone_rv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"/>
+            android:background="#FFFFFF" />
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#eeeeee"/>
+        android:background="#eeeeee" />
 </LinearLayout>

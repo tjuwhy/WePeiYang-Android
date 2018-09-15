@@ -18,11 +18,11 @@ import com.example.yellowpages2.service.SubData
 import com.example.yellowpages2.service.getPhone
 import com.example.yellowpages2.service.getUserCollection
 import com.example.yellowpages2.utils.ExpandableHelper
-import com.example.yellowpages2.utils.ItemAdapter
-import com.example.yellowpages2.utils.ItemManager
 import com.example.yellowpages2.service.YellowPagePreference
 import com.twt.wepeiyang.commons.experimental.cache.RefreshState
 import com.twt.wepeiyang.commons.experimental.extensions.fitSystemWindowWithStatusBar
+import com.twt.wepeiyang.commons.ui.rec.ItemAdapter
+import com.twt.wepeiyang.commons.ui.rec.ItemManager
 import es.dmoral.toasty.Toasty
 import org.jetbrains.anko.coroutines.experimental.asReference
 
@@ -70,26 +70,26 @@ class YellowPageActivity : AppCompatActivity() {
         }
     }
 
-    private fun load(){
+    private fun load() {
         val activity = this@YellowPageActivity.asReference()
-        if (!isRefreshing){
-            Toast.makeText(this,"正在加载，请稍候",Toast.LENGTH_SHORT).show()
+        if (!isRefreshing) {
+            Toasty.info(this, "正在加载", Toast.LENGTH_SHORT).show()
         }
         getUserCollection()
         getPhone { refreshState ->
             when (refreshState) {
                 is RefreshState.Success -> {
-                    val childDatas = mutableListOf<Array<SubData>>()
-                    childDatas.add(YellowPagePreference.collectionList)
-                    childDatas.addAll(YellowPagePreference.subArray)
-                    ExpandableHelper(this, recyclerView, groupData.toTypedArray(), childDatas.toTypedArray())
+                    val childData = mutableListOf<Array<SubData>>()
+                    childData.add(YellowPagePreference.collectionList)
+                    childData.addAll(YellowPagePreference.subArray)
+                    ExpandableHelper(this, recyclerView, groupData.toTypedArray(), childData.toTypedArray())
                 }
                 is RefreshState.Failure -> {
                     if (YellowPagePreference.subArray.isNotEmpty()) {
-                        val childDatas = mutableListOf<Array<SubData>>()
-                        childDatas.add(YellowPagePreference.collectionList)
-                        childDatas.addAll(YellowPagePreference.subArray)
-                        ExpandableHelper(this, recyclerView, groupData.toTypedArray(), childDatas.toTypedArray())
+                        val childData = mutableListOf<Array<SubData>>()
+                        childData.add(YellowPagePreference.collectionList)
+                        childData.addAll(YellowPagePreference.subArray)
+                        ExpandableHelper(this, recyclerView, groupData.toTypedArray(), childData.toTypedArray())
                     }
                     Toasty.error(activity(), refreshState.throwable.toString()).show()
                 }

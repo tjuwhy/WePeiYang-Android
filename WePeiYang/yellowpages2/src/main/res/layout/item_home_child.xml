@@ -1,59 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    android:clickable="true"
-    android:focusable="true"
-    android:background="@drawable/recycler_item_selector"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="64dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    android:background="@drawable/recycler_item_selector"
+    android:clickable="true"
+    android:focusable="true">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#eeeeee"/>
+        android:background="#eeeeee" />
 
     <TextView
         android:id="@+id/third_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="核算科"
         android:layout_marginTop="4dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/phone_tv"
         app:layout_constraintStart_toStartOf="@id/phone_tv"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="核算科" />
 
     <TextView
         android:id="@+id/phone_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/third_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="44dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:textColor="#00a1e9"
         android:textSize="14sp"
-        android:text="@string/childContent"
-        android:textColor="#00a1e9"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/third_name"
+        tools:text="@string/childContent" />
 
     <ImageView
         android:id="@+id/is_starred"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/favorite_light"
-        app:layout_constraintEnd_toStartOf="@id/phone_button"
-        app:layout_constraintBottom_toBottomOf="@id/phone_tv"
         android:layout_marginEnd="18dp"
-        />
+        android:src="@drawable/favorite_light"
+        app:layout_constraintBottom_toBottomOf="@id/phone_tv"
+        app:layout_constraintEnd_toStartOf="@id/phone_button" />
 
     <ImageView
         android:id="@+id/phone_button"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toBottomOf="@id/phone_tv"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/phone"/>
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/phone"
+        app:layout_constraintBottom_toBottomOf="@id/phone_tv"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

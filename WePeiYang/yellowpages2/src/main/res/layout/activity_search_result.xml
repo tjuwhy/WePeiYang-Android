@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.SearchResultActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".view.SearchResultActivity">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
@@ -21,20 +21,20 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:padding="12dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/ic_arrow_back_black_24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/ic_arrow_back_black_24dp"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/search_result_arrow_back"
+                android:id="@+id/search_keyword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
                 android:textColor="#e9e9e9"
-                android:id="@+id/search_keyword"/>
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/search_result_arrow_back"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
 

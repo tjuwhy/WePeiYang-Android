@@ -21,9 +21,9 @@ import com.example.yellowpages2.service.GroupData
 import com.example.yellowpages2.service.SearchBean
 import com.example.yellowpages2.service.update
 import com.example.yellowpages2.utils.Expandable
-import com.example.yellowpages2.utils.Item
-import com.example.yellowpages2.utils.ItemController
 import com.twt.wepeiyang.commons.experimental.cache.RefreshState
+import com.twt.wepeiyang.commons.ui.rec.Item
+import com.twt.wepeiyang.commons.ui.rec.ItemController
 import es.dmoral.toasty.Toasty
 import org.jetbrains.anko.layoutInflater
 import org.jetbrains.anko.sdk25.coroutines.onClick
@@ -201,30 +201,6 @@ class ChildItem(val context: Context, val name: String, val phoneNum: String, va
                             cm.text = item.phoneNum.trim()
                             Toast.makeText(item.context, "已复制到剪贴板", Toast.LENGTH_SHORT).show()
                         }
-//                        1 -> {
-//
-//                            //申请读写联系人权限
-////                            val permission = ContextCompat.checkSelfPermission(item.context,android.Manifest.permission.WRITE_CONTACTS)
-////                            if (permission == PackageManager.PERMISSION_DENIED){
-////                                ActivityCompat.requestPermissions(item.context as Activity, arrayOf(android.Manifest.permission.WRITE_CONTACTS,android.Manifest.permission.READ_CONTACTS),321)
-////                            }
-////                            val values = ContentValues()
-////                            val rawContractUri = item.context.contentResolver.insert(ContactsContract.RawContacts.CONTENT_URI,values)
-////                            val rawContactId = ContentUris.parseId(rawContractUri)
-////                            values.clear()
-////                            values.put(ContactsContract.Contacts.Data.RAW_CONTACT_ID, rawContactId)
-////                            values.put(ContactsContract.Contacts.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE)
-////                            values.put(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, item.name)
-////                            item.context.contentResolver.insert(android.provider.ContactsContract.Contacts.CONTENT_URI,values)
-////
-////                            values.clear()
-////                            values.put(ContactsContract.Contacts.Data.RAW_CONTACT_ID,rawContactId)
-////                            values.put(ContactsContract.Contacts.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)//待修改分类
-////                            values.put(ContactsContract.CommonDataKinds.Phone.NUMBER,item.phoneNum)
-////                            values.put(ContactsContract.CommonDataKinds.Phone.TYPE, if (item.phoneNum.length == 11) ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE else ContactsContract.CommonDataKinds.Phone.TYPE_OTHER)
-////                            item.context.contentResolver.insert(android.provider.ContactsContract.Contacts.CONTENT_URI,values)
-//
-//                        }
                         1 -> {
                             val normalDialog1 = AlertDialog.Builder(item.context)
                             normalDialog1.setMessage("号码/名称有误？大佬要加群反馈下吗？")
@@ -258,7 +234,7 @@ class ChildItem(val context: Context, val name: String, val phoneNum: String, va
 
 class CharItem(val a: Char) : Item {
 
-    companion object Cotroller : ItemController {
+    companion object Controller : ItemController {
         override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
             val inflater = parent.context.layoutInflater
             val view = inflater.inflate(R.layout.item_char, parent, false)
@@ -277,18 +253,18 @@ class CharItem(val a: Char) : Item {
     class ViewHolder(itemView: View, val char: TextView) : RecyclerView.ViewHolder(itemView)
 
     override val controller: ItemController
-        get() = Cotroller
+        get() = Controller
 
 }
 
-class SearchHistoryItem(val context: Context,val str: String,val block: (String) -> Unit): Item {
+class SearchHistoryItem(val context: Context, val str: String, val block: (String) -> Unit) : Item {
 
     companion object Controller : ItemController {
         override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
             val inflater = parent.context.layoutInflater
-            val view = inflater.inflate(R.layout.item_search_history,parent,false)
+            val view = inflater.inflate(R.layout.item_search_history, parent, false)
             val text = view.findViewById<TextView>(R.id.history_text)
-            return ViewHolder(view,text)
+            return ViewHolder(view, text)
         }
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: Item) {
@@ -304,11 +280,11 @@ class SearchHistoryItem(val context: Context,val str: String,val block: (String)
     override val controller: ItemController
         get() = Controller
 
-    class ViewHolder(itemView: View, val textView: TextView):RecyclerView.ViewHolder(itemView)
+    class ViewHolder(itemView: View, val textView: TextView) : RecyclerView.ViewHolder(itemView)
 
 }
 
-class SingleTextItem(val content : String,val block: () -> Unit): Item {
+class SingleTextItem(val content: String, val block: () -> Unit) : Item {
 
     companion object Controller : ItemController {
 
@@ -323,14 +299,14 @@ class SingleTextItem(val content : String,val block: () -> Unit): Item {
 
         override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
             val inflater = parent.context.layoutInflater
-            val view = inflater.inflate(R.layout.item_single_text,parent,false)
+            val view = inflater.inflate(R.layout.item_single_text, parent, false)
             val singleText = view.findViewById<TextView>(R.id.single_text)
-            return ViewHolder(view,singleText)
+            return ViewHolder(view, singleText)
         }
 
     }
 
-    class ViewHolder(itemView: View?, val singleText: TextView):RecyclerView.ViewHolder(itemView)
+    class ViewHolder(itemView: View?, val singleText: TextView) : RecyclerView.ViewHolder(itemView)
 
     override val controller: ItemController
         get() = Controller
@@ -340,7 +316,7 @@ class SingleTextItem(val content : String,val block: () -> Unit): Item {
 class SearchResultItem(val context: Context, val searchBean: SearchBean, val query: String) : Item {
 
 
-    companion object Cotroller : ItemController {
+    companion object Controller : ItemController {
         override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
             val inflater = parent.context.layoutInflater
             val view = inflater.inflate(R.layout.item_search_result, parent, false)
@@ -355,22 +331,22 @@ class SearchResultItem(val context: Context, val searchBean: SearchBean, val que
             var content = ""
             val subList = item.searchBean.unit_list?.map { it.item_name }
             subList?.apply {
-                if (this.size > 1){
+                if (this.size > 1) {
                     this.forEach {
-                        content+= "$it、"
+                        content += "$it、"
                     }
-                } else if (this.size == 1){
+                } else if (this.size == 1) {
                     content += this[0]
                 }
             }
             holder.textView2!!.setSingleLine()
             holder.textView!!.text = matchText(item.searchBean.department_name, item.query)
-            holder.textView2.text = matchText( content, item.query)
+            holder.textView2.text = matchText(content, item.query)
             holder.itemView.setOnClickListener {
                 val intent = Intent(item.context, DepartmentActivity::class.java)
                 val id = item.searchBean.department_attach - 1
                 intent.putExtra("first_index", id)
-                intent.putExtra("second_index",when(id){
+                intent.putExtra("second_index", when (id) {
                     0 -> item.searchBean.id - 1
                     1 -> item.searchBean.id - 29
                     2 -> item.searchBean.id - 54
@@ -397,7 +373,7 @@ class SearchResultItem(val context: Context, val searchBean: SearchBean, val que
     class ViewHolder(itemView: View?, val textView: TextView?, val textView2: TextView?) : RecyclerView.ViewHolder(itemView)
 
     override val controller: ItemController
-        get() = Cotroller
+        get() = Controller
 
 
 }

@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:clickable="true"
-    android:focusable="true"
-    android:background="@drawable/recycler_item_selector"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="56dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@drawable/recycler_item_selector"
+    android:clickable="true"
+    android:focusable="true">
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#eeeeee"/>
+        android:background="#eeeeee" />
 
     <TextView
         android:id="@+id/sub_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:text="123"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="123" />
 
 </android.support.constraint.ConstraintLayout>

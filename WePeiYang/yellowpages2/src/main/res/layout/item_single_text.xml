@@ -5,11 +5,11 @@
     android:background="#EFEFEF">
 
     <TextView
+        android:id="@+id/single_text"
         android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:id="@+id/single_text"
         android:gravity="center"
         android:textColor="#606060"
-        android:textSize="14sp"/>
+        android:textSize="14sp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -4,10 +4,13 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import com.example.yellowpages2.service.*
 import com.example.yellowpages2.view.*
+import com.twt.wepeiyang.commons.ui.rec.Item
+import com.twt.wepeiyang.commons.ui.rec.ItemAdapter
+import com.twt.wepeiyang.commons.ui.rec.ItemManager
 import java.text.Collator
 
-interface UpdateCallBack{
-    fun collectionUpdate(id : Int)
+interface UpdateCallBack {
+    fun collectionUpdate(id: Int)
 }
 
 interface Expandable {

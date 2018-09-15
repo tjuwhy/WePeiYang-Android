@@ -10,7 +10,7 @@ import android.widget.ImageView
 import com.example.yellowpages2.*
 import com.example.yellowpages2.service.Unit
 import com.example.yellowpages2.service.YellowPagePreference
-import com.example.yellowpages2.utils.withItems
+import com.twt.wepeiyang.commons.ui.rec.withItems
 
 class DepartmentActivity : AppCompatActivity() {
 

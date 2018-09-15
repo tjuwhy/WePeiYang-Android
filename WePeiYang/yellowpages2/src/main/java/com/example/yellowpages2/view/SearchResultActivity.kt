@@ -9,14 +9,14 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.yellowpages2.R
 import com.example.yellowpages2.service.search
-import com.example.yellowpages2.utils.withItems
 import com.twt.wepeiyang.commons.experimental.cache.RefreshState
+import com.twt.wepeiyang.commons.ui.rec.withItems
 import es.dmoral.toasty.Toasty
 
 class SearchResultActivity : AppCompatActivity() {
 
-    lateinit var keyWord : String
-    lateinit var arrowBackIv : ImageView
+    lateinit var keyWord: String
+    lateinit var arrowBackIv: ImageView
     lateinit var keyWordTv: TextView
     lateinit var recyclerView: RecyclerView
 
