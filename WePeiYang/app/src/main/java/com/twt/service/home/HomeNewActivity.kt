@@ -36,7 +36,7 @@ class HomeNewActivity : CAppCompatActivity() {
         }
         val imageView = findViewById<ImageView>(R.id.iv_toolbar_avatar).apply {
             setOnClickListener {
-                startActivity<YellowPageActivity>()
+                startActivity<HomeActivity>()
             }
         }
         authSelfLiveData.bindNonNull(this) {
