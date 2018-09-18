@@ -46,8 +46,6 @@ class YellowPageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_yellow_page)
 
         toolbar = findViewById(R.id.toolbar)
-        fitSystemWindowWithStatusBar(toolbar)
-        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         searchIcon = findViewById(R.id.yellow_page_search)
         recyclerView = findViewById(R.id.phone_rv)
         swipeRefreshLayout = findViewById(R.id.yellow_page_srl)

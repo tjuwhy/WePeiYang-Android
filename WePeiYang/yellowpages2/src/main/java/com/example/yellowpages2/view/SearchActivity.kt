@@ -37,10 +37,11 @@ class SearchActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.search_history_rv)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = ItemAdapter(itemManager)
-        recyclerView.withItems(YellowPagePreference.searchHistory.map { t -> SearchHistoryItem(this, t) { search(t) } })
+       YellowPagePreference.searchHistory.mapTo(items) { t -> SearchHistoryItem(this, t) { search(t) } }
         if (YellowPagePreference.searchHistory.size > 0) {
-            itemManager.add(SingleTextItem("清空历史"){clearHistory()})
+            items.add(SingleTextItem("清空历史"){clearHistory()})
         }
+        recyclerView.withItems(items)
 
         arrowBack.setOnClickListener {
             onBackPressed()

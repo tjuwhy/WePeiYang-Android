@@ -7,8 +7,7 @@
 
     <application>
         <activity
-            android:name=".view.YellowPageActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:name=".view.YellowPageActivity"/>
         <activity
             android:name=".view.SearchActivity"
             android:launchMode="singleTask" />
