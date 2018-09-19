@@ -7,17 +7,14 @@
 
     <application>
         <activity
-            android:name=".view.YellowPageActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".view.SearchActivity" />
+            android:name=".view.YellowPageActivity"/>
+        <activity
+            android:name=".view.SearchActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".view.DepartmentActivity" />
-        <activity android:name=".view.SearchResultActivity"></activity>
+        <activity
+            android:name=".view.SearchResultActivity"
+            android:launchMode="singleTask" />
     </application>
 
 </manifest>

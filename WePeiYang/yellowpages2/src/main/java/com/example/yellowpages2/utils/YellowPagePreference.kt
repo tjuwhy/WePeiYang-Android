@@ -1,7 +1,7 @@
 package com.example.yellowpages2.utils
 
-import com.example.yellowpages2.model.PhoneBean
-import com.example.yellowpages2.model.SubData
+import com.example.yellowpages2.service.PhoneBean
+import com.example.yellowpages2.service.SubData
 import com.twt.wepeiyang.commons.experimental.preference.hawk
 
 object YellowPagePreference {

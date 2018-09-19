@@ -1,4 +1,5 @@
-package com.example.yellowpages2.model
+package com.example.yellowpages2.service
+
 
 const val ITEM_SECOND = 0
 const val ITEM_COLLECTION = 1
@@ -42,9 +43,7 @@ data class Department(
         val department_name: String,
         val department_attach: String,
         val unit_list: List<Unit>
-) {
-    override fun equals(other: Any?): Boolean = this.id == (other as Department).id
-}
+)
 
 data class Unit(
         val id: Int,
@@ -66,14 +65,8 @@ data class CollectionBean(
 )
 
 data class SearchBean(
-        val department: List<Department>,
-        val item: List<Item>
-)
-
-data class Item(
         val id: Int,
-        val item_name: String,
-        val item_phone: String,
-        val item_attach: String
+        val department_name: String,
+        val department_attach: Int,
+        val unit_list: List<Unit>?
 )
-

@@ -1,18 +1,17 @@
 package com.example.yellowpages2.service
 
-import com.example.yellowpages2.model.*
 import com.example.yellowpages2.utils.FirstLetterUtil
 import com.example.yellowpages2.utils.Selector
-import com.example.yellowpages2.utils.YellowPagePreference
-import com.twt.wepeiyang.commons.experimental.cache.RefreshState
+import com.twt.wepeiyang.commons.experimental.cache.*
 import com.twt.wepeiyang.commons.experimental.extensions.awaitAndHandle
 import com.twt.wepeiyang.commons.experimental.network.ServiceFactory
 import kotlinx.coroutines.experimental.Deferred
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
 import retrofit2.http.*
+import kotlin.Unit
 
-interface YellowPageSevice {
+interface YellowPageService {
 
     @GET("v1/yellowpage/data3")
     fun getPhone(): Deferred<PhoneBean>
@@ -25,14 +24,14 @@ interface YellowPageSevice {
 
     @POST("v1/yellowpage/query")
     @FormUrlEncoded
-    fun search(@Field("query") string: String): Deferred<SearchBean>
+    fun search(@Field("query") keyword: String): Deferred<List<SearchBean>>
 
-    companion object : YellowPageSevice by ServiceFactory()
+    companion object : YellowPageService by ServiceFactory()
 }
 
 fun getPhone(callback: suspend (RefreshState<Unit>) -> Unit = {}) {
     launch(UI) {
-        YellowPageSevice.getPhone().awaitAndHandle {
+        YellowPageService.getPhone().awaitAndHandle {
             callback(RefreshState.Failure(it))
         }?.let { phoneBean ->
             val childData = mutableListOf<Array<SubData>>()
@@ -63,7 +62,7 @@ fun getPhone(callback: suspend (RefreshState<Unit>) -> Unit = {}) {
 
 fun getUserCollection(callback: suspend (RefreshState<Unit>) -> Unit = {}) {
     launch(UI) {
-        YellowPageSevice.getCollectionList().awaitAndHandle {
+        YellowPageService.getCollectionList().awaitAndHandle {
             callback(RefreshState.Failure(it))
         }?.let { collectionList ->
             var childIndex = 0
@@ -89,7 +88,7 @@ fun getUserCollection(callback: suspend (RefreshState<Unit>) -> Unit = {}) {
 
 fun update(id: Int, callback: suspend (RefreshState<Unit>, String) -> Unit) {
     launch(UI) {
-        YellowPageSevice.updateCollection(id).awaitAndHandle {
+        YellowPageService.updateCollection(id).awaitAndHandle {
             callback(RefreshState.Failure(it), it.toString())
         }?.let { updateBean ->
             var childIndex = 0
@@ -102,9 +101,9 @@ fun update(id: Int, callback: suspend (RefreshState<Unit>, String) -> Unit) {
     }
 }
 
-fun search(query: String, callback: suspend (RefreshState<Unit>, SearchBean?) -> Unit) {
+fun search(keyword: String, callback: suspend (RefreshState<Unit>, List<SearchBean>?) -> Unit) {
     launch(UI) {
-        YellowPageSevice.search(query).awaitAndHandle {
+        YellowPageService.search(keyword).awaitAndHandle {
             callback(RefreshState.Failure(it), null)
         }?.let {
             callback(RefreshState.Success(Unit), it)
