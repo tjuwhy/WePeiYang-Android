@@ -1,13 +1,13 @@
 package com.example.yellowpages2.view
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.widget.TextView
 import android.support.v7.widget.Toolbar
 import android.widget.ImageView
-import com.example.yellowpages2.*
+import android.widget.TextView
+import com.example.yellowpages2.R
 import com.example.yellowpages2.service.Unit
 import com.example.yellowpages2.service.YellowPagePreference
 import com.twt.wepeiyang.commons.ui.rec.withItems

@@ -2,14 +2,13 @@ package com.example.yellowpages2.service
 
 import com.example.yellowpages2.utils.FirstLetterUtil
 import com.example.yellowpages2.utils.Selector
-import com.twt.wepeiyang.commons.experimental.cache.*
+import com.twt.wepeiyang.commons.experimental.cache.RefreshState
 import com.twt.wepeiyang.commons.experimental.extensions.awaitAndHandle
 import com.twt.wepeiyang.commons.experimental.network.ServiceFactory
 import kotlinx.coroutines.experimental.Deferred
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
 import retrofit2.http.*
-import kotlin.Unit
 
 interface YellowPageService {
 

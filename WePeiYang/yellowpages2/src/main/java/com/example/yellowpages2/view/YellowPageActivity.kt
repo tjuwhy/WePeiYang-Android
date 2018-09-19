@@ -11,13 +11,9 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.widget.ImageView
 import android.widget.Toast
-import com.example.yellowpages2.*
-import com.example.yellowpages2.service.GroupData
-import com.example.yellowpages2.service.SubData
-import com.example.yellowpages2.service.getPhone
-import com.example.yellowpages2.service.getUserCollection
+import com.example.yellowpages2.R
+import com.example.yellowpages2.service.*
 import com.example.yellowpages2.utils.ExpandableHelper
-import com.example.yellowpages2.service.YellowPagePreference
 import com.twt.wepeiyang.commons.experimental.cache.RefreshState
 import com.twt.wepeiyang.commons.ui.rec.ItemAdapter
 import com.twt.wepeiyang.commons.ui.rec.ItemManager

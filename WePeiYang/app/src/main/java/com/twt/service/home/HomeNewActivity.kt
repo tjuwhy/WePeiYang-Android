@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.WindowManager
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.example.yellowpages2.view.YellowPageActivity
 import com.twt.service.R
 import com.twt.service.schedule2.view.home.homeScheduleItem
 import com.twt.wepeiyang.commons.experimental.extensions.bindNonNull
@@ -36,7 +35,7 @@ class HomeNewActivity : CAppCompatActivity() {
         }
         val imageView = findViewById<ImageView>(R.id.iv_toolbar_avatar).apply {
             setOnClickListener {
-                startActivity<YellowPageActivity>()
+                startActivity<HomeActivity>()
             }
         }
         authSelfLiveData.bindNonNull(this) {

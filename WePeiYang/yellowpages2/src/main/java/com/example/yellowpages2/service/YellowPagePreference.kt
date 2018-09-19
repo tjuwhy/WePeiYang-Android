@@ -2,14 +2,14 @@ package com.example.yellowpages2.service
 
 import com.twt.wepeiyang.commons.experimental.preference.hawk
 
-object YellowPagePreference{
+object YellowPagePreference {
 
     var searchHistory: MutableSet<String> by hawk("search_histoty", mutableSetOf())
 
-    var phoneBean : PhoneBean? by hawk("phoneBean",null)
+    var phoneBean: PhoneBean? by hawk("phoneBean", null)
 
-    var collectionList : Array<SubData> by hawk("collection_list", arrayOf())
+    var collectionList: Array<SubData> by hawk("collection_list", arrayOf())
 
-    var subArray : Array<Array<SubData>> by hawk("sub_data_list", arrayOf(arrayOf()))
+    var subArray: Array<Array<SubData>> by hawk("sub_data_list", arrayOf(arrayOf()))
 
 }
