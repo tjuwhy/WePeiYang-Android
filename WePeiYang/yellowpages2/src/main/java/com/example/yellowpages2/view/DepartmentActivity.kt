@@ -1,16 +1,16 @@
 package com.example.yellowpages2.view
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.widget.TextView
 import android.support.v7.widget.Toolbar
 import android.widget.ImageView
-import com.example.yellowpages2.*
+import android.widget.TextView
+import com.example.yellowpages2.R
 import com.example.yellowpages2.model.Unit
-import com.example.yellowpages2.model.YellowPagePreference
+import com.example.yellowpages2.utils.YellowPagePreference
 import com.example.yellowpages2.utils.withItems
 
 class DepartmentActivity : AppCompatActivity() {

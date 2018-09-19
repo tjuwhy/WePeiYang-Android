@@ -6,9 +6,6 @@ import com.example.yellowpages2.model.*
 import com.example.yellowpages2.view.*
 import java.text.Collator
 
-interface UpdateCallBack{
-    fun collectionUpdate(id : Int)
-}
 
 interface Expandable {
 

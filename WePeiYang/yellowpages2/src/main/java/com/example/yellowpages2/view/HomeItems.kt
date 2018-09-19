@@ -1,16 +1,23 @@
 package com.example.yellowpages2.view
 
 import android.animation.ObjectAnimator
-import android.content.*
+import android.content.ClipboardManager
+import android.content.Context
+import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.RecyclerView
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import com.example.yellowpages2.*
+import com.example.yellowpages2.R
+import com.example.yellowpages2.model.Department
 import com.example.yellowpages2.model.GroupData
 import com.example.yellowpages2.service.update
 import com.example.yellowpages2.utils.Expandable
@@ -20,6 +27,8 @@ import com.twt.wepeiyang.commons.experimental.cache.RefreshState
 import es.dmoral.toasty.Toasty
 import org.jetbrains.anko.layoutInflater
 import org.jetbrains.anko.sdk25.coroutines.onClick
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 class HeaderItem(val context: Context) : Item {
 
@@ -276,6 +285,98 @@ class CharItem(val a: Char) : Item {
 private fun addExtra(intent: Intent, firstIndex: Int, secondIndex: Int) {
     intent.putExtra("first_index", firstIndex)
     intent.putExtra("second_index", secondIndex)
+}
+
+class SearchHistoryItem(val content: String) : Item {
+
+    companion object Cotroller : ItemController {
+
+
+        override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
+            val inflater = parent.context.layoutInflater
+            val view = inflater.inflate(R.layout.item_search_history, parent, false)
+            val textView = view.findViewById<TextView>(R.id.text_search_history)
+            val imageView = view.findViewById<ImageView>(R.id.item_search_delete)
+            return ViewHolder(view, textView, imageView)
+        }
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: Item) {
+            holder as ViewHolder
+            item as SearchHistoryItem
+            holder.itemView.setOnClickListener {
+                //实现点击历史记录跳转到搜索
+            }
+            holder.textView.text = item.content
+            holder.textView.setOnLongClickListener {
+                holder.imageView.visibility = View.VISIBLE
+                true
+            }
+        }
+    }
+
+    override val controller: ItemController
+        get() = Cotroller
+
+    class ViewHolder(itemView: View, val textView: TextView, val imageView: ImageView) : RecyclerView.ViewHolder(itemView)
+}
+
+class SearchResultItem(val context: Context, val department: Department, val subList: MutableList<String>, val query: String) : Item {
+
+
+    companion object Cotroller : ItemController {
+        override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
+            val inflater = parent.context.layoutInflater
+            val view = inflater.inflate(R.layout.item_search_result, parent, false)
+            val textView = view.findViewById<TextView>(R.id.item_sear_result_text1)
+            val textView2 = view.findViewById<TextView>(R.id.item_sear_result_text2)
+            return ViewHolder(view, textView, textView2)
+        }
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: Item) {
+            holder as ViewHolder
+            item as SearchResultItem
+            var content = ""
+            if (item.subList.size > 1) {
+                item.subList.forEach {
+                    content += "$it、"
+                }
+            } else if (item.subList.size in 1..1) content += item.subList[0]
+            holder.textView2!!.setSingleLine()
+            holder.textView!!.text = matchText(item.department.department_name, item.query)
+            holder.textView2.text = matchText(content, item.query)
+            holder.itemView.setOnClickListener {
+                val intent = Intent(item.context, DepartmentActivity::class.java)
+                intent.putExtra("first_index", item.department.department_attach.toInt() - 1)
+                intent.putExtra("second_index", when (item.department.department_attach.toInt()) {
+                    1 -> item.department.id - 1
+                    2 -> item.department.id - 29
+                    3 -> item.department.id - 54
+                    else -> 0
+                })
+                item.context.startActivity(intent)
+            }
+        }
+
+        fun matchText(text: String, keyword: String): SpannableString {
+            val ss = SpannableString(text)
+            val pattern: Pattern = Pattern.compile(keyword)
+            val matcher: Matcher = pattern.matcher(ss)
+            while (matcher.find()) {
+                val start: Int = matcher.start()
+                val end: Int = matcher.end()
+                ss.setSpan(ForegroundColorSpan(Color.parseColor("#45a0e3")), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+            }
+            return ss
+        }
+    }
+
+    class ViewHolder(itemView: View?, val textView: TextView?, val textView2: TextView?) : RecyclerView.ViewHolder(itemView)
+
+    override val controller: ItemController
+        get() = Cotroller
+
+
 }
 
 

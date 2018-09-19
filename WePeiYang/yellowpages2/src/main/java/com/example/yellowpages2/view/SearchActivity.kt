@@ -1,6 +1,7 @@
-package com.example.yellowpages2
+package com.example.yellowpages2.view
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.AppCompatActivity
@@ -13,6 +14,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import com.example.yellowpages2.R
+import com.example.yellowpages2.utils.ItemAdapter
+import com.example.yellowpages2.utils.ItemManager
+import com.example.yellowpages2.utils.YellowPagePreference
+import com.example.yellowpages2.utils.withItems
 import java.lang.reflect.Method
 
 
@@ -25,46 +31,49 @@ class SearchActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var mToolbar: Toolbar
     lateinit var footer: TextView
-    lateinit var mSearchAutoComplete: SearchView.SearchAutoComplete
+    val mSearchAutoComplete: SearchView.SearchAutoComplete? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
         mToolbar = this.findViewById(R.id.sear_toolbar)
         setSupportActionBar(mToolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         footer = this.findViewById(R.id.item_search_delete_all)
         recyclerView = this.findViewById(R.id.recyclerview_search)
-        recyclerView.withItems(YellowPagesPreference.historyList.map { it -> SearchHistoryItem(it) })
+        recyclerView.withItems(YellowPagePreference.historyList.map { it -> SearchHistoryItem(it) })
         recyclerView.layoutManager = LinearLayoutManager(this)
         itemManager = ItemManager()
         recyclerView.adapter = ItemAdapter(itemManager)
         footer.setOnClickListener {
-            YellowPagesPreference.historyList.clear()
-            itemManager.refreshAll(YellowPagesPreference.historyList.map { it -> SearchHistoryItem(it) })
+            YellowPagePreference.historyList.clear()
+            itemManager.refreshAll(YellowPagePreference.historyList.map { it -> SearchHistoryItem(it) })
             footer.visibility = View.INVISIBLE
-        }
-        mToolbar.setNavigationOnClickListener {
-            if (mSearchAutoComplete.isShown) {
-                try {
-                    mSearchAutoComplete.setText("")
-                    val method: Method = mSearchView.javaClass.getDeclaredMethod("onCloseClicked")
-                    method.isAccessible = true
-                    method.invoke(mSearchView)
-                } catch (e: Exception) {
-                    e.printStackTrace()
+
+            mToolbar.setNavigationOnClickListener {
+                if (mSearchAutoComplete!!.isShown) {
+                    try {
+                        mSearchAutoComplete.setText("")
+                        val method: Method = mSearchView.javaClass.getDeclaredMethod("onCloseClicked")
+                        method.isAccessible = true
+                        method.invoke(mSearchView)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                } else {
+                    finish()
                 }
-            } else {
-                finish()
             }
         }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
-        menuInflater.inflate(R.menu.search_view,menu)
+        menuInflater.inflate(R.menu.search_view, menu)
         val searchItem: MenuItem = menu!!.findItem(R.id.menu_search)
+//        val searchViewButton: MenuItem =menu.findItem(R.id.menu_search)
         mSearchView = MenuItemCompat.getActionView(searchItem) as SearchView
-        mSearchView.setIconifiedByDefault(false)
+        //  mSearchView.setIconifiedByDefault(false)
         mSearchView.onActionViewExpanded()
         mSearchView.isIconified = false
         mSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -74,9 +83,13 @@ class SearchActivity : AppCompatActivity() {
             }
 
             override fun onQueryTextSubmit(query: String?): Boolean {
-                YellowPagesPreference.historyList.add(0, query!!)
+                val intent = Intent(this@SearchActivity, SearchResultActivity::class.java)
+                intent.putExtra("query", query)
+                startActivity(intent)
+
+                YellowPagePreference.historyList.add(0, query!!)
                 footer.visibility = View.VISIBLE
-                itemManager.refreshAll(YellowPagesPreference.historyList.map { it -> SearchHistoryItem(it) })
+                itemManager.refreshAll(YellowPagePreference.historyList.map { it -> SearchHistoryItem(it) })
                 return true
             }
         })

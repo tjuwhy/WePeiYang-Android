@@ -9,15 +9,15 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.widget.ImageView
-import com.example.yellowpages2.*
+import com.example.yellowpages2.R
 import com.example.yellowpages2.model.GroupData
 import com.example.yellowpages2.model.SubData
-import com.example.yellowpages2.model.YellowPagePreference
 import com.example.yellowpages2.service.getPhone
 import com.example.yellowpages2.service.getUserCollection
 import com.example.yellowpages2.utils.ExpandableHelper
 import com.example.yellowpages2.utils.ItemAdapter
 import com.example.yellowpages2.utils.ItemManager
+import com.example.yellowpages2.utils.YellowPagePreference
 import com.twt.wepeiyang.commons.experimental.cache.RefreshState
 import es.dmoral.toasty.Toasty
 import org.jetbrains.anko.coroutines.experimental.asReference
