@@ -6,13 +6,13 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application>
-        <activity android:name=".view.YellowPageActivity" />
+        <activity android:name="com.tjuwhy.yellowpages2.view.YellowPageActivity" />
         <activity
-            android:name=".view.SearchActivity"
+            android:name="com.tjuwhy.yellowpages2.view.SearchActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".view.DepartmentActivity" />
+        <activity android:name="com.tjuwhy.yellowpages2.view.DepartmentActivity" />
         <activity
-            android:name=".view.SearchResultActivity"
+            android:name="com.tjuwhy.yellowpages2.view.SearchResultActivity"
             android:launchMode="singleTask" />
     </application>
 

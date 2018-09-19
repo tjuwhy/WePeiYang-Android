@@ -1,4 +1,4 @@
-package com.example.yellowpages2.view
+package com.tjuwhy.yellowpages2.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.ImageView
 import com.example.yellowpages2.R
-import com.example.yellowpages2.service.YellowPagePreference
+import com.tjuwhy.yellowpages2.service.YellowPagePreference
 import com.twt.wepeiyang.commons.ui.rec.Item
 import com.twt.wepeiyang.commons.ui.rec.ItemAdapter
 import com.twt.wepeiyang.commons.ui.rec.ItemManager

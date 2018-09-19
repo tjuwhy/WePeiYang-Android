@@ -1,4 +1,4 @@
-package com.example.yellowpages2.utils;
+package com.tjuwhy.yellowpages2.utils;
 
 public class FirstLetterUtil {
     private static int BEGIN = 45217;

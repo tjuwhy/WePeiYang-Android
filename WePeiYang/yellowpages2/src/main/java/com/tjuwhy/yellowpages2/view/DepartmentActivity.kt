@@ -1,4 +1,4 @@
-package com.example.yellowpages2.view
+package com.tjuwhy.yellowpages2.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -8,14 +8,14 @@ import android.support.v7.widget.Toolbar
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.yellowpages2.R
-import com.example.yellowpages2.service.Unit
-import com.example.yellowpages2.service.YellowPagePreference
+import com.tjuwhy.yellowpages2.service.Unit1
+import com.tjuwhy.yellowpages2.service.YellowPagePreference
 import com.twt.wepeiyang.commons.ui.rec.withItems
 
 class DepartmentActivity : AppCompatActivity() {
 
     lateinit var title: String
-    private lateinit var unitList: List<Unit>
+    private lateinit var unitList: List<Unit1>
     private lateinit var arrowBack: ImageView
     private lateinit var departmentTv: TextView
     lateinit var recyclerView: RecyclerView

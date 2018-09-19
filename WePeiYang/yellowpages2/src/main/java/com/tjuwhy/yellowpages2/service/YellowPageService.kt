@@ -1,7 +1,7 @@
-package com.example.yellowpages2.service
+package com.tjuwhy.yellowpages2.service
 
-import com.example.yellowpages2.utils.FirstLetterUtil
-import com.example.yellowpages2.utils.Selector
+import com.tjuwhy.yellowpages2.utils.FirstLetterUtil
+import com.tjuwhy.yellowpages2.utils.Selector
 import com.twt.wepeiyang.commons.experimental.cache.RefreshState
 import com.twt.wepeiyang.commons.experimental.extensions.awaitAndHandle
 import com.twt.wepeiyang.commons.experimental.network.ServiceFactory

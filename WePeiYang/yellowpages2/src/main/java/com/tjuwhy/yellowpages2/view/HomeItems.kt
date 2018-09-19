@@ -1,4 +1,4 @@
-package com.example.yellowpages2.view
+package com.tjuwhy.yellowpages2.view
 
 import android.animation.ObjectAnimator
 import android.content.ClipboardManager
@@ -17,10 +17,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.yellowpages2.R
-import com.example.yellowpages2.service.GroupData
-import com.example.yellowpages2.service.SearchBean
-import com.example.yellowpages2.service.update
-import com.example.yellowpages2.utils.Expandable
+import com.tjuwhy.yellowpages2.service.GroupData
+import com.tjuwhy.yellowpages2.service.SearchBean
+import com.tjuwhy.yellowpages2.service.update
+import com.tjuwhy.yellowpages2.utils.Expandable
 import com.twt.wepeiyang.commons.experimental.cache.RefreshState
 import com.twt.wepeiyang.commons.ui.rec.Item
 import com.twt.wepeiyang.commons.ui.rec.ItemController

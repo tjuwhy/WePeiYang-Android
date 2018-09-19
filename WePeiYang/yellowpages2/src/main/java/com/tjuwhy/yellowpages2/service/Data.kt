@@ -1,4 +1,4 @@
-package com.example.yellowpages2.service
+package com.tjuwhy.yellowpages2.service
 
 
 const val ITEM_SECOND = 0
@@ -42,10 +42,10 @@ data class Department(
         val id: Int,
         val department_name: String,
         val department_attach: String,
-        val unit_list: List<Unit>
+        val unit_list: List<Unit1>
 )
 
-data class Unit(
+data class Unit1(
         val id: Int,
         val item_name: String,
         val item_phone: String,
@@ -68,5 +68,5 @@ data class SearchBean(
         val id: Int,
         val department_name: String,
         val department_attach: Int,
-        val unit_list: List<Unit>?
+        val unit_list: List<Unit1>?
 )

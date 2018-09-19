@@ -1,4 +1,4 @@
-package com.example.yellowpages2.view
+package com.tjuwhy.yellowpages2.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.yellowpages2.R
-import com.example.yellowpages2.service.search
+import com.tjuwhy.yellowpages2.service.search
 import com.twt.wepeiyang.commons.experimental.cache.RefreshState
 import com.twt.wepeiyang.commons.ui.rec.withItems
 import es.dmoral.toasty.Toasty

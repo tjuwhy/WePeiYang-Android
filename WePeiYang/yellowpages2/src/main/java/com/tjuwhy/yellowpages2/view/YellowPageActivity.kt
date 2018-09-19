@@ -1,4 +1,4 @@
-package com.example.yellowpages2.view
+package com.tjuwhy.yellowpages2.view
 
 import android.content.Intent
 import android.os.Build
@@ -12,8 +12,8 @@ import android.support.v7.widget.Toolbar
 import android.widget.ImageView
 import android.widget.Toast
 import com.example.yellowpages2.R
-import com.example.yellowpages2.service.*
-import com.example.yellowpages2.utils.ExpandableHelper
+import com.tjuwhy.yellowpages2.service.*
+import com.tjuwhy.yellowpages2.utils.ExpandableHelper
 import com.twt.wepeiyang.commons.experimental.cache.RefreshState
 import com.twt.wepeiyang.commons.ui.rec.ItemAdapter
 import com.twt.wepeiyang.commons.ui.rec.ItemManager
